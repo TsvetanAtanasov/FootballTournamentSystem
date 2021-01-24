@@ -1,4 +1,4 @@
-﻿namespace CarRentalSystem.Domain.Common
+﻿namespace FootballTournamentSystem.TournamentDomain.Common
 {
     using System;
     using Exceptions;
@@ -50,6 +50,17 @@
             }
 
             ThrowException<TException>($"{name} must be between {min} and {max}.");
+        }
+
+        public static void ForPositiveNumber<TException>(int number, string name = "Value")
+            where TException : BaseDomainException, new()
+        {
+            if (number > 0)
+            {
+                return;
+            }
+
+            ThrowException<TException>($"{name} must be greater than 0.");
         }
 
         public static void ForValidUrl<TException>(string url, string name = "Value")

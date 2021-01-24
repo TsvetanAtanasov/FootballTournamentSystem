@@ -1,4 +1,4 @@
-﻿namespace CarRentalSystem.Domain.Common
+﻿namespace FootballTournamentSystem.TournamentDomain.Common
 {
     using System.Collections.Generic;
     using System.Linq;
