@@ -1,7 +1,7 @@
-﻿namespace FootballTournamentSystem.TournamentDomain.Models.Tournament
+﻿namespace FootballTournamentSystem.Domain.Models.TournamentContext.Tournament
 {
-    using FootballTournamentSystem.TournamentDomain.Common;
-    using FootballTournamentSystem.TournamentDomain.Exceptions;
+    using FootballTournamentSystem.Domain.Common;
+    using FootballTournamentSystem.Domain.Exceptions;
 
     public class Tournament : Entity<int>, IAggregateRoot
     {

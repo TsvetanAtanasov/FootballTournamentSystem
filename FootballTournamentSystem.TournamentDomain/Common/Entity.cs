@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.TournamentDomain.Common
+﻿namespace FootballTournamentSystem.Domain.Common
 {
     public abstract class Entity<TId>
         where TId : struct

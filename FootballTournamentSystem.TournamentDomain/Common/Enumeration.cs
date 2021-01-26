@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.TournamentDomain.Common
+﻿namespace FootballTournamentSystem.Domain.Common
 {
     using System;
     using System.Collections.Concurrent;
