@@ -63,6 +63,17 @@
             ThrowException<TException>($"{name} must be greater than 0.");
         }
 
+        public static void ForPositiveNumber<TException>(double number, string name = "Value")
+            where TException : BaseDomainException, new()
+        {
+            if (number > 0)
+            {
+                return;
+            }
+
+            ThrowException<TException>($"{name} must be greater than 0.");
+        }
+
         public static void ForValidUrl<TException>(string url, string name = "Value")
             where TException : BaseDomainException, new()
         {

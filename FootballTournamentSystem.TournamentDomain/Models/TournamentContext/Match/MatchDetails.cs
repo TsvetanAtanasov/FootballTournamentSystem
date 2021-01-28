@@ -8,7 +8,7 @@
         internal MatchDetails(int homeTeamGoals, int awayTeamGoals)
         {
             this.Validate(homeTeamGoals, awayTeamGoals);
-            // todo add more properties
+            // todo add more properties (referee, teams, goalscorers? etc.)
             this.HomeTeamGoals = homeTeamGoals;
             this.AwayTeamGoals = awayTeamGoals;
         }
