@@ -2,28 +2,88 @@
 {
     using FootballTournamentSystem.Domain.Common;
     using FootballTournamentSystem.Domain.Models.PlayerContext.Player;
-    using FootballTournamentSystem.Domain.Models.StatisticsContext.TeamStatistics;
     using System.Collections.Generic;
     using System.Linq;
+    using FootballTournamentSystem.Domain.Exceptions;
+
+    using static ModelConstants.Common;
 
     public class Team : Entity<int>, IAggregateRoot
     {
-        private readonly HashSet<TeamStatistics> teamStatistics;
         private readonly HashSet<Player> players;
 
-        public Team(TeamDetails teamDetails)
+        public Team(string name, string logoUrl, int yearFounded, string president, string coach, string league, string stadium)
         {
-            this.TeamDetails = teamDetails;
+            this.Validate(name, logoUrl, yearFounded, president, coach, league, stadium);
 
-            this.teamStatistics = new HashSet<TeamStatistics>();
+            this.Name = name;
+            this.LogoUrl = logoUrl;
+            this.YearFounded = yearFounded;
+            this.President = president;
+            this.Coach = coach;
+            this.League = league;
+            this.Stadium = stadium;
+
             this.players = new HashSet<Player>();
         }
-        public IReadOnlyCollection<TeamStatistics> TeamStatistics => this.teamStatistics.ToList().AsReadOnly();
+
+        public string Name { get; }
+
+        public string LogoUrl { get; }
+
+        public int YearFounded { get; }
+
+        public string President { get; }
+
+        public string Coach { get; }
+
+        public string League { get; }
+
+        public string Stadium { get; }
 
         public IReadOnlyCollection<Player> Players => this.players.ToList().AsReadOnly();
 
         public void AddPlayer(Player player) => this.players.Add(player);
 
-        public TeamDetails TeamDetails { get; }
+        private void Validate(string name, string logoUrl, int yearFounded, string president, string coach, string league, string stadium)
+        {
+            Guard.ForStringLength<InvalidTeamException>(
+            name,
+            MinNameLength,
+            MaxNameLength,
+            nameof(this.Name));
+
+            Guard.ForValidUrl<InvalidTeamException>(
+            logoUrl,
+            nameof(this.LogoUrl));
+
+            Guard.ForPositiveNumber<InvalidTeamException>(
+            yearFounded,
+            nameof(this.YearFounded));
+
+            Guard.ForStringLength<InvalidTeamException>(
+            president,
+            MinNameLength,
+            MaxNameLength,
+            nameof(this.President));
+
+            Guard.ForStringLength<InvalidTeamException>(
+            coach,
+            MinNameLength,
+            MaxNameLength,
+            nameof(this.Coach));
+
+            Guard.ForStringLength<InvalidTeamException>(
+            league,
+            MinNameLength,
+            MaxNameLength,
+            nameof(this.League));
+
+            Guard.ForStringLength<InvalidTeamException>(
+            stadium,
+            MinNameLength,
+            MaxNameLength,
+            nameof(this.Stadium));
+        }
     }
 }
