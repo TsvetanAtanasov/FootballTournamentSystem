@@ -13,7 +13,7 @@
         private readonly HashSet<Team> teams;
         private readonly HashSet<Match> matches;
 
-        public Group(
+        internal Group(
             string name)
         {
             this.Validate(name);

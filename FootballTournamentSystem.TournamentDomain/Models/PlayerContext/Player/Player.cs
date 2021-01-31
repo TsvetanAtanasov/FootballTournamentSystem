@@ -6,7 +6,7 @@
 
     public class Player : Entity<int>, IAggregateRoot
     {
-        public Player(string firstName, string lastName, double height, double weight, string imageUrl)
+        internal Player(string firstName, string lastName, double height, double weight, string imageUrl)
         {
             this.Validate(firstName, lastName, height, weight, imageUrl);
 

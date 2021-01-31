@@ -6,7 +6,7 @@
 
     public class Match : Entity<int>, IAggregateRoot
     {
-        public Match(Team homeTeam, Team awayTeam)
+        internal Match(Team homeTeam, Team awayTeam)
         {
             this.HomeTeam = homeTeam;
             this.AwayTeam = awayTeam;

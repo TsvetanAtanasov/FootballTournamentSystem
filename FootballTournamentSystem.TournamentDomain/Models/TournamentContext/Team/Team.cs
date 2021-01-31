@@ -12,7 +12,7 @@
     {
         private readonly HashSet<Player> players;
 
-        public Team(string name, string logoUrl, int yearFounded, string president, string coach, string league, string stadium)
+        internal Team(string name, string logoUrl, int yearFounded, string president, string coach, string league, string stadium)
         {
             this.Validate(name, logoUrl, yearFounded, president, coach, league, stadium);
 

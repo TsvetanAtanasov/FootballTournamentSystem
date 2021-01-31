@@ -11,7 +11,7 @@
         private readonly HashSet<Player> goalScorers;
         private readonly HashSet<Player> assistMakers;
 
-        public MatchStatistics(int homeTeamGoals, int awayTeamGoals, string referee)
+        internal MatchStatistics(int homeTeamGoals, int awayTeamGoals, string referee)
         {
             this.Validate(homeTeamGoals, awayTeamGoals);
 

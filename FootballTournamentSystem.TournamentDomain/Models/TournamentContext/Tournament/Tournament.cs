@@ -9,7 +9,7 @@
     {
         private readonly HashSet<Group> groups;
 
-        public Tournament(
+        internal Tournament(
             TournamentType tournamentType,
             int numberOfTeams,
             string imageUrl)

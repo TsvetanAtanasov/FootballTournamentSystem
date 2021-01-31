@@ -4,7 +4,7 @@
 
     public class Ranking : Entity<int>
     {
-        public Ranking()
+        internal Ranking()
         {
         }
     }

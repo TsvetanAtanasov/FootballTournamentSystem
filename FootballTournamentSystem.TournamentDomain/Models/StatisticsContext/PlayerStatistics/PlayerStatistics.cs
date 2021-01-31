@@ -5,7 +5,7 @@
 
     public class PlayerStatistics : Entity<int>
     {
-        public PlayerStatistics(int goalsScored, int minutesPlayed, int assists)
+        internal PlayerStatistics(int goalsScored, int minutesPlayed, int assists)
         {
             this.Validate(goalsScored, minutesPlayed, assists);
 
