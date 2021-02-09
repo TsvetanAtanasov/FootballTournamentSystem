@@ -36,7 +36,7 @@
 
         private void Validate(string name)
         {
-            Guard.ForStringLength<InvalidTeamDetailsException>(
+            Guard.ForStringLength<InvalidGroupException>(
             name,
             MinNameLength,
             MaxNameLength,

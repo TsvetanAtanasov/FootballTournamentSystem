@@ -1,4 +1,4 @@
-﻿namespace CarRentalSystem.Application.Contracts
+﻿namespace FootballTournamentSystem.Application.Contracts
 {
     using System.Linq;
     using System.Threading;
