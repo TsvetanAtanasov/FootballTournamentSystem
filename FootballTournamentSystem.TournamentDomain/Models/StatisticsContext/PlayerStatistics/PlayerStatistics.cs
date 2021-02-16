@@ -3,7 +3,7 @@
     using FootballTournamentSystem.Domain.Common;
     using FootballTournamentSystem.Domain.Exceptions;
 
-    public class PlayerStatistics : Entity<int>
+    public class PlayerStatistics : Entity<int>, IAggregateRoot
     {
         internal PlayerStatistics(int goalsScored, int minutesPlayed, int assists)
         {

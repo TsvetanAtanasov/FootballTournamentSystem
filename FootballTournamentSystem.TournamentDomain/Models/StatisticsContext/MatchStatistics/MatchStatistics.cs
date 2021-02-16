@@ -6,12 +6,12 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    public class MatchStatistics : Entity<int>
+    public class MatchStatistics : Entity<int>, IAggregateRoot
     {
         private readonly HashSet<Player> goalScorers;
         private readonly HashSet<Player> assistMakers;
 
-        internal MatchStatistics(int homeTeamGoals, int awayTeamGoals, string referee)
+        internal MatchStatistics(int homeTeamGoals, int awayTeamGoals)
         {
             this.Validate(homeTeamGoals, awayTeamGoals);
 
@@ -20,6 +20,8 @@
 
             this.goalScorers = new HashSet<Player>();
             this.assistMakers = new HashSet<Player>();
+
+            // add referee
         }
 
         public int HomeTeamGoals { get; }

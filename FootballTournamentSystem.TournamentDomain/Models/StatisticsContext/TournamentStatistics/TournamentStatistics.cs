@@ -5,7 +5,7 @@
     using FootballTournamentSystem.Domain.Models.PlayerContext.Player;
     using FootballTournamentSystem.Domain.Models.TournamentContext.Team;
 
-    public class TournamentStatistics : Entity<int>
+    public class TournamentStatistics : Entity<int>, IAggregateRoot
     {
         internal TournamentStatistics(int goalsScored, Player goalScorer, Team winner)
         {
