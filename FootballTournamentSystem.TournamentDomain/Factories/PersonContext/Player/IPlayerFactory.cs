@@ -1,6 +1,6 @@
-﻿namespace FootballTournamentSystem.Domain.Factories.PlayerContext.Player
+﻿namespace FootballTournamentSystem.Domain.Factories.PersonContext.Player
 {
-    using Models.PlayerContext.Player;
+    using Models.PersonContext.Player;
 
     public interface IPlayerFactory : IFactory<Player>
     {

@@ -1,6 +1,6 @@
 ﻿namespace FootballTournamentSystem.Domain.Factories.StatisticsContext.TournamentStatistics
 {
-    using Models.PlayerContext.Player;
+    using Models.PersonContext.Player;
     using Models.TournamentContext.Team;
     using Models.StatisticsContext.TournamentStatistics;
 

@@ -2,7 +2,6 @@
 {
     using System.Threading.Tasks;
     using Application;
-    using Common;
     using FootballTournamentSystem.Application.Common;
     using MediatR;
     using Microsoft.AspNetCore.Mvc;

@@ -14,17 +14,21 @@
         private readonly HashSet<Match> matches;
 
         internal Group(
-            string name)
+            string name,
+            GroupRanking groupRanking)
         {
             this.Validate(name);
 
             this.Name = name;
+            this.GroupRanking = groupRanking;
 
             this.teams = new HashSet<Team>();
             this.matches = new HashSet<Match>();
         }
 
         public string Name { get; }
+
+        public GroupRanking GroupRanking { get; }
 
         public IReadOnlyCollection<Team> Teams => this.teams.ToList().AsReadOnly();
 

@@ -1,7 +1,9 @@
 ﻿namespace FootballTournamentSystem.Domain.Models.TournamentContext.Team
 {
     using FootballTournamentSystem.Domain.Common;
-    using FootballTournamentSystem.Domain.Models.PlayerContext.Player;
+    using FootballTournamentSystem.Domain.Models.PersonContext.Player;
+    using FootballTournamentSystem.Domain.Models.PersonContext.President;
+    using FootballTournamentSystem.Domain.Models.PersonContext.Coach;
     using System.Collections.Generic;
     using System.Linq;
     using FootballTournamentSystem.Domain.Exceptions;
@@ -12,9 +14,9 @@
     {
         private readonly HashSet<Player> players;
 
-        internal Team(string name, string logoUrl, int yearFounded, string president, string coach, string league, string stadium)
+        internal Team(string name, string logoUrl, int yearFounded, President president, Coach coach, string league, string stadium, int groupPoints)
         {
-            this.Validate(name, logoUrl, yearFounded, president, coach, league, stadium);
+            this.Validate(name, logoUrl, yearFounded, league, stadium, groupPoints);
 
             this.Name = name;
             this.LogoUrl = logoUrl;
@@ -23,6 +25,7 @@
             this.Coach = coach;
             this.League = league;
             this.Stadium = stadium;
+            this.GroupPoints = groupPoints;
 
             this.players = new HashSet<Player>();
         }
@@ -33,19 +36,21 @@
 
         public int YearFounded { get; }
 
-        public string President { get; }
+        public President President { get; }
 
-        public string Coach { get; }
+        public Coach Coach { get; }
 
         public string League { get; }
 
         public string Stadium { get; }
 
+        public int GroupPoints { get; }
+
         public IReadOnlyCollection<Player> Players => this.players.ToList().AsReadOnly();
 
         public void AddPlayer(Player player) => this.players.Add(player);
 
-        private void Validate(string name, string logoUrl, int yearFounded, string president, string coach, string league, string stadium)
+        private void Validate(string name, string logoUrl, int yearFounded, string league, string stadium, int groupPoints)
         {
             Guard.ForStringLength<InvalidTeamException>(
             name,
@@ -62,18 +67,6 @@
             nameof(this.YearFounded));
 
             Guard.ForStringLength<InvalidTeamException>(
-            president,
-            MinNameLength,
-            MaxNameLength,
-            nameof(this.President));
-
-            Guard.ForStringLength<InvalidTeamException>(
-            coach,
-            MinNameLength,
-            MaxNameLength,
-            nameof(this.Coach));
-
-            Guard.ForStringLength<InvalidTeamException>(
             league,
             MinNameLength,
             MaxNameLength,
@@ -84,6 +77,10 @@
             MinNameLength,
             MaxNameLength,
             nameof(this.Stadium));
+
+            Guard.ForPositiveNumber<InvalidTeamException>(
+            groupPoints,
+            nameof(this.GroupPoints));
         }
     }
 }
