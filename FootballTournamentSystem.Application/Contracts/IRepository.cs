@@ -5,11 +5,9 @@
     using System.Threading.Tasks;
     using FootballTournamentSystem.Domain.Common;
 
-    public interface IRepository<out TEntity>
+    public interface IRepository<in TEntity>
         where TEntity : IAggregateRoot
     {
-        IQueryable<TEntity> All();
-
-        Task<int> SaveChanges(CancellationToken cancellationToken = default);
+        Task Save(TEntity entity, CancellationToken cancellationToken = default);
     }
 }

@@ -4,8 +4,7 @@
 
     public class TournamentType : Enumeration
     {
-        public static readonly TournamentType League = new TournamentType(1, nameof(League));
-        public static readonly TournamentType Tournament = new TournamentType(2, nameof(Tournament));
+        public static readonly TournamentType Tournament = new TournamentType(1, nameof(Tournament));
 
         private TournamentType(int value)
             : this(value, FromValue<TournamentType>(value).Name)

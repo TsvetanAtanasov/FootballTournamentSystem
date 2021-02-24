@@ -4,6 +4,8 @@
 
     public interface ITournamentFactory : IFactory<Tournament>
     {
+        ITournamentFactory WithName(string name);
+
         ITournamentFactory WithTournamentType(TournamentType tournamentType);
 
         ITournamentFactory WithNumberOfTeams(int numberOfTeams);

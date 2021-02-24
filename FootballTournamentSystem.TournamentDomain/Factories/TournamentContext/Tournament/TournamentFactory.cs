@@ -4,9 +4,16 @@
 
     internal class TournamentFactory : ITournamentFactory
     {
+        private string name = default!;
         private TournamentType tournamentType = default!;
         private int numberOfTeams = default!;
         private string imageUrl = default!;
+
+        public ITournamentFactory WithName(string name)
+        {
+            this.name = name;
+            return this;
+        }
 
         public ITournamentFactory WithTournamentType(TournamentType tournamentType)
         {
@@ -26,6 +33,6 @@
             return this;
         }
 
-        public Tournament Build() => new Tournament(this.tournamentType, this.numberOfTeams, this.imageUrl);
+        public Tournament Build() => new Tournament(this.name, this.tournamentType, this.numberOfTeams, this.imageUrl);
     }
 }

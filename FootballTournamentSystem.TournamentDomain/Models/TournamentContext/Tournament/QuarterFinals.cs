@@ -1,6 +1,7 @@
 ﻿namespace FootballTournamentSystem.Domain.Models.TournamentContext.Tournament
 {
     using FootballTournamentSystem.Domain.Common;
+    using FootballTournamentSystem.Domain.Exceptions;
     using FootballTournamentSystem.Domain.Models.TournamentContext.Match;
     using System.Collections.Generic;
     using System.Linq;
@@ -16,6 +17,13 @@
 
         public IReadOnlyCollection<Match> Matches => this.matches.ToList().AsReadOnly();
 
-        public void AddMatch(Match match) => this.matches.Add(match);
+        public void AddMatch(Match match) 
+        {
+            Guard.ForMatchesCount<InvalidFinalsException>(
+                this.matches,
+                nameof(QuarterFinals));
+
+            this.matches.Add(match);
+        }
     }
 }

@@ -1,7 +1,10 @@
 ﻿namespace FootballTournamentSystem.Domain.Common
 {
     using System;
+    using System.Collections.Generic;
     using Exceptions;
+    using FootballTournamentSystem.Domain.Models.TournamentContext.Match;
+    using FootballTournamentSystem.Domain.Models.TournamentContext.Tournament;
     using Models;
 
     public static class Guard
@@ -96,6 +99,34 @@
             }
 
             ThrowException<TException>($"{name} must not be {unexpectedValue}.");
+        }
+
+        public static void ForMatchesCount<TException>(HashSet<Match> matches, string name = "Value")
+            where TException : BaseDomainException, new()
+        {
+            if (name == nameof(RoundOf16))
+            {
+                if (matches.Count > 8)
+                {
+                    ThrowException<TException>($"{name} must be greater than 0.");
+                }
+            }
+            else if (name == nameof(QuarterFinals))
+            {
+                if (matches.Count > 4)
+                {
+                    ThrowException<TException>($"{name} must be greater than 0.");
+                }
+            }
+            else if (name == nameof(SemiFinals))
+            {
+                if (matches.Count > 2)
+                {
+                    ThrowException<TException>($"{name} must be greater than 0.");
+                }
+            }
+
+            return;
         }
 
         private static void ThrowException<TException>(string message)
