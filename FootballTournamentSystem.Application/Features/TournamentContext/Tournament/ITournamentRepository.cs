@@ -3,6 +3,7 @@
     using Contracts;
     using Domain.Models.TournamentContext.Tournament;
     using Features.TournamentContext.Tournament.Queries.All;
+    using Features.TournamentContext.Tournament.Queries.Groups;
     using System.Collections.Generic;
     using System.Threading;
     using System.Threading.Tasks;
@@ -14,5 +15,7 @@
         Task<bool> Delete(int tournamentId, CancellationToken cancellationToken = default);
 
         Task<IEnumerable<GetTournamentOutputModel>> GetTournaments(CancellationToken cancellationToken = default);
+
+        Task<IEnumerable<GetTournamentGroupOutputModel>> GetTournamentGroups(int tournamentId, CancellationToken cancellationToken = default);
     }
 }

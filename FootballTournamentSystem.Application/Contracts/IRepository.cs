@@ -1,6 +1,5 @@
 ﻿namespace FootballTournamentSystem.Application.Contracts
 {
-    using System.Linq;
     using System.Threading;
     using System.Threading.Tasks;
     using FootballTournamentSystem.Domain.Common;

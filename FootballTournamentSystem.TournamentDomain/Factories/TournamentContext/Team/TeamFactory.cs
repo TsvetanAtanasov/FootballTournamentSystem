@@ -1,5 +1,6 @@
 ﻿namespace FootballTournamentSystem.Domain.Factories.TournamentContext.Team
 {
+    using FootballTournamentSystem.Domain.Models.PersonContext.Coach;
     using FootballTournamentSystem.Domain.Models.PersonContext.President;
     using Models.TournamentContext.Team;
 
@@ -9,8 +10,8 @@
         private string logoUrl = default!;
         private int yearFounded = default!;
         private President president = default!;
-        private string coach = default!;
-        private string league = default!;
+        private Coach coach = default!;
+        private string country = default!;
         private string stadium = default!;
         private int groupPoints = default!;
 
@@ -32,21 +33,27 @@
             return this;
         }
 
+        public ITeamFactory WithPresident(string firstName, string lastName, string imageUrl)
+            => this.WithPresident(new President(firstName, lastName, imageUrl));
+
         public ITeamFactory WithPresident(President president)
         {
             this.president = president;
             return this;
         }
 
-        public ITeamFactory WithCoach(string coach)
+        public ITeamFactory WithCoach(string firstName, string lastName, string imageUrl)
+            => this.WithCoach(new Coach(firstName, lastName, imageUrl));
+
+        public ITeamFactory WithCoach(Coach coach)
         {
             this.coach = coach;
             return this;
         }
 
-        public ITeamFactory WithLeague(string league)
+        public ITeamFactory WithLeague(string country)
         {
-            this.league = league;
+            this.country = country;
             return this;
         }
 
@@ -62,6 +69,6 @@
             return this;
         }
 
-        public Team Build() => new Team(this.name, this.logoUrl, this.yearFounded, this.president, this.coach, this.league, this.stadium, this.groupPoints);
+        public Team Build() => new Team(this.name, this.logoUrl, this.yearFounded, this.president, this.coach, this.country, this.stadium, this.groupPoints);
     }
 }

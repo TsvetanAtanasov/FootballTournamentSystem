@@ -1,5 +1,6 @@
 ﻿namespace FootballTournamentSystem.Domain.Factories.TournamentContext.Team
 {
+    using FootballTournamentSystem.Domain.Models.PersonContext.Coach;
     using FootballTournamentSystem.Domain.Models.PersonContext.President;
     using Models.TournamentContext.Team;
 
@@ -11,11 +12,15 @@
 
         ITeamFactory WithYearFounded(int yearFounded);
 
+        ITeamFactory WithPresident(string firstName, string lastName, string imageUrl);
+
         ITeamFactory WithPresident(President president);
 
-        ITeamFactory WithCoach(string coach);
+        ITeamFactory WithCoach(string firstName, string lastName, string imageUrl);
 
-        ITeamFactory WithLeague(string league);
+        ITeamFactory WithCoach(Coach coach);
+
+        ITeamFactory WithCountry(string country);
 
         ITeamFactory WithStadium(string stadium);
 

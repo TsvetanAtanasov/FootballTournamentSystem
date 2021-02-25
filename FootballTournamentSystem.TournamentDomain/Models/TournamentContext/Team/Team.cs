@@ -14,16 +14,16 @@
     {
         private readonly HashSet<Player> players;
 
-        internal Team(string name, string logoUrl, int yearFounded, President president, Coach coach, string league, string stadium, int groupPoints)
+        internal Team(string name, string logoUrl, int yearFounded, President president, Coach coach, string country, string stadium, int groupPoints)
         {
-            this.Validate(name, logoUrl, yearFounded, league, stadium, groupPoints);
+            this.Validate(name, logoUrl, yearFounded, country, stadium, groupPoints);
 
             this.Name = name;
             this.LogoUrl = logoUrl;
             this.YearFounded = yearFounded;
             this.President = president;
             this.Coach = coach;
-            this.League = league;
+            this.Country = country;
             this.Stadium = stadium;
             this.GroupPoints = groupPoints;
 
@@ -40,7 +40,7 @@
 
         public Coach Coach { get; }
 
-        public string League { get; }
+        public string Country { get; }
 
         public string Stadium { get; }
 
@@ -50,7 +50,7 @@
 
         public void AddPlayer(Player player) => this.players.Add(player);
 
-        private void Validate(string name, string logoUrl, int yearFounded, string league, string stadium, int groupPoints)
+        private void Validate(string name, string logoUrl, int yearFounded, string country, string stadium, int groupPoints)
         {
             Guard.ForStringLength<InvalidTeamException>(
             name,
@@ -67,10 +67,10 @@
             nameof(this.YearFounded));
 
             Guard.ForStringLength<InvalidTeamException>(
-            league,
+            country,
             MinNameLength,
             MaxNameLength,
-            nameof(this.League));
+            nameof(this.Country));
 
             Guard.ForStringLength<InvalidTeamException>(
             stadium,
