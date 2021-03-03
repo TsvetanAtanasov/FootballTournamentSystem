@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.Domain.Models.TournamentContext.Tournament
+﻿namespace FootballTournamentSystem.Domain.Models.TournamentContext.Group
 {
     using FootballTournamentSystem.Domain.Common;
     using FootballTournamentSystem.Domain.Models.TournamentContext.Team;
@@ -8,27 +8,23 @@
     using static ModelConstants.Common;
     using System.Linq;
 
-    public class Group : Entity<int>
+    public class Group : Entity<int>, IAggregateRoot
     {
         private readonly HashSet<Team> teams;
         private readonly HashSet<Match> matches;
 
         internal Group(
-            string name,
-            GroupRanking groupRanking)
+            string name)
         {
             this.Validate(name);
 
             this.Name = name;
-            this.GroupRanking = groupRanking;
 
             this.teams = new HashSet<Team>();
             this.matches = new HashSet<Match>();
         }
 
         public string Name { get; }
-
-        public GroupRanking GroupRanking { get; }
 
         public IReadOnlyCollection<Team> Teams => this.teams.ToList().AsReadOnly();
 

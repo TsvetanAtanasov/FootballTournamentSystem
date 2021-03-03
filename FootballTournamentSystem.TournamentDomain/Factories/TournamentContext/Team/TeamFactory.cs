@@ -51,7 +51,7 @@
             return this;
         }
 
-        public ITeamFactory WithLeague(string country)
+        public ITeamFactory WithCountry(string country)
         {
             this.country = country;
             return this;

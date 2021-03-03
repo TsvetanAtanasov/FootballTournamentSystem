@@ -44,6 +44,7 @@
 
         public string Stadium { get; }
 
+        // Team's place in the group will be calculated by this property ( no need of group ranking )
         public int GroupPoints { get; }
 
         public IReadOnlyCollection<Player> Players => this.players.ToList().AsReadOnly();

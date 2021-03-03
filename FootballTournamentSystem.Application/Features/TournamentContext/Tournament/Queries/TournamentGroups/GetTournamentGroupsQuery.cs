@@ -1,8 +1,9 @@
-﻿namespace FootballTournamentSystem.Application.Features.TournamentContext.Tournament.Queries.Groups
+﻿namespace FootballTournamentSystem.Application.Features.TournamentContext.Tournament.Queries.TournamentGroups
 {
     using System.Collections.Generic;
     using System.Threading;
     using System.Threading.Tasks;
+    using FootballTournamentSystem.Application.Features.TournamentContext.Tournament;
     using MediatR;
 
     public class GetTournamentGroupsQuery : EntityCommand<int>, IRequest<IEnumerable<GetTournamentGroupOutputModel>>

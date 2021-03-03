@@ -33,6 +33,7 @@
                     .WithGroupPoints(request.GroupPoints)
                     .Build();
 
+                // in infrastucture layer - save coach and president?
                 await this.teamRepository.Save(team, cancellationToken);
 
                 return new CreateTeamOutputModel(team.Id);

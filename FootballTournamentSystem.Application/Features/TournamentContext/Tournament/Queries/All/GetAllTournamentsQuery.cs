@@ -1,13 +1,14 @@
 ﻿namespace FootballTournamentSystem.Application.Features.TournamentContext.Tournament.Queries.All
 {
+    using Tournament.Common;
     using MediatR;
     using System.Collections.Generic;
     using System.Threading;
     using System.Threading.Tasks;
 
-    public class GetAllTournamentsQuery : IRequest<IEnumerable<GetTournamentOutputModel>>
+    public class GetAllTournamentsQuery : IRequest<IEnumerable<TournamentOutputModel>>
     {
-        public class GetAllTournamentsQueryHandler : IRequestHandler<GetAllTournamentsQuery, IEnumerable<GetTournamentOutputModel>>
+        public class GetAllTournamentsQueryHandler : IRequestHandler<GetAllTournamentsQuery, IEnumerable<TournamentOutputModel>>
         {
             private readonly ITournamentRepository tournamentRepository;
 
@@ -16,7 +17,7 @@
                 this.tournamentRepository = tournamentRepository;
             }
             
-            public async Task<IEnumerable<GetTournamentOutputModel>> Handle(GetAllTournamentsQuery request, CancellationToken cancellationToken)
+            public async Task<IEnumerable<TournamentOutputModel>> Handle(GetAllTournamentsQuery request, CancellationToken cancellationToken)
             {
                 return await this.tournamentRepository.GetTournaments();
             }

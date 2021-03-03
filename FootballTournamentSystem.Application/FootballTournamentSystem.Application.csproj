@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <Folder Include="Contracts\" />
+    <Folder Include="Features\TournamentContext\Team\Queries\" />
   </ItemGroup>
 
 </Project>

@@ -1,7 +1,8 @@
 ﻿namespace FootballTournamentSystem.Domain.Models.TournamentContext.Tournament
 {
-    using FootballTournamentSystem.Domain.Common;
-    using FootballTournamentSystem.Domain.Exceptions;
+    using Domain.Common;
+    using Domain.Models.TournamentContext.Group;
+    using Domain.Exceptions;
     using System.Collections.Generic;
     using System.Linq;
 
