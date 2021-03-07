@@ -4,6 +4,7 @@
     using Domain.Models.TournamentContext.Tournament;
     using Features.TournamentContext.Tournament.Common;
     using Features.TournamentContext.Tournament.Queries.TournamentGroups;
+    using Features.TournamentContext.Tournament.Queries.TournamentMatches;
     using Features.TournamentContext.Team.Common;
     using System.Collections.Generic;
     using System.Threading;
@@ -20,6 +21,9 @@
         Task<Tournament> GetTournamentById(int tournamentId, CancellationToken cancellationToken = default);
 
         Task<IEnumerable<GetTournamentGroupOutputModel>> GetTournamentGroups(int tournamentId, CancellationToken cancellationToken = default);
+
+        // get group matches + final matches in one query
+        Task<IEnumerable<GetTournamentMatchOutputModel>> GetTournamentMatches(int tournamentId, CancellationToken cancellationToken = default);
 
         Task<IEnumerable<TeamOutputModel>> GetTournamentTeams(IList<int> groupIds, CancellationToken cancellationToken = default);
     }

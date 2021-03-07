@@ -25,8 +25,6 @@
                     request.Id,
                     cancellationToken);
 
-                // return group ranking also
-
                 return tournamentGroups;
             }
         }

@@ -2,6 +2,7 @@
 {
     using Domain.Common;
     using Domain.Models.TournamentContext.Group;
+    using Domain.Models.TournamentContext.Match;
     using Domain.Exceptions;
     using System.Collections.Generic;
     using System.Linq;
@@ -11,6 +12,7 @@
     public class Tournament : Entity<int>, IAggregateRoot
     {
         private readonly HashSet<Group> groups;
+        private readonly HashSet<Match> matches;
 
         internal Tournament(
             string name,
@@ -26,6 +28,7 @@
             this.ImageUrl = imageUrl;
 
             this.groups = new HashSet<Group>();
+            this.matches = new HashSet<Match>();
         }
 
         public string Name { get; }
@@ -46,11 +49,13 @@
 
         public int PlayerStatisticsId { get; }
 
-        public int TournamentId { get; }
-
         public IReadOnlyCollection<Group> Groups => this.groups.ToList().AsReadOnly();
 
+        public IReadOnlyCollection<Match> Matches => this.matches.ToList().AsReadOnly();
+
         public void AddGroup(Group group) => this.groups.Add(group);
+
+        // TODO: add finals methods
 
         private void Validate(string name, int numberOfTeams, string imageUrl)
         {

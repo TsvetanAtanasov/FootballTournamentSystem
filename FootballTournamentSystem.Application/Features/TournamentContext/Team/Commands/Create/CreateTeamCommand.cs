@@ -1,6 +1,5 @@
 ﻿namespace FootballTournamentSystem.Application.Features.TournamentContext.Team.Commands.Create
 {
-    using Domain.Factories.TournamentContext.Tournament;
     using Application.Features.TournamentContext.Team.Common;
     using MediatR;
     using System.Threading;

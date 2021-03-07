@@ -20,8 +20,6 @@
 
             this.goalScorers = new HashSet<Player>();
             this.assistMakers = new HashSet<Player>();
-
-            // add referee
         }
 
         public int HomeTeamGoals { get; }
