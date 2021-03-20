@@ -6,5 +6,9 @@
             : base(firstName, lastName, imageUrl)
         {
         }
+
+        public int TeamId { get; private set; }
+
+        public void AssignTeam(int teamId) => this.TeamId = teamId;
     }
 }

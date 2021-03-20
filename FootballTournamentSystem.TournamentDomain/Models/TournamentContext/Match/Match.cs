@@ -6,21 +6,20 @@
 
     public class Match : Entity<int>, IAggregateRoot
     {
-        internal Match(Team homeTeam, Team awayTeam, Referee referee)
+        internal Match(Team homeTeam, Team awayTeam)
         {
             this.HomeTeam = homeTeam;
             this.AwayTeam = awayTeam;
-            this.Referee = referee;
         }
 
         public Team HomeTeam { get; }
 
         public Team AwayTeam { get; }
 
-        public Referee Referee { get; }
-
         public int PlayerStatisticsId { get; }
 
         public int MatchStatisticsId { get; }
+
+        public int RefereeId { get; }
     }
 }

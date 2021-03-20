@@ -2,8 +2,6 @@
 {
     using FootballTournamentSystem.Domain.Common;
     using FootballTournamentSystem.Domain.Models.PersonContext.Player;
-    using FootballTournamentSystem.Domain.Models.PersonContext.President;
-    using FootballTournamentSystem.Domain.Models.PersonContext.Coach;
     using System.Collections.Generic;
     using System.Linq;
     using FootballTournamentSystem.Domain.Exceptions;
@@ -12,22 +10,20 @@
 
     public class Team : Entity<int>, IAggregateRoot
     {
-        private readonly HashSet<Player> players;
+        private readonly HashSet<int> playerIds;
 
-        internal Team(string name, string logoUrl, int yearFounded, President president, Coach coach, string country, string stadium, int groupPoints)
+        internal Team(string name, string logoUrl, int yearFounded, string country, string stadium, int groupPoints)
         {
             this.Validate(name, logoUrl, yearFounded, country, stadium, groupPoints);
 
             this.Name = name;
             this.LogoUrl = logoUrl;
             this.YearFounded = yearFounded;
-            this.President = president;
-            this.Coach = coach;
             this.Country = country;
             this.Stadium = stadium;
             this.GroupPoints = groupPoints;
 
-            this.players = new HashSet<Player>();
+            this.playerIds = new HashSet<int>();
         }
 
         public string Name { get; }
@@ -36,10 +32,6 @@
 
         public int YearFounded { get; }
 
-        public President President { get; }
-
-        public Coach Coach { get; }
-
         public string Country { get; }
 
         public string Stadium { get; }
@@ -47,9 +39,9 @@
         // Team's place in the group will be calculated by this property ( no need of group ranking )
         public int GroupPoints { get; }
 
-        public IReadOnlyCollection<Player> Players => this.players.ToList().AsReadOnly();
+        public IReadOnlyCollection<int> PlayerIds => this.playerIds.ToList().AsReadOnly();
 
-        public void AddPlayer(Player player) => this.players.Add(player);
+        public void AddPlayer(int playerId) => this.playerIds.Add(playerId);
 
         private void Validate(string name, string logoUrl, int yearFounded, string country, string stadium, int groupPoints)
         {

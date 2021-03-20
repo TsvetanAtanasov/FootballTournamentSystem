@@ -9,9 +9,5 @@
         IMatchFactory WithHomeTeam(Team homeTeam);
 
         IMatchFactory WithAwayTeam(Team awayTeam);
-
-        IMatchFactory WithReferee(Referee referee);
-
-        IMatchFactory WithReferee(string firstName, string lastName, string imageUrl);
     }
 }

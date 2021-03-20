@@ -18,7 +18,9 @@
 
         public double Weight { get; }
 
-        public int PlayerStatisticsId { get; }
+        public int TeamId { get; private set; }
+
+        public int PlayerStatisticsId { get; private set; }
 
         private void Validate(double height, double weight)
         {

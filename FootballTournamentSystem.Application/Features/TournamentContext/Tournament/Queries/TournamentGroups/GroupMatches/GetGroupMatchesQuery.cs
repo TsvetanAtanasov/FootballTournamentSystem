@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.Application.Features.TournamentContext.Group.Queries.GroupMatches
+﻿namespace FootballTournamentSystem.Application.Features.TournamentContext.Tournament.Queries.TournamentGroups.GroupMatches
 {
     using System.Collections.Generic;
     using System.Threading;
@@ -10,18 +10,18 @@
     {
         public class GetGroupMatchesQueryHandler : IRequestHandler<GetGroupMatchesQuery, IEnumerable<GetGroupMatchOutputModel>>
         {
-            private readonly IGroupRepository groupRepository;
+            private readonly ITournamentRepository tournamentRepository;
 
-            public GetGroupMatchesQueryHandler(IGroupRepository groupRepository)
+            public GetGroupMatchesQueryHandler(ITournamentRepository tournamentRepository)
             {
-                this.groupRepository = groupRepository;
+                this.tournamentRepository = tournamentRepository;
             }
 
             public async Task<IEnumerable<GetGroupMatchOutputModel>> Handle(
                 GetGroupMatchesQuery request,
                 CancellationToken cancellationToken)
             {
-                var groupMatches = await this.groupRepository.GetGroupMatches(
+                var groupMatches = await this.tournamentRepository.GetGroupMatches(
                     request.Id,
                     cancellationToken);
 

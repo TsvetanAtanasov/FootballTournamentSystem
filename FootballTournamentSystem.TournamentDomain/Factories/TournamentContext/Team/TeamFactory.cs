@@ -9,8 +9,6 @@
         private string name = default!;
         private string logoUrl = default!;
         private int yearFounded = default!;
-        private President president = default!;
-        private Coach coach = default!;
         private string country = default!;
         private string stadium = default!;
         private int groupPoints = default!;
@@ -33,24 +31,6 @@
             return this;
         }
 
-        public ITeamFactory WithPresident(string firstName, string lastName, string imageUrl)
-            => this.WithPresident(new President(firstName, lastName, imageUrl));
-
-        public ITeamFactory WithPresident(President president)
-        {
-            this.president = president;
-            return this;
-        }
-
-        public ITeamFactory WithCoach(string firstName, string lastName, string imageUrl)
-            => this.WithCoach(new Coach(firstName, lastName, imageUrl));
-
-        public ITeamFactory WithCoach(Coach coach)
-        {
-            this.coach = coach;
-            return this;
-        }
-
         public ITeamFactory WithCountry(string country)
         {
             this.country = country;
@@ -69,6 +49,6 @@
             return this;
         }
 
-        public Team Build() => new Team(this.name, this.logoUrl, this.yearFounded, this.president, this.coach, this.country, this.stadium, this.groupPoints);
+        public Team Build() => new Team(this.name, this.logoUrl, this.yearFounded, this.country, this.stadium, this.groupPoints);
     }
 }

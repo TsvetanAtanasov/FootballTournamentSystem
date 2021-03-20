@@ -22,15 +22,6 @@
             return this;
         }
 
-        public IMatchFactory WithReferee(string firstName, string lastName, string imageUrl)
-            => this.WithReferee(new Referee(firstName, lastName, imageUrl));
-
-        public IMatchFactory WithReferee(Referee referee)
-        {
-            this.referee = referee;
-            return this;
-        }
-
-        public Match Build() => new Match(this.homeTeam, this.awayTeam, this.referee);
+        public Match Build() => new Match(this.homeTeam, this.awayTeam);
     }
 }

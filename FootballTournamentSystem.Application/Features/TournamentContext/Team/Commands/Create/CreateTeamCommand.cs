@@ -25,8 +25,6 @@
                     .WithName(request.Name)
                     .WithLogoUrl(request.LogoUrl)
                     .WithYearFounded(request.YearFounded)
-                    .WithPresident(request.PresidentFirstName, request.PresidentLastName, request.PresidentImageUrl)
-                    .WithCoach(request.CoachFirstName, request.CoachLastName, request.CoachImageUrl)
                     .WithCountry(request.Country)
                     .WithStadium(request.Stadium)
                     .WithGroupPoints(request.GroupPoints)

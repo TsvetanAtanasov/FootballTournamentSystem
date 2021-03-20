@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.Application.Features.TournamentContext.Tournament.Commands.Groups
+﻿namespace FootballTournamentSystem.Application.Features.TournamentContext.Tournament.Commands.TournamentGroups.AddGroupToTournament
 {
     public class AddGroupToTournamentOutputModel
     {

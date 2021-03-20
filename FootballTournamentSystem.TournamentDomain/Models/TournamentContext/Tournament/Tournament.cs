@@ -1,7 +1,7 @@
 ﻿namespace FootballTournamentSystem.Domain.Models.TournamentContext.Tournament
 {
     using Domain.Common;
-    using Domain.Models.TournamentContext.Group;
+    using Domain.Models.TournamentContext.Tournament;
     using Domain.Models.TournamentContext.Match;
     using Domain.Exceptions;
     using System.Collections.Generic;
@@ -53,7 +53,14 @@
 
         public IReadOnlyCollection<Match> Matches => this.matches.ToList().AsReadOnly();
 
-        public void AddGroup(Group group) => this.groups.Add(group);
+        public Group AddGroup(string groupName)
+        {
+            var group = new Group(groupName);
+
+            this.groups.Add(group);
+
+            return group;
+        }
 
         // TODO: add finals methods
 

@@ -9,6 +9,7 @@
     using System.Collections.Generic;
     using System.Threading;
     using System.Threading.Tasks;
+    using FootballTournamentSystem.Application.Features.TournamentContext.Tournament.Queries.TournamentGroups.GroupMatches;
 
     public interface ITournamentRepository : IRepository<Tournament>
     {
@@ -26,5 +27,9 @@
         Task<IEnumerable<GetTournamentMatchOutputModel>> GetTournamentMatches(int tournamentId, CancellationToken cancellationToken = default);
 
         Task<IEnumerable<TeamOutputModel>> GetTournamentTeams(IList<int> groupIds, CancellationToken cancellationToken = default);
+
+        Task<IEnumerable<TeamOutputModel>> GetGroupTeams(int groupId, CancellationToken cancellationToken = default);
+
+        Task<IEnumerable<GetGroupMatchOutputModel>> GetGroupMatches(int groupId, CancellationToken cancellationToken = default);
     }
 }

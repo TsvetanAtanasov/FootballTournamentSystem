@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.Domain.Models.TournamentContext.Group
+﻿namespace FootballTournamentSystem.Domain.Models.TournamentContext.Tournament
 {
     using FootballTournamentSystem.Domain.Common;
     using FootballTournamentSystem.Domain.Models.TournamentContext.Team;
@@ -8,7 +8,7 @@
     using static ModelConstants.Common;
     using System.Linq;
 
-    public class Group : Entity<int>, IAggregateRoot
+    public class Group : Entity<int>
     {
         private readonly HashSet<Team> teams;
         private readonly HashSet<Match> matches;

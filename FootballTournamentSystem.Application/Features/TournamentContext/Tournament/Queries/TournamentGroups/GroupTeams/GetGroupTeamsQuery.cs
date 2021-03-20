@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.Application.Features.TournamentContext.Group.Queries.GroupTeams
+﻿namespace FootballTournamentSystem.Application.Features.TournamentContext.Tournament.Queries.TournamentGroups.GroupTeams
 {
     using MediatR;
     using System.Collections.Generic;
@@ -10,16 +10,16 @@
     {
         public class GetGroupTeamsQueryHandler : IRequestHandler<GetGroupTeamsQuery, IEnumerable<TeamOutputModel>>
         {
-            private readonly IGroupRepository groupRepository;
+            private readonly ITournamentRepository tournamentRepository;
 
-            public GetGroupTeamsQueryHandler(IGroupRepository groupRepository)
+            public GetGroupTeamsQueryHandler(ITournamentRepository tournamentRepository)
             {
-                this.groupRepository = groupRepository;
+                this.tournamentRepository = tournamentRepository;
             }
 
             public async Task<IEnumerable<TeamOutputModel>> Handle(GetGroupTeamsQuery request, CancellationToken cancellationToken)
             {
-                return await this.groupRepository.GetGroupTeams(
+                return await this.tournamentRepository.GetGroupTeams(
                     request.Id,
                     cancellationToken);
             }
