@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FootballTournamentSystem.Application.Features.TournamentContext.Match.Commands.Create
+﻿namespace FootballTournamentSystem.Application.Features.TournamentContext.Match.Commands.Create
 {
-    class CreateMatchOutputModel
+    public class CreateMatchOutputModel
     {
+        public CreateMatchOutputModel(int matchId)
+        {
+            this.MatchId = matchId;
+        }
+
+        public int MatchId { get; }
     }
 }

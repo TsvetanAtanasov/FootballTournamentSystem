@@ -1,7 +1,7 @@
 ﻿namespace FootballTournamentSystem.Application.Features.TournamentContext.Match.Commands.Create
 {
     using Domain.Factories.TournamentContext.Match;
-    using Domain.Models.TournamentContext.Match;
+    using Application.Features.TournamentContext.Team;
     using MediatR;
     using System.Threading;
     using System.Threading.Tasks;
@@ -24,25 +24,29 @@
         public class CreateMatchCommandHandler : IRequestHandler<CreateMatchCommand, CreateMatchOutputModel>
         {
             private readonly IMatchRepository matchRepository;
+            private readonly ITeamRepository teamRepository;
             private readonly IMatchFactory matchFactory;
 
-            public CreateMatchCommandHandler(IMatchRepository matchRepository, IMatchFactory matchFactory)
+            public CreateMatchCommandHandler(IMatchRepository matchRepository, ITeamRepository teamRepository, IMatchFactory matchFactory)
             {
                 this.matchRepository = matchRepository;
+                this.teamRepository = teamRepository;
                 this.matchFactory = matchFactory;
             }
 
             public async Task<CreateMatchOutputModel> Handle(CreateMatchCommand request, CancellationToken cancellationToken)
             {
+                var homeTeam = await teamRepository.GetTeamById(request.HomeTeamId);
+                var awayTeam = await teamRepository.GetTeamById(request.AwayTeamId);
+
                 var match = this.matchFactory
-                    .WithTournamentType(request.TournamentType)
-                    .WithNumberOfTeams(request.NumberOfTeams)
-                    .WithImageUrl(request.ImageUrl)
+                    .WithHomeTeam(homeTeam)
+                    .WithAwayTeam(awayTeam)
                     .Build();
 
-                await this.tournamentRepository.Save(tournament, cancellationToken);
+                await this.matchRepository.Save(match, cancellationToken);
 
-                return new CreateMatchOutputModel(tournament.Id);
+                return new CreateMatchOutputModel(match.Id);
             }
         }
     }

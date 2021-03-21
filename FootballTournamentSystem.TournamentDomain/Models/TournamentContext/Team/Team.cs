@@ -39,9 +39,17 @@
         // Team's place in the group will be calculated by this property ( no need of group ranking )
         public int GroupPoints { get; }
 
+        public int PresidentId { get; private set; }
+
+        public int CoachId { get; private set; }
+
         public IReadOnlyCollection<int> PlayerIds => this.playerIds.ToList().AsReadOnly();
 
         public void AddPlayer(int playerId) => this.playerIds.Add(playerId);
+
+        public void AddPresident(int presidentId) => this.PresidentId = presidentId;
+
+        public void AddCoach(int coachId) => this.CoachId = coachId;
 
         private void Validate(string name, string logoUrl, int yearFounded, string country, string stadium, int groupPoints)
         {

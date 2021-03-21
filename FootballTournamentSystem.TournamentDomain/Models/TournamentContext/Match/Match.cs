@@ -20,6 +20,8 @@
 
         public int MatchStatisticsId { get; }
 
-        public int RefereeId { get; }
+        public int RefereeId { get; private set; }
+
+        public void AddReferee(int refereeId) => this.RefereeId = refereeId;
     }
 }
