@@ -2,25 +2,25 @@
 {
     using FootballTournamentSystem.Domain.Common;
     using FootballTournamentSystem.Domain.Exceptions;
-    using FootballTournamentSystem.Domain.Models.PersonContext.Player;
-    using FootballTournamentSystem.Domain.Models.TournamentContext.Team;
 
     public class TournamentStatistics : Entity<int>, IAggregateRoot
     {
-        internal TournamentStatistics(int goalsScored, Player goalScorer, Team winner)
+        internal TournamentStatistics(int goalsScored)
         {
             this.Validate(goalsScored);
 
             this.GoalsScored = goalsScored;
-            this.GoalScorer = goalScorer;
-            this.Winner = winner;
         }
 
         public int GoalsScored { get; }
 
-        public Player GoalScorer { get; }
+        public int GoalScorerId { get; private set; }
 
-        public Team Winner { get; }
+        public int WinnerTeamId { get; private set; }
+
+        public void AddGoalScorer(int goalScorerId) => this.GoalScorerId = goalScorerId;
+
+        public void AddWinnerTeam(int winnerTeamId) => this.WinnerTeamId = winnerTeamId;
 
         private void Validate(int goalsScored)
         {

@@ -7,9 +7,5 @@
     public interface ITournamentStatisticsFactory : IFactory<TournamentStatistics>
     {
         ITournamentStatisticsFactory WithGoalsScored(int goalsScored);
-
-        ITournamentStatisticsFactory WithGoalScorer(Player goalScorer);
-
-        ITournamentStatisticsFactory WithWinner(Team winner);
     }
 }

@@ -49,9 +49,13 @@
 
         public int PlayerStatisticsId { get; }
 
+        public int TournamentStatisticsId { get; private set; }
+
         public IReadOnlyCollection<Group> Groups => this.groups.ToList().AsReadOnly();
 
         public IReadOnlyCollection<Match> Matches => this.matches.ToList().AsReadOnly();
+
+        public void AddTournamentStatistics(int statisticsId) => this.TournamentStatisticsId = statisticsId;
 
         public Group AddGroup(string groupName)
         {

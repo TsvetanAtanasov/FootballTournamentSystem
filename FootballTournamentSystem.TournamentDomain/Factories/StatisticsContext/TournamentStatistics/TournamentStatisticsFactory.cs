@@ -16,18 +16,6 @@
             return this;
         }
 
-        public ITournamentStatisticsFactory WithGoalScorer(Player goalScorer)
-        {
-            this.goalScorer = goalScorer;
-            return this;
-        }
-
-        public ITournamentStatisticsFactory WithWinner(Team winner)
-        {
-            this.winner = winner;
-            return this;
-        }
-
-        public TournamentStatistics Build() => new TournamentStatistics(this.goalsScored, this.goalScorer, this.winner);
+        public TournamentStatistics Build() => new TournamentStatistics(this.goalsScored);
     }
 }
