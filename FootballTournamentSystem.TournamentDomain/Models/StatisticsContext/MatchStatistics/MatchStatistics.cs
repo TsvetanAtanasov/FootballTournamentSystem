@@ -8,8 +8,8 @@
 
     public class MatchStatistics : Entity<int>, IAggregateRoot
     {
-        private readonly HashSet<Player> goalScorers;
-        private readonly HashSet<Player> assistMakers;
+        private readonly List<int> goalScorerIds;
+        private readonly List<int> assistMakerIds;
 
         internal MatchStatistics(int homeTeamGoals, int awayTeamGoals)
         {
@@ -18,8 +18,8 @@
             this.HomeTeamGoals = homeTeamGoals;
             this.AwayTeamGoals = awayTeamGoals;
 
-            this.goalScorers = new HashSet<Player>();
-            this.assistMakers = new HashSet<Player>();
+            this.goalScorerIds = new List<int>();
+            this.assistMakerIds = new List<int>();
         }
 
         public int HomeTeamGoals { get; }
@@ -27,13 +27,13 @@
         public int AwayTeamGoals { get; }
 
 
-        public IReadOnlyCollection<Player> GoalScorers => this.goalScorers.ToList().AsReadOnly();
+        public IReadOnlyCollection<int> GoalScorerIds => this.goalScorerIds.ToList().AsReadOnly();
 
-        public IReadOnlyCollection<Player> AssistMakers => this.assistMakers.ToList().AsReadOnly();
+        public IReadOnlyCollection<int> AssistMakerIds => this.assistMakerIds.ToList().AsReadOnly();
 
-        public void AddGoalScorer(Player goalScorer) => this.goalScorers.Add(goalScorer);
+        public void AddGoalScorers(List<int> goalScorerIds) => this.goalScorerIds.AddRange(goalScorerIds);
 
-        public void AddAssistMaker(Player assistMaker) => this.assistMakers.Add(assistMaker);
+        public void AddAssistMakers(List<int> assistMakerIds) => this.assistMakerIds.AddRange(assistMakerIds);
 
         private void Validate(int homeTeamGoals, int awayTeamGoals)
         {

@@ -18,10 +18,12 @@
 
         public int PlayerStatisticsId { get; }
 
-        public int MatchStatisticsId { get; }
+        public int MatchStatisticsId { get; private set; }
 
         public int RefereeId { get; private set; }
 
         public void AddReferee(int refereeId) => this.RefereeId = refereeId;
+
+        public void AddMatchStatistics(int statisticsId) => this.MatchStatisticsId = statisticsId;
     }
 }

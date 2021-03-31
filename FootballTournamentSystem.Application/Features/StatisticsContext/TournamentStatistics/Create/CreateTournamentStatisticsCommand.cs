@@ -15,6 +15,7 @@
             this.GoalsScored = goalsScored;
             this.GoalScorerId = goalScorerId;
             this.WinnerTeamId = winnerTeamId;
+            this.TournamentId = tournamentId;
         }
 
         public int GoalsScored { get; }
