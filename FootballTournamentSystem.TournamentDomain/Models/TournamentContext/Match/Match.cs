@@ -16,7 +16,7 @@
 
         public Team AwayTeam { get; }
 
-        public int PlayerStatisticsId { get; }
+        public int PlayerStatisticsId { get; private set; }
 
         public int MatchStatisticsId { get; private set; }
 
@@ -25,5 +25,7 @@
         public void AddReferee(int refereeId) => this.RefereeId = refereeId;
 
         public void AddMatchStatistics(int statisticsId) => this.MatchStatisticsId = statisticsId;
+
+        public void AddPlayerStatistics(int statisticsId) => this.PlayerStatisticsId = statisticsId;
     }
 }

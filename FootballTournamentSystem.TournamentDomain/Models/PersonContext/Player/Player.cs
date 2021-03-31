@@ -20,6 +20,8 @@
 
         public int PlayerStatisticsId { get; private set; }
 
+        public void AddPlayerStatistics(int statisticsId) => this.PlayerStatisticsId = statisticsId;
+
         private void Validate(double height, double weight)
         {
             Guard.ForPositiveNumber<InvalidPlayerException>(

@@ -7,6 +7,6 @@
 
     public interface IMatchRepository : IRepository<Match>
     {
-        Task<Match> GetMatchById(int teamId, CancellationToken cancellationToken = default);
+        Task<Match> GetMatchById(int matchId, CancellationToken cancellationToken = default);
     }
 }
