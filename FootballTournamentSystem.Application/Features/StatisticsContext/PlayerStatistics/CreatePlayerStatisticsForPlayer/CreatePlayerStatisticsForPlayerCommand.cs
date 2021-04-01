@@ -3,7 +3,6 @@
     using MediatR;
     using System.Threading;
     using System.Threading.Tasks;
-    using Application.Features.TournamentContext.Match;
     using Application.Features.StatisticsContext.PlayerStatistics.Common;
     using Application.Features.PersonContext.Player;
     using Domain.Factories.StatisticsContext.PlayerStatistics;

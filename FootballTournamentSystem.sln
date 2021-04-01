@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballTournamentSystem.St
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballTournamentSystem.Web", "FootballTournamentSystem.Web\FootballTournamentSystem.Web.csproj", "{80E18FE8-4270-4240-828E-22EAF5605BE8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballTournamentSystem.Infrastructure", "FootballTournamentSystem.Infrastructure\FootballTournamentSystem.Infrastructure.csproj", "{EB2198A1-C2A4-4F94-AF1D-7C607B8DDB1F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{80E18FE8-4270-4240-828E-22EAF5605BE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80E18FE8-4270-4240-828E-22EAF5605BE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80E18FE8-4270-4240-828E-22EAF5605BE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB2198A1-C2A4-4F94-AF1D-7C607B8DDB1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB2198A1-C2A4-4F94-AF1D-7C607B8DDB1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB2198A1-C2A4-4F94-AF1D-7C607B8DDB1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB2198A1-C2A4-4F94-AF1D-7C607B8DDB1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
