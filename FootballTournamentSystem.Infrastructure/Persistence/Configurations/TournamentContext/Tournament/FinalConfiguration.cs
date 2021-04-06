@@ -9,10 +9,10 @@
         public void Configure(EntityTypeBuilder<Final> builder)
         {
             builder
-                .HasKey(d => d.Id);
+                .HasKey(f => f.Id);
 
             builder
-                .HasOne(c => c.Match)
+                .HasOne(f => f.Match)
                 .WithMany()
                 .HasForeignKey("MatchId")
                 .OnDelete(DeleteBehavior.Restrict);

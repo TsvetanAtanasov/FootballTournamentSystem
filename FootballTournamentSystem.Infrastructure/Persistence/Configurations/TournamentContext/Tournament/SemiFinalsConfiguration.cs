@@ -9,10 +9,10 @@
         public void Configure(EntityTypeBuilder<SemiFinals> builder)
         {
             builder
-                .HasKey(d => d.Id);
+                .HasKey(sf => sf.Id);
 
             builder
-                .HasMany(pr => pr.Matches)
+                .HasMany(sf => sf.Matches)
                 .WithOne()
                 .Metadata
                 .PrincipalToDependent

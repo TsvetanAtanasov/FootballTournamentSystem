@@ -11,64 +11,64 @@
         public void Configure(EntityTypeBuilder<Tournament> builder)
         {
             builder
-                .HasKey(d => d.Id);
+                .HasKey(t => t.Id);
 
             builder
-                .Property(d => d.Name)
+                .Property(t => t.Name)
                 .IsRequired()
                 .HasMaxLength(MaxNameLength);
 
             builder
-                .Property(d => d.TournamentType)
+                .Property(t => t.TournamentType)
                 .IsRequired();
 
             builder
-                .Property(d => d.NumberOfTeams)
+                .Property(t => t.NumberOfTeams)
                 .IsRequired();
 
             builder
-                .Property(d => d.ImageUrl)
+                .Property(t => t.ImageUrl)
                 .IsRequired();
 
             builder
-                .HasOne(c => c.RoundOf16)
+                .HasOne(t => t.RoundOf16)
                 .WithMany()
                 .HasForeignKey("RoundOf16Id")
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder
-                .HasOne(c => c.QuarterFinals)
+                .HasOne(t => t.QuarterFinals)
                 .WithMany()
                 .HasForeignKey("QuarterFinalsId")
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder
-                .HasOne(c => c.SemiFinals)
+                .HasOne(t => t.SemiFinals)
                 .WithMany()
                 .HasForeignKey("SemiFinalsId")
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder
-                .HasOne(c => c.Final)
+                .HasOne(t => t.Final)
                 .WithMany()
                 .HasForeignKey("FinalId")
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder
-                .HasOne(c => c.RoundOf16)
+                .HasOne(t => t.RoundOf16)
                 .WithMany()
                 .HasForeignKey("RoundOf16Id")
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder
-                .HasMany(pr => pr.Groups)
+                .HasMany(t => t.Groups)
                 .WithOne()
                 .Metadata
                 .PrincipalToDependent
                 .SetField("groups");
 
             builder
-                .HasMany(pr => pr.Matches)
+                .HasMany(t => t.Matches)
                 .WithOne()
                 .Metadata
                 .PrincipalToDependent

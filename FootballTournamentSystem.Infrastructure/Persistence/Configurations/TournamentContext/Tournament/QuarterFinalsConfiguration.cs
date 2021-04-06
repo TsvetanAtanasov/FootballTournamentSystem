@@ -9,10 +9,10 @@
         public void Configure(EntityTypeBuilder<QuarterFinals> builder)
         {
             builder
-                .HasKey(d => d.Id);
+                .HasKey(qf => qf.Id);
 
             builder
-                .HasMany(pr => pr.Matches)
+                .HasMany(qf => qf.Matches)
                 .WithOne()
                 .Metadata
                 .PrincipalToDependent

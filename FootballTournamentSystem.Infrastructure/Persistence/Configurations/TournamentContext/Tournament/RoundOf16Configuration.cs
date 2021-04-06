@@ -9,10 +9,10 @@
         public void Configure(EntityTypeBuilder<RoundOf16> builder)
         {
             builder
-                .HasKey(d => d.Id);
+                .HasKey(r => r.Id);
 
             builder
-                .HasMany(pr => pr.Matches)
+                .HasMany(r => r.Matches)
                 .WithOne()
                 .Metadata
                 .PrincipalToDependent
