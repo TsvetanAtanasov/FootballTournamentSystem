@@ -6,5 +6,11 @@
             : base(firstName, lastName, imageUrl)
         {
         }
+
+        private Coach() 
+            : base()
+        {
+
+        }
     }
 }

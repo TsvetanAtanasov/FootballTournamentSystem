@@ -1,6 +1,7 @@
 ﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Configurations.TournamentContext.Tournament
 {
     using Domain.Models.TournamentContext.Tournament;
+    using Domain.Models.StatisticsContext.TournamentStatistics;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -17,10 +18,6 @@
                 .Property(t => t.Name)
                 .IsRequired()
                 .HasMaxLength(MaxNameLength);
-
-            builder
-                .Property(t => t.TournamentType)
-                .IsRequired();
 
             builder
                 .Property(t => t.NumberOfTeams)
@@ -58,6 +55,12 @@
                 .HasOne(t => t.RoundOf16)
                 .WithMany()
                 .HasForeignKey("RoundOf16Id")
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder
+                .HasOne<TournamentStatistics>()
+                .WithMany()
+                .HasForeignKey(t => t.TournamentStatisticsId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder

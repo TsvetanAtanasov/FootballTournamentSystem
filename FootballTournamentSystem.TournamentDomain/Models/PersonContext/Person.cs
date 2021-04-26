@@ -15,6 +15,13 @@
             this.ImageUrl = imageUrl;
         }
 
+        protected Person()
+        {
+            this.FirstName = default!;
+            this.LastName = default!;
+            this.ImageUrl = default!;
+        }
+
         string FirstName { get; }
 
         string LastName { get; }

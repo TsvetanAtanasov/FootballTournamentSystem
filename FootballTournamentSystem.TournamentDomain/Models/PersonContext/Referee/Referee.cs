@@ -6,5 +6,11 @@
             : base(firstName, lastName, imageUrl)
         {
         }
+
+        private Referee()
+            : base()
+        {
+
+        }
     }
 }

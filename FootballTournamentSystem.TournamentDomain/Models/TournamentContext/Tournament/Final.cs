@@ -7,11 +7,13 @@
 
     public class Final : Entity<int>
     {
-        internal Final(Match match)
+        internal Final()
         {
-            this.Match = match;
+            this.Match = default!;
         }
 
-        public Match Match { get; }
+        public Match Match { get; private set; }
+
+        public void AddPresident(Match match) => this.Match = match;
     }
 }

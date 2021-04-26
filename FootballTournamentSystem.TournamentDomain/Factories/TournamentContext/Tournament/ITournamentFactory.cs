@@ -6,8 +6,6 @@
     {
         ITournamentFactory WithName(string name);
 
-        ITournamentFactory WithTournamentType(TournamentType tournamentType);
-
         ITournamentFactory WithNumberOfTeams(int numberOfTeams);
 
         ITournamentFactory WithImageUrl(string imageUrl);

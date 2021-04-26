@@ -16,14 +16,12 @@
 
         internal Tournament(
             string name,
-            TournamentType tournamentType,
             int numberOfTeams,
             string imageUrl)
         {
             this.Validate(name, numberOfTeams, imageUrl);
 
             this.Name = name;
-            this.TournamentType = tournamentType;
             this.NumberOfTeams = numberOfTeams;
             this.ImageUrl = imageUrl;
 
@@ -32,8 +30,6 @@
         }
 
         public string Name { get; }
-
-        public TournamentType TournamentType { get; }
 
         public int NumberOfTeams { get; }
 

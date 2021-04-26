@@ -1,7 +1,9 @@
 ﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Configurations.TournamentContext.Team
 {
-
     using Domain.Models.TournamentContext.Team;
+    using Domain.Models.PersonContext.President;
+    using Domain.Models.PersonContext.Coach;
+    using Domain.Models.PersonContext.Player;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -43,16 +45,23 @@
                 .IsRequired();
 
             builder
-                .HasOne(t => t.PresidentId)
+                .HasOne<President>()
                 .WithMany()
+                .HasForeignKey(t => t.PresidentId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder
-                .HasMany(pr => pr.Matches)
-                .WithOne()
-                .Metadata
-                .PrincipalToDependent
-                .SetField("matches");
+                .HasOne<Coach>()
+                .WithMany()
+                .HasForeignKey(t => t.CoachId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            //builder
+            //    .HasMany<Player>()
+            //    .WithOne()
+            //    .Metadata
+            //    .PrincipalToDependent
+            //    .SetField("playerIds");
         }
     }
 }

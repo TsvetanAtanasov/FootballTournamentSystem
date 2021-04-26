@@ -7,8 +7,6 @@
     internal class TournamentStatisticsFactory : ITournamentStatisticsFactory
     {
         private int goalsScored = default!;
-        private Player goalScorer = default!;
-        private Team winner = default!;
 
         public ITournamentStatisticsFactory WithGoalsScored(int goalsScored)
         {

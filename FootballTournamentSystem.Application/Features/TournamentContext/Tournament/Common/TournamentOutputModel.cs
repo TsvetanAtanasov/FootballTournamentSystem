@@ -10,8 +10,6 @@
 
         public string Name { get; private set; } = default!;
 
-        public TournamentType TournamentType { get; private set; } = default!;
-
         public int TotalGroups { get; set; }
     }
 }

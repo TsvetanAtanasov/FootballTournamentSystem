@@ -12,6 +12,7 @@
     using Domain.Models.PersonContext.President;
     using Domain.Models.PersonContext.Player;
     using Domain.Models.PersonContext.Coach;
+    using Microsoft.EntityFrameworkCore.Design;
 
     internal class FootballTournamentDbContext : DbContext
     {
@@ -53,11 +54,9 @@
 
         public DbSet<Coach> Coaches { get; set; } = default!;
 
-
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-
             base.OnModelCreating(builder);
         }
     }

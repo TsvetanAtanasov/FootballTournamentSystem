@@ -2,19 +2,34 @@
 {
     using FootballTournamentSystem.Domain.Common;
     using FootballTournamentSystem.Domain.Models.TournamentContext.Team;
-    using FootballTournamentSystem.Domain.Models.PersonContext.Referee;
+    using System.Collections.Generic;
+    using System.Linq;
 
     public class Match : Entity<int>, IAggregateRoot
     {
+        private readonly HashSet<Team> teams;
+
         internal Match(Team homeTeam, Team awayTeam)
         {
             this.HomeTeam = homeTeam;
             this.AwayTeam = awayTeam;
+
+            this.teams = new HashSet<Team>() { homeTeam, awayTeam };
+        }
+
+        private Match()
+        {
+            this.HomeTeam = default!;
+            this.AwayTeam = default!;
+            this.teams = default!;
         }
 
         public Team HomeTeam { get; }
 
         public Team AwayTeam { get; }
+
+        // for database connection
+        public IReadOnlyCollection<Team> Teams => this.teams.ToList().AsReadOnly();
 
         public int PlayerStatisticsId { get; private set; }
 

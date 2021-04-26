@@ -14,6 +14,12 @@
             this.Weight = weight;
         }
 
+        private Player()
+            : base()
+        {
+
+        }
+
         public double Height { get; }
 
         public double Weight { get; }

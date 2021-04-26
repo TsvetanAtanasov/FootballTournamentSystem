@@ -12,7 +12,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\FootballTournamentSystem.Application\FootballTournamentSystem.Application.csproj" />
+    <ProjectReference Include="..\FootballTournamentSystem.Infrastructure\FootballTournamentSystem.Infrastructure.csproj" />
     <ProjectReference Include="..\FootballTournamentSystem.Web\FootballTournamentSystem.Web.csproj" />
   </ItemGroup>
 

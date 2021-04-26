@@ -8,7 +8,6 @@
     {
         private Team homeTeam = default!;
         private Team awayTeam = default!;
-        private Referee referee = default!;
 
         public IMatchFactory WithHomeTeam(Team homeTeam)
         {
