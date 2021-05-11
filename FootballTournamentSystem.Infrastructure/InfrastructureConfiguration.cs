@@ -1,5 +1,7 @@
 ﻿namespace FootballTournamentSystem.Infrastructure
 {
+    using Application.Contracts;
+    using Infrastructure.Persistence.Repositories;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
@@ -14,6 +16,7 @@
                 .AddDbContext<FootballTournamentDbContext>(options => options
                     .UseSqlServer(
                         configuration.GetConnectionString("DefaultConnection"),
-                        b => b.MigrationsAssembly(typeof(FootballTournamentDbContext).Assembly.FullName)));
+                        b => b.MigrationsAssembly(typeof(FootballTournamentDbContext).Assembly.FullName)))
+                .AddTransient(typeof(IRepository<>), typeof(DataRepository<>));
     }
 }

@@ -4,6 +4,15 @@
 
     public class TournamentOutputModel
     {
+        public TournamentOutputModel(
+            int id,
+            string name,
+            int totalGroups)
+        {
+            this.Id = id;
+            this.Name = name;
+            this.TotalGroups = totalGroups;
+        }
         //TODO: IMapfrom later
 
         public int Id { get; private set; }

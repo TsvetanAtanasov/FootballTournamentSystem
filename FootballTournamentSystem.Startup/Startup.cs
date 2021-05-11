@@ -1,6 +1,7 @@
 namespace FootballTournamentSystem.Startup
 {
     using FootballTournamentSystem.Application;
+    using FootballTournamentSystem.Domain;
     using FootballTournamentSystem.Infrastructure;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
@@ -21,8 +22,9 @@ namespace FootballTournamentSystem.Startup
         public void ConfigureServices(IServiceCollection services)
         {
             services
-                .AddInfrastructure(this.Configuration)
+                .AddDomain()
                 //.AddApplication(this.Configuration)
+                .AddInfrastructure(this.Configuration)
                 .AddControllers();
         }
 

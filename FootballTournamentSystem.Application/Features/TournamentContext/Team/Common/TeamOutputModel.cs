@@ -2,7 +2,38 @@
 {
     public class TeamOutputModel
     {
+        public TeamOutputModel(
+            int id,
+            string name,
+            string logoUrl,
+            int yearFounded,
+            string presidentFirstName,
+            string presidentLastName,
+            string presidentImageUrl,
+            string coachFirstName,
+            string coachLastName,
+            string coachImageUrl,
+            string country,
+            string stadium,
+            int groupPoints)
+        {
+            this.Id = id;
+            this.Name = name;
+            this.LogoUrl = logoUrl;
+            this.YearFounded = yearFounded;
+            this.PresidentFirstName = presidentFirstName;
+            this.PresidentImageUrl = presidentImageUrl;
+            this.CoachFirstName = coachFirstName;
+            this.CoachLastName = coachLastName;
+            this.CoachImageUrl = coachImageUrl;
+            this.Country = country;
+            this.Stadium = stadium;
+            this.GroupPoints = groupPoints;
+        }
+
         //TODO: IMapfrom later
+
+        public int Id { get; private set; }
 
         public string Name { get; set; } = default!;
 

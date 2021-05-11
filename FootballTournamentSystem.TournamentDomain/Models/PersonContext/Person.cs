@@ -22,11 +22,11 @@
             this.ImageUrl = default!;
         }
 
-        string FirstName { get; }
+        public string FirstName { get; }
 
-        string LastName { get; }
+        public string LastName { get; }
 
-        string ImageUrl { get; }
+        public string ImageUrl { get; }
 
         private void Validate(string firstName, string lastName, string imageUrl)
         {
