@@ -4,6 +4,17 @@
 
     public class GetTournamentGroupOutputModel
     {
+        public GetTournamentGroupOutputModel(
+            int id,
+            string name,
+            IEnumerable<string> teamNames,
+            IEnumerable<string> teamLogos)
+        {
+            this.Id = id;
+            this.Name = name;
+            this.TeamNames = teamNames;
+            this.TeamLogos = teamLogos;
+        }
         public int Id { get; private set; }
 
         public string Name { get; private set; } = default!;
