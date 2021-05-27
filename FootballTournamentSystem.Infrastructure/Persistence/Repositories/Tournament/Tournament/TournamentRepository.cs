@@ -12,7 +12,6 @@
     using System.Collections.Generic;
     using System.Linq;
     using Microsoft.EntityFrameworkCore;
-    using FootballTournamentSystem.Domain.Models.TournamentContext.Team;
 
     internal class TournamentRepository : DataRepository<Tournament>, ITournamentRepository
     {
@@ -24,14 +23,7 @@
 
         public async Task<bool> Delete(int tournamentId, CancellationToken cancellationToken = default)
         {
-            var tournament = await this.Data.Tournaments.FindAsync(tournamentId);
-
-#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
-            if (tournament == null)
-#pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
-            {
-                return false;
-            }
+            var tournament = await this.Data.Tournaments.FirstOrDefaultAsync(t => t.Id == tournamentId, cancellationToken);
 
             this.Data.Tournaments.Remove(tournament);
 
@@ -42,22 +34,23 @@
 
         public async Task<IEnumerable<GetGroupMatchOutputModel>> GetGroupMatches(int groupId, CancellationToken cancellationToken = default)
         {
-            var group = await this.Data.Groups.FindAsync(groupId);
+            var group = await this.Data.Groups.FirstOrDefaultAsync(g => g.Id == groupId, cancellationToken);
             var matches = group.Matches;
-            // TODO: null check?
-            return await Task.FromResult(matches
+
+            return await matches
                 .Select(match => new GetGroupMatchOutputModel(
                     match.Id,
                     match.HomeTeam.Name,
                     match.HomeTeam.LogoUrl,
                     match.AwayTeam.Name,
                     match.AwayTeam.LogoUrl))
-                .ToList());
+                .AsQueryable()
+                .ToListAsync();
         }
 
         public async Task<IEnumerable<TeamOutputModel>> GetGroupTeams(int groupId, CancellationToken cancellationToken = default)
         {
-            var group = await this.Data.Groups.FindAsync(groupId);
+            var group = await this.Data.Groups.FirstOrDefaultAsync(g => g.Id == groupId, cancellationToken);
             var teams = group.Teams;
             var result = new List<TeamOutputModel>();
             foreach (var team in teams)
@@ -91,10 +84,10 @@
 
         public async Task<IEnumerable<GetTournamentGroupOutputModel>> GetTournamentGroups(int tournamentId, CancellationToken cancellationToken = default)
         {
-            var tournament = await this.Data.Tournaments.FindAsync(tournamentId);
+            var tournament = await this.Data.Tournaments.FirstOrDefaultAsync(t => t.Id == tournamentId, cancellationToken);
             var groups = tournament.Groups;
             var result = new List<GetTournamentGroupOutputModel>();
-            // TODO: null check?
+
             return await Task.FromResult(groups
                 .Select(group => new GetTournamentGroupOutputModel(
                     group.Id,
@@ -106,10 +99,10 @@
 
         public async Task<IEnumerable<GetTournamentMatchOutputModel>> GetTournamentMatches(int tournamentId, CancellationToken cancellationToken = default)
         {
-            var tournament = await this.Data.Tournaments.FindAsync(tournamentId);
+            var tournament = await this.Data.Tournaments.FirstOrDefaultAsync(t => t.Id == tournamentId, cancellationToken);
             var matches = tournament.Matches;
             var result = new List<GetTournamentMatchOutputModel>();
-            // TODO: null check?
+
             return await Task.FromResult(matches
                 .Select(match => new GetTournamentMatchOutputModel(
                     match.Id,
@@ -144,11 +137,9 @@
 
         public async Task<bool> TournamentExists(int tournamentId, CancellationToken cancellationToken = default)
         {
-            var tournament = await this.Data.Tournaments.FindAsync(tournamentId);
+            var tournaments = await this.Data.Tournaments.ToListAsync();
 
-#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
-            return tournament != null;
-#pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
+            return tournaments.Any(t => t.Id == tournamentId);
         }
     }
 }

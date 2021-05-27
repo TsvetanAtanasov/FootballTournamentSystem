@@ -19,9 +19,9 @@
 
   <ItemGroup>
     <Folder Include="Contracts\" />
-    <Folder Include="Features\PersonContext\Coach\Queries\" />
-    <Folder Include="Features\PersonContext\President\Queries\" />
-    <Folder Include="Features\TournamentContext\Team\Queries\" />
+    <Folder Include="Features\Person\Coach\Queries\" />
+    <Folder Include="Features\Person\President\Queries\" />
+    <Folder Include="Features\Tournament\Team\Queries\" />
   </ItemGroup>
 
 </Project>
