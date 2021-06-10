@@ -12,9 +12,12 @@
     using Domain.Models.PersonContext.President;
     using Domain.Models.PersonContext.Player;
     using Domain.Models.PersonContext.Coach;
-    using Microsoft.EntityFrameworkCore.Design;
+    using Infrastructure.Persistence.DbContextInterfaces;
 
-    internal class FootballTournamentDbContext : DbContext
+    internal class FootballTournamentDbContext : DbContext,
+        ITournamentDbContext,
+        IStatisticsDbContext,
+        IPersonDbContext
     {
         public FootballTournamentDbContext(DbContextOptions<FootballTournamentDbContext> options)
             : base(options)

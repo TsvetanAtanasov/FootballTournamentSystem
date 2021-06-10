@@ -74,7 +74,7 @@
                     team.GroupPoints));
             }
 
-            return await Task.FromResult(result);
+            return await result.AsQueryable().ToListAsync();
         }
 
         public async Task<Tournament> GetTournamentById(int tournamentId, CancellationToken cancellationToken = default)
@@ -88,13 +88,14 @@
             var groups = tournament.Groups;
             var result = new List<GetTournamentGroupOutputModel>();
 
-            return await Task.FromResult(groups
+            return await groups
                 .Select(group => new GetTournamentGroupOutputModel(
                     group.Id,
                     group.Name,
                     group.Teams.Select(t => t.Name),
                     group.Teams.Select(t => t.LogoUrl)))
-                .ToList());
+                .AsQueryable()
+                .ToListAsync();
         }
 
         public async Task<IEnumerable<GetTournamentMatchOutputModel>> GetTournamentMatches(int tournamentId, CancellationToken cancellationToken = default)
@@ -103,14 +104,15 @@
             var matches = tournament.Matches;
             var result = new List<GetTournamentMatchOutputModel>();
 
-            return await Task.FromResult(matches
+            return await matches
                 .Select(match => new GetTournamentMatchOutputModel(
                     match.Id,
                     match.HomeTeam.Name,
                     match.HomeTeam.LogoUrl,
                     match.AwayTeam.Name,
                     match.AwayTeam.LogoUrl))
-                .ToList());
+                .AsQueryable()
+                .ToListAsync();
         }
 
         public async Task<IEnumerable<TournamentOutputModel>> GetTournaments(CancellationToken cancellationToken = default)
