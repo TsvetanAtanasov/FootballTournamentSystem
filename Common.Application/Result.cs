@@ -1,4 +1,4 @@
-namespace FootballTournamentSystem.Application.Common
+﻿namespace Common.Application
 {
     using System;
     using System.Collections.Generic;

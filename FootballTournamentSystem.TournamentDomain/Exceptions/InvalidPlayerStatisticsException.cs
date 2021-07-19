@@ -1,5 +1,7 @@
 ﻿namespace FootballTournamentSystem.Domain.Exceptions
 {
+    using global::Common.Domain;
+
     public class InvalidPlayerStatisticsException : BaseDomainException
     {
         public InvalidPlayerStatisticsException()

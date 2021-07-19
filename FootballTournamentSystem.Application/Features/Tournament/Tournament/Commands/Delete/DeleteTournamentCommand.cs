@@ -1,6 +1,6 @@
 ﻿namespace FootballTournamentSystem.Application.Features.TournamentContext.Tournament.Commands.Delete
 {
-    using FootballTournamentSystem.Application.Common;
+    using global::Common.Application;
     using MediatR;
     using System.Threading;
     using System.Threading.Tasks;

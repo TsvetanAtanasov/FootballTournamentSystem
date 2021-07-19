@@ -1,13 +1,12 @@
 ﻿namespace FootballTournamentSystem.Domain.Models.TournamentContext.Tournament
 {
-    using Domain.Common;
-    using Domain.Models.TournamentContext.Tournament;
     using Domain.Models.TournamentContext.Match;
     using Domain.Exceptions;
     using System.Collections.Generic;
     using System.Linq;
 
-    using static ModelConstants.Common;
+    using global::Common.Domain;
+    using global::Common.Domain.Models;
 
     public class Tournament : Entity<int>, IAggregateRoot
     {
@@ -67,8 +66,8 @@
             //TODO: validate tournament types
             Guard.ForStringLength<InvalidPlayerException>(
             name,
-            MinNameLength,
-            MaxNameLength,
+            ModelConstants.Common.MinNameLength,
+            ModelConstants.Common.MaxNameLength,
             nameof(this.Name));
 
             Guard.ForPositiveNumber<InvalidTournamentException>(

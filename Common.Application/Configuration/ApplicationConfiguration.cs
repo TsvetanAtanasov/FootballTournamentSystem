@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.Application
+﻿namespace Common.Application.Configuration
 {
     using System.Reflection;
     using AutoMapper;
@@ -13,7 +13,7 @@
             IConfiguration configuration)
             => services
                 .Configure<ApplicationSettings>(
-                    configuration.GetSection(nameof(ApplicationSettings)), 
+                    configuration.GetSection(nameof(ApplicationSettings)),
                     options => options.BindNonPublicProperties = true)
                 .AddAutoMapper(Assembly.GetExecutingAssembly())
                 .AddMediatR(Assembly.GetExecutingAssembly());

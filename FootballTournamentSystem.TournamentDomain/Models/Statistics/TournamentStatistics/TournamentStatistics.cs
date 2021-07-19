@@ -1,7 +1,8 @@
 ﻿namespace FootballTournamentSystem.Domain.Models.StatisticsContext.TournamentStatistics
 {
-    using FootballTournamentSystem.Domain.Common;
     using FootballTournamentSystem.Domain.Exceptions;
+    using global::Common.Domain;
+    using global::Common.Domain.Models;
 
     public class TournamentStatistics : Entity<int>, IAggregateRoot
     {

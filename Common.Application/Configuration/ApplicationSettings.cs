@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.Application
+﻿namespace Common.Application.Configuration
 {
     public class ApplicationSettings
     {

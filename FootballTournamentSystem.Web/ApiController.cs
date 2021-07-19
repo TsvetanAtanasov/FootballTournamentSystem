@@ -1,8 +1,8 @@
 ﻿namespace FootballTournamentSystem.Web
 {
     using System.Threading.Tasks;
-    using Application.Common;
     using FootballTournamentSystem.Web.Common;
+    using global::Common.Application;
     using MediatR;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.DependencyInjection;

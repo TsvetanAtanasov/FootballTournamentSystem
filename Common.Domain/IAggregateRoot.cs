@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.Domain.Common
+﻿namespace Common.Domain
 {
     public interface IAggregateRoot
     {

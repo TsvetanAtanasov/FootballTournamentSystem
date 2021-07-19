@@ -1,5 +1,6 @@
 ﻿namespace FootballTournamentSystem.Domain.Factories.PersonContext.Player
 {
+    using global::Common.Domain;
     using Models.PersonContext.Player;
 
     public interface IPlayerFactory : IFactory<Player>

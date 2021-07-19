@@ -1,12 +1,11 @@
 ﻿namespace FootballTournamentSystem.Domain.Models.TournamentContext.Tournament
 {
-    using FootballTournamentSystem.Domain.Common;
     using FootballTournamentSystem.Domain.Models.TournamentContext.Team;
     using FootballTournamentSystem.Domain.Models.TournamentContext.Match;
     using FootballTournamentSystem.Domain.Exceptions;
     using System.Collections.Generic;
-    using static ModelConstants.Common;
     using System.Linq;
+    using global::Common.Domain.Models;
 
     public class Group : Entity<int>
     {
@@ -38,8 +37,8 @@
         {
             Guard.ForStringLength<InvalidGroupException>(
             name,
-            MinNameLength,
-            MaxNameLength,
+            ModelConstants.Common.MinNameLength,
+            ModelConstants.Common.MaxNameLength,
             nameof(this.Name));
         }
     }

@@ -1,11 +1,7 @@
-﻿namespace FootballTournamentSystem.Domain.Common
+﻿namespace Common.Domain.Models
 {
     using System;
-    using System.Collections.Generic;
-    using Exceptions;
-    using FootballTournamentSystem.Domain.Models.TournamentContext.Match;
-    using FootballTournamentSystem.Domain.Models.TournamentContext.Tournament;
-    using Models;
+    using Common.Domain;
 
     public static class Guard
     {
@@ -80,7 +76,7 @@
         public static void ForValidUrl<TException>(string url, string name = "Value")
             where TException : BaseDomainException, new()
         {
-            if (url.Length <= ModelConstants.Common.MaxUrlLength && 
+            if (url.Length <= ModelConstants.Common.MaxUrlLength &&
                 Uri.IsWellFormedUriString(url, UriKind.Absolute))
             {
                 return;
@@ -101,33 +97,33 @@
             ThrowException<TException>($"{name} must not be {unexpectedValue}.");
         }
 
-        public static void ForMatchesCount<TException>(HashSet<Match> matches, string name = "Value")
-            where TException : BaseDomainException, new()
-        {
-            if (name == nameof(RoundOf16))
-            {
-                if (matches.Count > 8)
-                {
-                    ThrowException<TException>($"{name} must be greater than 0.");
-                }
-            }
-            else if (name == nameof(QuarterFinals))
-            {
-                if (matches.Count > 4)
-                {
-                    ThrowException<TException>($"{name} must be greater than 0.");
-                }
-            }
-            else if (name == nameof(SemiFinals))
-            {
-                if (matches.Count > 2)
-                {
-                    ThrowException<TException>($"{name} must be greater than 0.");
-                }
-            }
+        //public static void ForMatchesCount<TException>(HashSet<Match> matches, string name = "Value")
+        //    where TException : BaseDomainException, new()
+        //{
+        //    if (name == nameof(RoundOf16))
+        //    {
+        //        if (matches.Count > 8)
+        //        {
+        //            ThrowException<TException>($"{name} must be greater than 0.");
+        //        }
+        //    }
+        //    else if (name == nameof(QuarterFinals))
+        //    {
+        //        if (matches.Count > 4)
+        //        {
+        //            ThrowException<TException>($"{name} must be greater than 0.");
+        //        }
+        //    }
+        //    else if (name == nameof(SemiFinals))
+        //    {
+        //        if (matches.Count > 2)
+        //        {
+        //            ThrowException<TException>($"{name} must be greater than 0.");
+        //        }
+        //    }
 
-            return;
-        }
+        //    return;
+        //}
 
         private static void ThrowException<TException>(string message)
             where TException : BaseDomainException, new()

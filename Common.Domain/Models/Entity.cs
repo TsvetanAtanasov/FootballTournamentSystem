@@ -1,7 +1,7 @@
-﻿namespace FootballTournamentSystem.Domain.Common
+﻿namespace Common.Domain.Models
 {
     public abstract class Entity<TId>
-        where TId : struct
+            where TId : struct
     {
         public TId Id { get; private set; } = default;
 

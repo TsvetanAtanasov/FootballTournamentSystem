@@ -1,8 +1,7 @@
 ﻿namespace FootballTournamentSystem.Domain.Models.TournamentContext.Tournament
 {
-    using FootballTournamentSystem.Domain.Common;
-    using FootballTournamentSystem.Domain.Exceptions;
     using FootballTournamentSystem.Domain.Models.TournamentContext.Match;
+    using global::Common.Domain.Models;
     using System.Collections.Generic;
     using System.Linq;
 
@@ -19,9 +18,9 @@
 
         public void AddMatch(Match match)
         {
-            Guard.ForMatchesCount<InvalidFinalsException>(
-                this.matches,
-                nameof(SemiFinals));
+            //Guard.ForMatchesCount<InvalidFinalsException>(
+            //    this.matches,
+            //    nameof(SemiFinals));
 
             this.matches.Add(match);
         }

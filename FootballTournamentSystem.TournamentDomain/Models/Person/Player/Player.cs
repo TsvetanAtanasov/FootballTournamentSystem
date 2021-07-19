@@ -1,7 +1,7 @@
 ﻿namespace FootballTournamentSystem.Domain.Models.PersonContext.Player
 {
-    using FootballTournamentSystem.Domain.Common;
     using FootballTournamentSystem.Domain.Exceptions;
+    using global::Common.Domain.Models;
 
     public class Player : Person
     {

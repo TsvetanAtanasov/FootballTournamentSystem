@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.Domain.Models
+﻿namespace Common.Domain.Models
 {
     public class ModelConstants
     {

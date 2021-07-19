@@ -1,8 +1,8 @@
 ﻿namespace FootballTournamentSystem.Domain.Models.PersonContext
 {
-    using FootballTournamentSystem.Domain.Common;
     using FootballTournamentSystem.Domain.Exceptions;
-    using static ModelConstants.Common;
+    using global::Common.Domain;
+    using global::Common.Domain.Models;
 
     public abstract class Person : Entity<int>, IAggregateRoot
     {
@@ -32,14 +32,14 @@
         {
             Guard.ForStringLength<InvalidPlayerException>(
             firstName,
-            MinNameLength,
-            MaxNameLength,
+            ModelConstants.Common.MinNameLength,
+            ModelConstants.Common.MaxNameLength,
             nameof(this.FirstName));
 
             Guard.ForStringLength<InvalidPlayerException>(
             lastName,
-            MinNameLength,
-            MaxNameLength,
+            ModelConstants.Common.MinNameLength,
+            ModelConstants.Common.MaxNameLength,
             nameof(this.LastName));
 
             Guard.ForValidUrl<InvalidPlayerException>(

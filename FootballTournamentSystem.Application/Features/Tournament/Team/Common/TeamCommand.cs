@@ -1,5 +1,7 @@
 ﻿namespace FootballTournamentSystem.Application.Features.TournamentContext.Team.Common
 {
+    using global::Common.Application;
+
     public abstract class TeamCommand<TCommand> : EntityCommand<int>
         where TCommand : EntityCommand<int>
     {

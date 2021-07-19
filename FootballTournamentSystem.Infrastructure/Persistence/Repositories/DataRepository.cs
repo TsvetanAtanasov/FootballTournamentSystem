@@ -4,7 +4,7 @@
     using System.Threading;
     using System.Threading.Tasks;
     using Application.Contracts;
-    using Domain.Common;
+    using Common.Domain;
 
     internal abstract class DataRepository<TEntity> : IRepository<TEntity>
         where TEntity : class, IAggregateRoot

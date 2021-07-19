@@ -4,8 +4,7 @@
     using Domain.Models.StatisticsContext.TournamentStatistics;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
-
-    using static Domain.Models.ModelConstants.Common;
+    using Common.Domain.Models;
 
     internal class TournamentConfiguration : IEntityTypeConfiguration<Tournament>
     {
@@ -17,7 +16,7 @@
             builder
                 .Property(t => t.Name)
                 .IsRequired()
-                .HasMaxLength(MaxNameLength);
+                .HasMaxLength(ModelConstants.Common.MaxNameLength);
 
             builder
                 .Property(t => t.NumberOfTeams)

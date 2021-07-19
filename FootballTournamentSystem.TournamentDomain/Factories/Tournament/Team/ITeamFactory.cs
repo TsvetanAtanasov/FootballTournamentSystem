@@ -2,6 +2,7 @@
 {
     using FootballTournamentSystem.Domain.Models.PersonContext.Coach;
     using FootballTournamentSystem.Domain.Models.PersonContext.President;
+    using global::Common.Domain;
     using Models.TournamentContext.Team;
 
     public interface ITeamFactory : IFactory<Team>

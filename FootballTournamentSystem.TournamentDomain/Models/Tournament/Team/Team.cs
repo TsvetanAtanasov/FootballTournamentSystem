@@ -1,12 +1,11 @@
 ﻿namespace FootballTournamentSystem.Domain.Models.TournamentContext.Team
 {
-    using FootballTournamentSystem.Domain.Common;
-    using FootballTournamentSystem.Domain.Models.PersonContext.Player;
     using System.Collections.Generic;
     using System.Linq;
     using FootballTournamentSystem.Domain.Exceptions;
 
-    using static ModelConstants.Common;
+    using global::Common.Domain;
+    using global::Common.Domain.Models;
 
     public class Team : Entity<int>, IAggregateRoot
     {
@@ -55,8 +54,8 @@
         {
             Guard.ForStringLength<InvalidTeamException>(
             name,
-            MinNameLength,
-            MaxNameLength,
+            ModelConstants.Common.MinNameLength,
+            ModelConstants.Common.MaxNameLength,
             nameof(this.Name));
 
             Guard.ForValidUrl<InvalidTeamException>(
@@ -69,14 +68,14 @@
 
             Guard.ForStringLength<InvalidTeamException>(
             country,
-            MinNameLength,
-            MaxNameLength,
+            ModelConstants.Common.MinNameLength,
+            ModelConstants.Common.MaxNameLength,
             nameof(this.Country));
 
             Guard.ForStringLength<InvalidTeamException>(
             stadium,
-            MinNameLength,
-            MaxNameLength,
+            ModelConstants.Common.MinNameLength,
+            ModelConstants.Common.MaxNameLength,
             nameof(this.Stadium));
 
             Guard.ForPositiveNumber<InvalidTeamException>(

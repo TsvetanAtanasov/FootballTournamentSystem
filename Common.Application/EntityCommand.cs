@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.Application.Features
+﻿namespace Common.Application
 {
     public class EntityCommand<TId>
     {

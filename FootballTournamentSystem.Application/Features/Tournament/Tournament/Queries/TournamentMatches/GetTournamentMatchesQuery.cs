@@ -4,6 +4,7 @@
     using System.Threading;
     using System.Threading.Tasks;
     using FootballTournamentSystem.Application.Features.TournamentContext.Tournament;
+    using global::Common.Application;
     using MediatR;
 
     public class GetTournamentMatchesQuery : EntityCommand<int>, IRequest<IEnumerable<GetTournamentMatchOutputModel>>

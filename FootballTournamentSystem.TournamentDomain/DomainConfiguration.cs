@@ -1,6 +1,6 @@
 ﻿namespace FootballTournamentSystem.Domain
 {
-    using Factories;
+    using global::Common.Domain;
     using Microsoft.Extensions.DependencyInjection;
 
     public static class DomainConfiguration

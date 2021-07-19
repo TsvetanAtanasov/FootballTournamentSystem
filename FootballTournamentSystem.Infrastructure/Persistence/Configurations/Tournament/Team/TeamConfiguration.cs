@@ -6,8 +6,7 @@
     using Domain.Models.PersonContext.Player;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
-
-    using static Domain.Models.ModelConstants.Common;
+    using Common.Domain.Models;
 
     internal class TeamConfiguration : IEntityTypeConfiguration<Team>
     {
@@ -19,12 +18,12 @@
             builder
                 .Property(t => t.Name)
                 .IsRequired()
-                .HasMaxLength(MaxNameLength);
+                .HasMaxLength(ModelConstants.Common.MaxNameLength);
 
             builder
                 .Property(t => t.LogoUrl)
                 .IsRequired()
-                .HasMaxLength(MaxUrlLength);
+                .HasMaxLength(ModelConstants.Common.MaxUrlLength);
 
             builder
                 .Property(t => t.YearFounded)
@@ -33,12 +32,12 @@
             builder
                 .Property(t => t.Country)
                 .IsRequired()
-                .HasMaxLength(MaxNameLength);
+                .HasMaxLength(ModelConstants.Common.MaxNameLength);
 
             builder
                 .Property(t => t.Stadium)
                 .IsRequired()
-                .HasMaxLength(MaxNameLength);
+                .HasMaxLength(ModelConstants.Common.MaxNameLength);
 
             builder
                 .Property(t => t.GroupPoints)

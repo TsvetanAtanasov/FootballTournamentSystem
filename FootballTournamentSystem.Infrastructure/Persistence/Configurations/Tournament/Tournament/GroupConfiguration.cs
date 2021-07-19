@@ -1,10 +1,9 @@
 ﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Configurations.TournamentContext.Tournament
 {
+    using Common.Domain.Models;
     using Domain.Models.TournamentContext.Tournament;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
-
-    using static Domain.Models.ModelConstants.Common;
 
     internal class GroupConfiguration : IEntityTypeConfiguration<Group>
     {
@@ -16,7 +15,7 @@
             builder
                 .Property(g => g.Name)
                 .IsRequired()
-                .HasMaxLength(MaxNameLength);
+                .HasMaxLength(ModelConstants.Common.MaxNameLength);
 
             builder
                 .HasMany(g => g.Teams)

@@ -1,7 +1,5 @@
-﻿namespace FootballTournamentSystem.Domain.Factories
+﻿namespace Common.Domain
 {
-    using Domain.Common;
-
     public interface IFactory<out TEntity>
         where TEntity : IAggregateRoot
     {

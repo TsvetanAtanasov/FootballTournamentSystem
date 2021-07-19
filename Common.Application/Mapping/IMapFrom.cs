@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.Application.Mapping
+﻿namespace Common.Application.Mapping
 {
     using AutoMapper;
 

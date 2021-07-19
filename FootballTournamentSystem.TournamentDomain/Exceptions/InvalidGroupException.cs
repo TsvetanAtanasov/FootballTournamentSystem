@@ -1,5 +1,7 @@
 ﻿namespace FootballTournamentSystem.Domain.Exceptions
 {
+    using global::Common.Domain;
+
     public class InvalidGroupException : BaseDomainException
     {
         public InvalidGroupException()

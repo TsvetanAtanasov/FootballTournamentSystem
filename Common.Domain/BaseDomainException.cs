@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.Domain.Exceptions
+﻿namespace Common.Domain
 {
     using System;
 
