@@ -4,8 +4,9 @@
     using Domain.Models.TournamentContext.Match;
     using Microsoft.EntityFrameworkCore;
     using Domain.Models.TournamentContext.Team;
+    using Common.Infrastructure.Persistence;
 
-    internal interface ITournamentDbContext
+    internal interface ITournamentDbContext : IDbContext
     {
         DbSet<Tournament> Tournaments { get; }
 

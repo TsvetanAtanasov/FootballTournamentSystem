@@ -5,8 +5,9 @@
     using Domain.Models.PersonContext.Player;
     using Domain.Models.PersonContext.Coach;
     using Microsoft.EntityFrameworkCore;
+    using Common.Infrastructure.Persistence;
 
-    internal interface IPersonDbContext
+    internal interface IPersonDbContext : IDbContext
     {
         DbSet<Referee> Referees { get; }
 

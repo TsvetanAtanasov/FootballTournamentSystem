@@ -12,8 +12,9 @@
     using System.Collections.Generic;
     using System.Linq;
     using Microsoft.EntityFrameworkCore;
+    using Common.Infrastructure.Persistence;
 
-    internal class TournamentRepository : DataRepository<Tournament>, ITournamentRepository
+    internal class TournamentRepository : DataRepository<FootballTournamentDbContext, Tournament>, ITournamentRepository
     {
         public TournamentRepository(FootballTournamentDbContext db)
             : base(db)

@@ -1,7 +1,7 @@
 ﻿namespace FootballTournamentSystem.Infrastructure
 {
     using Application.Contracts;
-    using Infrastructure.Persistence.Repositories;
+    using Common.Infrastructure.Persistence;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;

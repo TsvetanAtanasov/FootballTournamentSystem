@@ -5,7 +5,7 @@
     using System.Threading.Tasks;
     using Common.Domain;
 
-    internal abstract class DataRepository<TDbContext, TEntity> : IDomainRepository<TEntity>
+    public abstract class DataRepository<TDbContext, TEntity> : IDomainRepository<TEntity>
         where TDbContext : IDbContext
         where TEntity : class, IAggregateRoot
     {

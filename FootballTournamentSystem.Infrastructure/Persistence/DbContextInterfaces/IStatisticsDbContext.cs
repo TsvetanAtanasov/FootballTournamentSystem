@@ -4,8 +4,9 @@
     using Domain.Models.StatisticsContext.PlayerStatistics;
     using Domain.Models.StatisticsContext.MatchStatistics;
     using Microsoft.EntityFrameworkCore;
+    using Common.Infrastructure.Persistence;
 
-    internal interface IStatisticsDbContext
+    internal interface IStatisticsDbContext : IDbContext
     {
         DbSet<TournamentStatistics> TournamentStatistics { get; }
 
