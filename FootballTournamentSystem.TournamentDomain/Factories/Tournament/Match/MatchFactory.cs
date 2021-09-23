@@ -1,6 +1,6 @@
 ﻿namespace FootballTournamentSystem.Domain.Factories.TournamentContext.Match
 {
-    using Models.PersonContext.Referee;
+    using Models.Person.Referee;
     using Models.TournamentContext.Match;
     using Models.TournamentContext.Team;
 

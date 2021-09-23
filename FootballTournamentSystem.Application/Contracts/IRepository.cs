@@ -2,7 +2,7 @@
 {
     using System.Threading;
     using System.Threading.Tasks;
-    using global::Common.Domain;
+    using Common.Domain;
 
     public interface IRepository<in TEntity>
         where TEntity : IAggregateRoot

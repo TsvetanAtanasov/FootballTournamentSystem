@@ -1,7 +1,7 @@
-﻿namespace FootballTournamentSystem.Application.Features.PersonContext.Coach
+﻿namespace FootballTournamentSystem.Application.Features.Person.Coach
 {
     using Application.Contracts;
-    using Domain.Models.PersonContext.Coach;
+    using Domain.Models.Person.Coach;
 
     public interface ICoachRepository : IRepository<Coach>
     {

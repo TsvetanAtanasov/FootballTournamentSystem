@@ -1,13 +1,13 @@
-﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Repositories.PersonContext.Player
+﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Repositories.Person.Player
 {
     using Common.Infrastructure.Persistence;
-    using Domain.Models.PersonContext.Player;
-    using FootballTournamentSystem.Application.Features.PersonContext.Player;
+    using Domain.Models.Person.Player;
+    using FootballTournamentSystem.Application.Features.Person.Player;
     using Microsoft.EntityFrameworkCore;
     using System.Threading;
     using System.Threading.Tasks;
 
-    internal class PlayerRepository : DataRepository<FootballTournamentDbContext, Player>, IPlayerRepository
+    internal class PlayerRepository : FootballTournamentDataRepository<Player>, IPlayerRepository
     {
         public PlayerRepository(FootballTournamentDbContext db)
             : base(db)

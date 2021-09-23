@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.Application.Features.PersonContext.Referee.Commands.Create
+﻿namespace FootballTournamentSystem.Application.Features.Person.Referee.Commands.Create
 {
     public class CreateRefereeOutputModel
     {

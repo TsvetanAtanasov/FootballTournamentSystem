@@ -1,9 +1,9 @@
-﻿namespace FootballTournamentSystem.Application.Features.PersonContext.Referee.Commands.Create
+﻿namespace FootballTournamentSystem.Application.Features.Person.Referee.Commands.Create
 {
     using MediatR;
     using System.Threading;
     using System.Threading.Tasks;
-    using Domain.Factories.PersonContext.Referee;
+    using Domain.Factories.Person.Referee;
     using Application.Features.TournamentContext.Match;
 
     public class CreateRefereeCommand : IRequest<CreateRefereeOutputModel>

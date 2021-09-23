@@ -1,6 +1,6 @@
-﻿namespace FootballTournamentSystem.Domain.Factories.PersonContext.Referee
+﻿namespace FootballTournamentSystem.Domain.Factories.Person.Referee
 {
-    using Models.PersonContext.Referee;
+    using Models.Person.Referee;
 
     internal class RefereeFactory : IRefereeFactory
     {

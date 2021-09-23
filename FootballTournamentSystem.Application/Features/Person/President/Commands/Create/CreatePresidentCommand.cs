@@ -1,9 +1,9 @@
-﻿namespace FootballTournamentSystem.Application.Features.PersonContext.President.Commands.Create
+﻿namespace FootballTournamentSystem.Application.Features.Person.President.Commands.Create
 {
     using MediatR;
     using System.Threading;
     using System.Threading.Tasks;
-    using Domain.Factories.PersonContext.President;
+    using Domain.Factories.Person.President;
     using Application.Features.TournamentContext.Team;
 
     public class CreatePresidentCommand : IRequest<CreatePresidentOutputModel>
@@ -43,15 +43,10 @@
                     .WithFirstName(request.FirstName)
                     .WithLastName(request.LastName)
                     .WithImageUrl(request.ImageUrl)
+                    .WithTeamId(request.TeamId)
                     .Build();
 
                 await this.presidentRepository.Save(president, cancellationToken);
-
-                if (request.TeamId != 0)
-                {
-                    var team = await this.teamRepository.GetTeamById(request.TeamId);
-                    team.AddPresident(president.Id);
-                }
 
                 return new CreatePresidentOutputModel(president.Id);
             }

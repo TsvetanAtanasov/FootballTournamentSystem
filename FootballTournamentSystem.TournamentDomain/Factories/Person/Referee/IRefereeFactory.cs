@@ -1,7 +1,7 @@
-﻿namespace FootballTournamentSystem.Domain.Factories.PersonContext.Referee
+﻿namespace FootballTournamentSystem.Domain.Factories.Person.Referee
 {
     using global::Common.Domain;
-    using Models.PersonContext.Referee;
+    using Models.Person.Referee;
 
     public interface IRefereeFactory : IFactory<Referee>
     {

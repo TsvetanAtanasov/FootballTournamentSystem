@@ -7,12 +7,18 @@
     using System.Threading;
     using System.Threading.Tasks;
 
-    internal class TeamRepository : DataRepository<FootballTournamentDbContext, Team>, ITeamRepository
+    internal class TeamRepository : FootballTournamentDataRepository<Team>, ITeamRepository
     {
         public TeamRepository(FootballTournamentDbContext db)
             : base(db)
         {
 
+        }
+
+        public Task AddPresidentToTeam(int teamId, int presidentId)
+        {
+            // TODO
+            throw new System.NotImplementedException();
         }
 
         public async Task<Team> GetTeamById(int teamId, CancellationToken cancellationToken = default)

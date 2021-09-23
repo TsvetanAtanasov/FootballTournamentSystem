@@ -1,6 +1,6 @@
-﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Configurations.PersonContext.Coach
+﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Configurations.Person.Coach
 {
-    using Domain.Models.PersonContext.Coach;
+    using Domain.Models.Person.Coach;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

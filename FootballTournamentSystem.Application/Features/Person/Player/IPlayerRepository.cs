@@ -1,9 +1,9 @@
-﻿namespace FootballTournamentSystem.Application.Features.PersonContext.Player
+﻿namespace FootballTournamentSystem.Application.Features.Person.Player
 {
     using System.Threading;
     using System.Threading.Tasks;
     using Application.Contracts;
-    using Domain.Models.PersonContext.Player;
+    using Domain.Models.Person.Player;
 
     public interface IPlayerRepository : IRepository<Player>
     {

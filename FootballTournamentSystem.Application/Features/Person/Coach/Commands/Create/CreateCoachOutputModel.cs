@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.Application.Features.PersonContext.Coach.Commands.Create
+﻿namespace FootballTournamentSystem.Application.Features.Person.Coach.Commands.Create
 {
     public class CreateCoachOutputModel
     {

@@ -1,12 +1,13 @@
-﻿namespace FootballTournamentSystem.Domain.Factories.PersonContext.President
+﻿namespace FootballTournamentSystem.Domain.Factories.Person.President
 {
-    using Models.PersonContext.President;
+    using Models.Person.President;
 
     internal class PresidentFactory : IPresidentFactory
     {
         private string firstName = default!;
         private string lastName = default!;
         private string imageUrl = default!;
+        private int teamId;
 
         public IPresidentFactory WithFirstName(string firstName)
         {
@@ -26,6 +27,12 @@
             return this;
         }
 
-        public President Build() => new President(this.firstName, this.lastName, this.imageUrl);
+        public IPresidentFactory WithTeamId(int teamId)
+        {
+            this.teamId = teamId;
+            return this;
+        }
+
+        public President Build() => new President(this.firstName, this.lastName, this.imageUrl, this.teamId);
     }
 }

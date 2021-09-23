@@ -1,6 +1,6 @@
-﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Configurations.PersonContext.Referee
+﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Configurations.Person.Referee
 {
-    using Domain.Models.PersonContext.Referee;
+    using Domain.Models.Person.Referee;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

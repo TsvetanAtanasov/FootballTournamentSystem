@@ -14,7 +14,7 @@
     using Microsoft.EntityFrameworkCore;
     using Common.Infrastructure.Persistence;
 
-    internal class TournamentRepository : DataRepository<FootballTournamentDbContext, Tournament>, ITournamentRepository
+    internal class TournamentRepository : FootballTournamentDataRepository<Tournament>, ITournamentRepository
     {
         public TournamentRepository(FootballTournamentDbContext db)
             : base(db)
@@ -54,6 +54,14 @@
             var group = await this.Data.Groups.FirstOrDefaultAsync(g => g.Id == groupId, cancellationToken);
             var teams = group.Teams;
             var result = new List<TeamOutputModel>();
+
+            var teamIds = teams.Select(t => t.Id).ToList();
+
+            var presidents = await this.Data
+                .Presidents
+                .Where(pr => teamIds.Contains(pr.TeamId))
+                .ToListAsync();
+
             foreach (var team in teams)
             {
                 // TODO: bulk get presidents?

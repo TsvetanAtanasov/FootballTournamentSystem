@@ -1,9 +1,9 @@
 ﻿namespace FootballTournamentSystem.Infrastructure.Persistence.DbContextInterfaces
 {
-    using Domain.Models.PersonContext.Referee;
-    using Domain.Models.PersonContext.President;
-    using Domain.Models.PersonContext.Player;
-    using Domain.Models.PersonContext.Coach;
+    using Domain.Models.Person.Referee;
+    using Domain.Models.Person.President;
+    using Domain.Models.Person.Player;
+    using Domain.Models.Person.Coach;
     using Microsoft.EntityFrameworkCore;
     using Common.Infrastructure.Persistence;
 

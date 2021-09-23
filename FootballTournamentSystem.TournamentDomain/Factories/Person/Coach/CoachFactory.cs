@@ -1,6 +1,6 @@
-﻿namespace FootballTournamentSystem.Domain.Factories.PersonContext.Coach
+﻿namespace FootballTournamentSystem.Domain.Factories.Person.Coach
 {
-    using Models.PersonContext.Coach;
+    using Models.Person.Coach;
 
     internal class CoachFactory : ICoachFactory
     {

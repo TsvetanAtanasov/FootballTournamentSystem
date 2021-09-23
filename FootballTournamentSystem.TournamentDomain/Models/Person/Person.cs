@@ -1,14 +1,18 @@
-﻿namespace FootballTournamentSystem.Domain.Models.PersonContext
+﻿namespace FootballTournamentSystem.Domain.Models.Person
 {
     using FootballTournamentSystem.Domain.Exceptions;
-    using global::Common.Domain;
-    using global::Common.Domain.Models;
+    using Common.Domain;
+    using Common.Domain.Models;
+    using System;
 
     public abstract class Person : Entity<int>, IAggregateRoot
     {
         public Person(string firstName, string lastName, string imageUrl)
         {
             this.Validate(firstName, lastName, imageUrl);
+
+            // TODO: Make Id Guid
+            // this.Id = Guid.NewGuid();
 
             this.FirstName = firstName;
             this.LastName = lastName;

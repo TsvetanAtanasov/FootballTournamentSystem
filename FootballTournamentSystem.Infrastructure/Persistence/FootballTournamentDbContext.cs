@@ -1,27 +1,42 @@
 ﻿namespace FootballTournamentSystem.Infrastructure.Persistence
 {
+    using System.Collections.Generic;
+    using System.Linq;
     using System.Reflection;
-    using Microsoft.EntityFrameworkCore;
-    using Domain.Models.TournamentContext.Tournament;
+    using System.Threading;
+    using System.Threading.Tasks;
+    using Common.Domain.Models;
+    using Common.Infrastructure.Events;
+    using Domain.Models.Person.Coach;
+    using Domain.Models.Person.Player;
+    using Domain.Models.Person.President;
+    using Domain.Models.Person.Referee;
+    using Domain.Models.StatisticsContext.MatchStatistics;
+    using Domain.Models.StatisticsContext.PlayerStatistics;
+    using Domain.Models.StatisticsContext.TournamentStatistics;
     using Domain.Models.TournamentContext.Match;
     using Domain.Models.TournamentContext.Team;
-    using Domain.Models.StatisticsContext.TournamentStatistics;
-    using Domain.Models.StatisticsContext.PlayerStatistics;
-    using Domain.Models.StatisticsContext.MatchStatistics;
-    using Domain.Models.PersonContext.Referee;
-    using Domain.Models.PersonContext.President;
-    using Domain.Models.PersonContext.Player;
-    using Domain.Models.PersonContext.Coach;
+    using Domain.Models.TournamentContext.Tournament;
     using Infrastructure.Persistence.DbContextInterfaces;
+    using Microsoft.EntityFrameworkCore;
 
-    internal class FootballTournamentDbContext : DbContext,
+    // Return to internal when extracting microservices
+    public class FootballTournamentDbContext : DbContext,
         ITournamentDbContext,
         IStatisticsDbContext,
         IPersonDbContext
     {
-        public FootballTournamentDbContext(DbContextOptions<FootballTournamentDbContext> options)
+        private readonly IEventDispatcher eventDispatcher;
+        private readonly Stack<object> savesChangesTracker;
+
+        public FootballTournamentDbContext(
+            DbContextOptions<FootballTournamentDbContext> options, 
+            IEventDispatcher eventDispatcher)
             : base(options)
         {
+            this.eventDispatcher = eventDispatcher;
+
+            this.savesChangesTracker = new Stack<object>();
         }
 
         // Tournament Context
@@ -56,6 +71,38 @@
         public DbSet<Player> Players { get; set; } = default!;
 
         public DbSet<Coach> Coaches { get; set; } = default!;
+
+        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
+        {
+            this.savesChangesTracker.Push(new object());
+
+            var entities = this.ChangeTracker
+                .Entries<IEntity>()
+                .Select(e => e.Entity)
+                .Where(e => e.Events.Any())
+                .ToArray();
+
+            foreach (var entity in entities)
+            {
+                var events = entity.Events.ToArray();
+
+                entity.ClearEvents();
+
+                foreach (var domainEvent in events)
+                {
+                    await this.eventDispatcher.Dispatch(domainEvent);
+                }
+            }
+
+            this.savesChangesTracker.Pop();
+
+            if (!this.savesChangesTracker.Any())
+            {
+                return await base.SaveChangesAsync(cancellationToken);
+            }
+
+            return 0;
+        }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

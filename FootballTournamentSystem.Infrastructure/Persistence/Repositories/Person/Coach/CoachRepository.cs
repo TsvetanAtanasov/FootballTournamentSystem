@@ -1,10 +1,10 @@
-﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Repositories.PersonContext.Coach
+﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Repositories.Person.Coach
 {
-    using Common.Infrastructure.Persistence;
-    using Domain.Models.PersonContext.Coach;
-    using FootballTournamentSystem.Application.Features.PersonContext.Coach;
+    using Domain.Models.Person.Coach;
+    using FootballTournamentSystem.Application.Features.Person.Coach;
+    using FootballTournamentSystem.Infrastructure.Persistence.Repositories;
 
-    internal class CoachRepository : DataRepository<FootballTournamentDbContext, Coach>, ICoachRepository
+    internal class CoachRepository : FootballTournamentDataRepository<Coach>, ICoachRepository
     {
         public CoachRepository(FootballTournamentDbContext db)
             : base(db)

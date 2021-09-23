@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.Domain.Models.PersonContext.Referee
+﻿namespace FootballTournamentSystem.Domain.Models.Person.Referee
 {
     public class Referee : Person
     {

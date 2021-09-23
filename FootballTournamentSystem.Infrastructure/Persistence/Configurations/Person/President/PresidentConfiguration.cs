@@ -1,6 +1,6 @@
-﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Configurations.PersonContext.President
+﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Configurations.Person.President
 {
-    using Domain.Models.PersonContext.President;
+    using Domain.Models.Person.President;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

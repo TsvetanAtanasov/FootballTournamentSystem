@@ -1,7 +1,7 @@
-﻿namespace FootballTournamentSystem.Domain.Factories.PersonContext.President
+﻿namespace FootballTournamentSystem.Domain.Factories.Person.President
 {
     using global::Common.Domain;
-    using Models.PersonContext.President;
+    using Models.Person.President;
 
     public interface IPresidentFactory : IFactory<President>
     {
@@ -10,5 +10,7 @@
         IPresidentFactory WithLastName(string lastName);
 
         IPresidentFactory WithImageUrl(string imageUrl);
+
+        IPresidentFactory WithTeamId(int teamId);
     }
 }

@@ -1,6 +1,6 @@
-﻿namespace FootballTournamentSystem.Application.Features.PersonContext.Player.Commands.Create
+﻿namespace FootballTournamentSystem.Application.Features.Person.Player.Commands.Create
 {
-    using Domain.Factories.PersonContext.Player;
+    using Domain.Factories.Person.Player;
     using Application.Features.TournamentContext.Team;
     using MediatR;
     using System.Threading;

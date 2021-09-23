@@ -21,7 +21,7 @@ namespace FootballTournamentSystem.Infrastructure.Persistence.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.PersonContext.Coach.Coach", b =>
+            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.Person.Coach.Coach", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -33,7 +33,7 @@ namespace FootballTournamentSystem.Infrastructure.Persistence.Migrations
                     b.ToTable("Coaches");
                 });
 
-            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.PersonContext.Player.Player", b =>
+            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.Person.Player.Player", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -56,7 +56,7 @@ namespace FootballTournamentSystem.Infrastructure.Persistence.Migrations
                     b.ToTable("Players");
                 });
 
-            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.PersonContext.President.President", b =>
+            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.Person.President.President", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -68,7 +68,7 @@ namespace FootballTournamentSystem.Infrastructure.Persistence.Migrations
                     b.ToTable("Presidents");
                 });
 
-            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.PersonContext.Referee.Referee", b =>
+            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.Person.Referee.Referee", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -374,7 +374,7 @@ namespace FootballTournamentSystem.Infrastructure.Persistence.Migrations
                     b.ToTable("Tournaments");
                 });
 
-            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.PersonContext.Player.Player", b =>
+            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.Person.Player.Player", b =>
                 {
                     b.HasOne("FootballTournamentSystem.Domain.Models.StatisticsContext.PlayerStatistics.PlayerStatistics", null)
                         .WithMany()
@@ -405,7 +405,7 @@ namespace FootballTournamentSystem.Infrastructure.Persistence.Migrations
                         .WithMany("Matches")
                         .HasForeignKey("QuarterFinalsId");
 
-                    b.HasOne("FootballTournamentSystem.Domain.Models.PersonContext.Referee.Referee", null)
+                    b.HasOne("FootballTournamentSystem.Domain.Models.Person.Referee.Referee", null)
                         .WithMany()
                         .HasForeignKey("RefereeId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -426,7 +426,7 @@ namespace FootballTournamentSystem.Infrastructure.Persistence.Migrations
 
             modelBuilder.Entity("FootballTournamentSystem.Domain.Models.TournamentContext.Team.Team", b =>
                 {
-                    b.HasOne("FootballTournamentSystem.Domain.Models.PersonContext.Coach.Coach", null)
+                    b.HasOne("FootballTournamentSystem.Domain.Models.Person.Coach.Coach", null)
                         .WithMany()
                         .HasForeignKey("CoachId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -440,7 +440,7 @@ namespace FootballTournamentSystem.Infrastructure.Persistence.Migrations
                         .WithMany("Teams")
                         .HasForeignKey("MatchId");
 
-                    b.HasOne("FootballTournamentSystem.Domain.Models.PersonContext.President.President", null)
+                    b.HasOne("FootballTournamentSystem.Domain.Models.Person.President.President", null)
                         .WithMany()
                         .HasForeignKey("PresidentId")
                         .OnDelete(DeleteBehavior.Restrict)

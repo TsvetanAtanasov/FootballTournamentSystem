@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.Domain.Models.PersonContext.Coach
+﻿namespace FootballTournamentSystem.Domain.Models.Person.Coach
 {
     public class Coach : Person
     {

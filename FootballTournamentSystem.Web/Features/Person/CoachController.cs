@@ -1,6 +1,6 @@
 ﻿namespace FootballTournamentSystem.Web.Features.Person
 {
-    using Application.Features.PersonContext.Coach.Commands.Create;
+    using Application.Features.Person.Coach.Commands.Create;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using System.Threading.Tasks;

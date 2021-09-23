@@ -1,16 +1,22 @@
-﻿namespace FootballTournamentSystem.Domain.Models.PersonContext.President
+﻿namespace FootballTournamentSystem.Domain.Models.Person.President
 {
+    using Common.Domain.Events;
+
     public class President : Person
     {
-        internal President(string firstName, string lastName, string imageUrl)
+        internal President(string firstName, string lastName, string imageUrl, int teamId)
             : base(firstName, lastName, imageUrl)
         {
+            this.TeamId = teamId;
+
+            this.RaiseEvent(new PresidentCreatedEvent(this.Id, this.TeamId));
         }
 
         private President()
             : base()
         {
-
         }
+
+        public int TeamId { get; }
     }
 }

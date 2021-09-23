@@ -4,7 +4,7 @@
     using System.Threading;
     using System.Threading.Tasks;
     using Application.Features.StatisticsContext.PlayerStatistics.Common;
-    using Application.Features.PersonContext.Player;
+    using Application.Features.Person.Player;
     using Domain.Factories.StatisticsContext.PlayerStatistics;
 
     public class CreatePlayerStatisticsForPlayerCommand : IRequest<CreatePlayerStatisticsOutputModel>

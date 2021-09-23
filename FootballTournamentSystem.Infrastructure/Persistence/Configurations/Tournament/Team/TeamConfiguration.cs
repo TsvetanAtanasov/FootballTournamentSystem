@@ -1,9 +1,9 @@
 ﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Configurations.TournamentContext.Team
 {
     using Domain.Models.TournamentContext.Team;
-    using Domain.Models.PersonContext.President;
-    using Domain.Models.PersonContext.Coach;
-    using Domain.Models.PersonContext.Player;
+    using Domain.Models.Person.President;
+    using Domain.Models.Person.Coach;
+    using Domain.Models.Person.Player;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
     using Common.Domain.Models;

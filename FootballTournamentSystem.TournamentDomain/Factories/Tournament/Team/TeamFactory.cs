@@ -1,7 +1,7 @@
 ﻿namespace FootballTournamentSystem.Domain.Factories.TournamentContext.Team
 {
-    using FootballTournamentSystem.Domain.Models.PersonContext.Coach;
-    using FootballTournamentSystem.Domain.Models.PersonContext.President;
+    using FootballTournamentSystem.Domain.Models.Person.Coach;
+    using FootballTournamentSystem.Domain.Models.Person.President;
     using Models.TournamentContext.Team;
 
     internal class TeamFactory : ITeamFactory

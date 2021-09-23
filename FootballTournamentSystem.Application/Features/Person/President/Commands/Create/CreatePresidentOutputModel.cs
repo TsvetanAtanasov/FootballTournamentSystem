@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.Application.Features.PersonContext.President.Commands.Create
+﻿namespace FootballTournamentSystem.Application.Features.Person.President.Commands.Create
 {
     public class CreatePresidentOutputModel
     {

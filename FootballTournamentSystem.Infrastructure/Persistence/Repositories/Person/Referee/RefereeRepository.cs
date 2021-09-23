@@ -1,10 +1,10 @@
-﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Repositories.PersonContext.Referee
+﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Repositories.Person.Referee
 {
     using Common.Infrastructure.Persistence;
-    using Domain.Models.PersonContext.Referee;
-    using FootballTournamentSystem.Application.Features.PersonContext.Referee;
+    using Domain.Models.Person.Referee;
+    using FootballTournamentSystem.Application.Features.Person.Referee;
 
-    internal class RefereeRepository : DataRepository<FootballTournamentDbContext, Referee>, IRefereeRepository
+    internal class RefereeRepository : FootballTournamentDataRepository<Referee>, IRefereeRepository
     {
         public RefereeRepository(FootballTournamentDbContext db)
             : base(db)

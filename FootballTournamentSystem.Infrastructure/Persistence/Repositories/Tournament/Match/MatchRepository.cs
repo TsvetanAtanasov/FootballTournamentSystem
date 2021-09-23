@@ -7,7 +7,7 @@
     using System.Threading;
     using System.Threading.Tasks;
 
-    internal class MatchRepository : DataRepository<FootballTournamentDbContext, Match>, IMatchRepository
+    internal class MatchRepository : FootballTournamentDataRepository<Match>, IMatchRepository
     {
         public MatchRepository(FootballTournamentDbContext db)
             : base(db)

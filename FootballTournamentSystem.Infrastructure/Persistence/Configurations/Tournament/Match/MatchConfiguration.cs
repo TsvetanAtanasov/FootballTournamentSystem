@@ -3,7 +3,7 @@
     using Domain.Models.TournamentContext.Match;
     using Domain.Models.StatisticsContext.PlayerStatistics;
     using Domain.Models.StatisticsContext.MatchStatistics;
-    using Domain.Models.PersonContext.Referee;
+    using Domain.Models.Person.Referee;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

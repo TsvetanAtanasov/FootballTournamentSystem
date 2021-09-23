@@ -3,7 +3,7 @@
     using MediatR;
     using System.Threading;
     using System.Threading.Tasks;
-    using Domain.Factories.PersonContext.President;
+    using Domain.Factories.Person.President;
     using Domain.Factories.StatisticsContext.TournamentStatistics;
     using Application.Features.TournamentContext.Team;
     using Application.Features.TournamentContext.Tournament;

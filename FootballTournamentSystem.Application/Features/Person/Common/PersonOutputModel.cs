@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.Application.Features.PersonContext.Common
+﻿namespace FootballTournamentSystem.Application.Features.Person.Common
 {
     public class PersonOutputModel
     {

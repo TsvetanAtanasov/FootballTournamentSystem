@@ -4,7 +4,7 @@
     using Domain.Models.StatisticsContext.MatchStatistics;
     using FootballTournamentSystem.Application.Features.StatisticsContext.MatchStatistics;
 
-    internal class MatchStatisticsRepository : DataRepository<FootballTournamentDbContext, MatchStatistics>, IMatchStatisticsRepository
+    internal class MatchStatisticsRepository : FootballTournamentDataRepository<MatchStatistics>, IMatchStatisticsRepository
     {
         public MatchStatisticsRepository(FootballTournamentDbContext db)
             : base(db)

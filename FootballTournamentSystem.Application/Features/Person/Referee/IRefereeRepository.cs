@@ -1,7 +1,7 @@
-﻿namespace FootballTournamentSystem.Application.Features.PersonContext.Referee
+﻿namespace FootballTournamentSystem.Application.Features.Person.Referee
 {
     using Application.Contracts;
-    using Domain.Models.PersonContext.Referee;
+    using Domain.Models.Person.Referee;
 
     public interface IRefereeRepository : IRepository<Referee>
     {

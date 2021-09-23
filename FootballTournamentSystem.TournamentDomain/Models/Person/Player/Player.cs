@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.Domain.Models.PersonContext.Player
+﻿namespace FootballTournamentSystem.Domain.Models.Person.Player
 {
     using FootballTournamentSystem.Domain.Exceptions;
     using global::Common.Domain.Models;
