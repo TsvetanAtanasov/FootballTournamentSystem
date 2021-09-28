@@ -5,10 +5,11 @@
     using MediatR;
     using System.Threading;
     using System.Threading.Tasks;
+    using System;
 
     public class CreateMatchCommand : IRequest<CreateMatchOutputModel>
     {
-        public CreateMatchCommand(int homeTeamId, int awayTeamId, int refereeId)
+        public CreateMatchCommand(int homeTeamId, int awayTeamId, Guid refereeId)
         {
             this.HomeTeamId = homeTeamId;
             this.AwayTeamId = awayTeamId;
@@ -19,7 +20,7 @@
 
         public int AwayTeamId { get; }
 
-        public int RefereeId { get; }
+        public Guid RefereeId { get; }
 
         public class CreateMatchCommandHandler : IRequestHandler<CreateMatchCommand, CreateMatchOutputModel>
         {

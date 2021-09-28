@@ -3,6 +3,7 @@
     using FootballTournamentSystem.Domain.Models.TournamentContext.Team;
     using global::Common.Domain;
     using global::Common.Domain.Models;
+    using System;
     using System.Collections.Generic;
     using System.Linq;
 
@@ -36,9 +37,9 @@
 
         public int MatchStatisticsId { get; private set; }
 
-        public int RefereeId { get; private set; }
+        public Guid RefereeId { get; private set; }
 
-        public void AddReferee(int refereeId) => this.RefereeId = refereeId;
+        public void AddReferee(Guid refereeId) => this.RefereeId = refereeId;
 
         public void AddMatchStatistics(int statisticsId) => this.MatchStatisticsId = statisticsId;
 

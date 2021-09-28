@@ -1,12 +1,14 @@
-﻿namespace FootballTournamentSystem.Application.Features.TournamentContext.Match.Commands.AddRefereeToMatch
+﻿using System;
+
+namespace FootballTournamentSystem.Application.Features.TournamentContext.Match.Commands.AddRefereeToMatch
 {
     public class AddRefereeToMatchOutputModel
     {
-        public AddRefereeToMatchOutputModel(int refereeId)
+        public AddRefereeToMatchOutputModel(Guid refereeId)
         {
             this.RefereeId = refereeId;
         }
 
-        public int RefereeId { get; }
+        public Guid RefereeId { get; }
     }
 }

@@ -1,12 +1,13 @@
 ﻿namespace FootballTournamentSystem.Application.Features.TournamentContext.Match.Commands.AddRefereeToMatch
 {
     using MediatR;
+    using System;
     using System.Threading;
     using System.Threading.Tasks;
 
     public class AddRefereeToMatchCommand : IRequest<AddRefereeToMatchOutputModel>
     {
-        public AddRefereeToMatchCommand(int matchId, int refereeId)
+        public AddRefereeToMatchCommand(int matchId, Guid refereeId)
         {
             this.MatchId = matchId;
             this.RefereeId = refereeId;
@@ -14,7 +15,7 @@
 
         public int MatchId { get; }
 
-        public int RefereeId { get; }
+        public Guid RefereeId { get; }
 
         public class AddRefereeToMatchCommandHandler : IRequestHandler<AddRefereeToMatchCommand, AddRefereeToMatchOutputModel>
         {
@@ -33,7 +34,7 @@
 
                 await this.matchRepository.Save(match, cancellationToken);
 
-                return new AddRefereeToMatchOutputModel(match.Id);
+                return new AddRefereeToMatchOutputModel(request.RefereeId);
             }
         }
     }

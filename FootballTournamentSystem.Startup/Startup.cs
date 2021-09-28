@@ -23,7 +23,7 @@ namespace FootballTournamentSystem.Startup
         {
             services
                 .AddDomain()
-                //.AddApplication(this.Configuration)
+                .AddApplication(this.Configuration)
                 .AddInfrastructure(this.Configuration)
                 .AddControllers();
         }
