@@ -1,12 +1,14 @@
-﻿namespace FootballTournamentSystem.Application.Features.Person.President.Commands.Create
+﻿using System;
+
+namespace FootballTournamentSystem.Application.Features.Person.President.Commands.Create
 {
     public class CreatePresidentOutputModel
     {
-        public CreatePresidentOutputModel(int presidentId)
+        public CreatePresidentOutputModel(Guid presidentId)
         {
             this.PresidentId = presidentId;
         }
 
-        public int PresidentId { get; }
+        public Guid PresidentId { get; }
     }
 }

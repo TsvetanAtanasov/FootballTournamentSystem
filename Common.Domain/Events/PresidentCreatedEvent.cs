@@ -1,14 +1,16 @@
-﻿namespace Common.Domain.Events
+﻿using System;
+
+namespace Common.Domain.Events
 {
     public class PresidentCreatedEvent : IDomainEvent
     {
-        public PresidentCreatedEvent(int presidentId, int teamId)
+        public PresidentCreatedEvent(Guid presidentId, int teamId)
         {
             this.PresidentId = presidentId;
             this.TeamId = teamId;
         }
 
-        public int PresidentId { get; }
+        public Guid PresidentId { get; }
 
         public int TeamId { get; }
     }

@@ -4,6 +4,7 @@
     using Domain.Models.Person.Player;
     using FootballTournamentSystem.Application.Features.Person.Player;
     using Microsoft.EntityFrameworkCore;
+    using System;
     using System.Threading;
     using System.Threading.Tasks;
 
@@ -15,7 +16,7 @@
 
         }
 
-        public async Task<Player> GetPlayerById(int playerId, CancellationToken cancellationToken = default)
+        public async Task<Player> GetPlayerById(Guid playerId, CancellationToken cancellationToken = default)
         {
             return await this.Data.Players.FirstOrDefaultAsync(p => p.Id == playerId, cancellationToken);
         }

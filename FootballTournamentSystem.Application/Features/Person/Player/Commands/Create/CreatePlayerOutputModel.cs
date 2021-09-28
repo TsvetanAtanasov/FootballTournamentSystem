@@ -1,12 +1,14 @@
-﻿namespace FootballTournamentSystem.Application.Features.Person.Player.Commands.Create
+﻿using System;
+
+namespace FootballTournamentSystem.Application.Features.Person.Player.Commands.Create
 {
     public class CreatePlayerOutputModel
     {
-        public CreatePlayerOutputModel(int playerId)
+        public CreatePlayerOutputModel(Guid playerId)
         {
             this.PlayerId = playerId;
         }
 
-        public int PlayerId { get; }
+        public Guid PlayerId { get; }
     }
 }

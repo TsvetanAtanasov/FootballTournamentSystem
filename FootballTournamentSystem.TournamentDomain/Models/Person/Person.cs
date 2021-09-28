@@ -5,14 +5,13 @@
     using Common.Domain.Models;
     using System;
 
-    public abstract class Person : Entity<int>, IAggregateRoot
+    public abstract class Person : Entity<Guid>, IAggregateRoot
     {
         public Person(string firstName, string lastName, string imageUrl)
         {
             this.Validate(firstName, lastName, imageUrl);
 
-            // TODO: Make Id Guid
-            // this.Id = Guid.NewGuid();
+            this.Id = Guid.NewGuid();
 
             this.FirstName = firstName;
             this.LastName = lastName;

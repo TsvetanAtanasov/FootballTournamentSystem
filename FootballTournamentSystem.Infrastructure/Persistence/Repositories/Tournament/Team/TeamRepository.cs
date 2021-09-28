@@ -4,6 +4,7 @@
     using Domain.Models.TournamentContext.Team;
     using FootballTournamentSystem.Application.Features.TournamentContext.Team;
     using Microsoft.EntityFrameworkCore;
+    using System;
     using System.Threading;
     using System.Threading.Tasks;
 
@@ -15,10 +16,12 @@
 
         }
 
-        public Task AddPresidentToTeam(int teamId, int presidentId)
+        public async Task AddPresidentToTeam(int teamId, Guid presidentId, CancellationToken cancellationToken)
         {
-            // TODO
-            throw new System.NotImplementedException();
+            Team team = await this.GetTeamById(teamId);
+            team.PresidentId = presidentId;
+
+            await this.Data.SaveChangesAsync(cancellationToken);
         }
 
         public async Task<Team> GetTeamById(int teamId, CancellationToken cancellationToken = default)

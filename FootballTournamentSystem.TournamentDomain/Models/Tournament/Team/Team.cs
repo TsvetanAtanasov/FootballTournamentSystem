@@ -1,5 +1,6 @@
 ﻿namespace FootballTournamentSystem.Domain.Models.TournamentContext.Team
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using FootballTournamentSystem.Domain.Exceptions;
@@ -9,7 +10,7 @@
 
     public class Team : Entity<int>, IAggregateRoot
     {
-        private readonly HashSet<int> playerIds;
+        private readonly HashSet<Guid> playerIds;
 
         internal Team(string name, string logoUrl, int yearFounded, string country, string stadium, int groupPoints)
         {
@@ -22,7 +23,7 @@
             this.Stadium = stadium;
             this.GroupPoints = groupPoints;
 
-            this.playerIds = new HashSet<int>();
+            this.playerIds = new HashSet<Guid>();
         }
 
         public string Name { get; }
@@ -38,17 +39,17 @@
         // Team's place in the group will be calculated by this property ( no need of group ranking )
         public int GroupPoints { get; }
 
-        public int PresidentId { get; private set; }
+        public Guid PresidentId { get; set; }
 
-        public int CoachId { get; private set; }
+        public Guid CoachId { get; private set; }
 
-        public IReadOnlyCollection<int> PlayerIds => this.playerIds.ToList().AsReadOnly();
+        public IReadOnlyCollection<Guid> PlayerIds => this.playerIds.ToList().AsReadOnly();
 
-        public void AddPlayer(int playerId) => this.playerIds.Add(playerId);
+        public void AddPlayer(Guid playerId) => this.playerIds.Add(playerId);
 
-        public void AddPresident(int presidentId) => this.PresidentId = presidentId;
+        public void AddPresident(Guid presidentId) => this.PresidentId = presidentId;
 
-        public void AddCoach(int coachId) => this.CoachId = coachId;
+        public void AddCoach(Guid coachId) => this.CoachId = coachId;
 
         private void Validate(string name, string logoUrl, int yearFounded, string country, string stadium, int groupPoints)
         {

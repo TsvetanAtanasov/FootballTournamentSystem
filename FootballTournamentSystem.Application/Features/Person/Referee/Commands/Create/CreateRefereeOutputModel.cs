@@ -1,12 +1,14 @@
-﻿namespace FootballTournamentSystem.Application.Features.Person.Referee.Commands.Create
+﻿using System;
+
+namespace FootballTournamentSystem.Application.Features.Person.Referee.Commands.Create
 {
     public class CreateRefereeOutputModel
     {
-        public CreateRefereeOutputModel(int refereeId)
+        public CreateRefereeOutputModel(Guid refereeId)
         {
             this.RefereeId = refereeId;
         }
 
-        public int RefereeId { get; }
+        public Guid RefereeId { get; }
     }
 }

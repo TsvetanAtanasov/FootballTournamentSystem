@@ -6,10 +6,11 @@
     using Application.Features.StatisticsContext.PlayerStatistics.Common;
     using Application.Features.Person.Player;
     using Domain.Factories.StatisticsContext.PlayerStatistics;
+    using System;
 
     public class CreatePlayerStatisticsForPlayerCommand : IRequest<CreatePlayerStatisticsOutputModel>
     {
-        public CreatePlayerStatisticsForPlayerCommand(int playerId, int goalsScored, int minutesPlayed, int assists)
+        public CreatePlayerStatisticsForPlayerCommand(Guid playerId, int goalsScored, int minutesPlayed, int assists)
         {
             this.PlayerId = playerId;
             this.GoalsScored = goalsScored;
@@ -17,7 +18,7 @@
             this.Assists = assists;
         }
 
-        public int PlayerId { get; }
+        public Guid PlayerId { get; }
 
         public int GoalsScored { get; }
 
