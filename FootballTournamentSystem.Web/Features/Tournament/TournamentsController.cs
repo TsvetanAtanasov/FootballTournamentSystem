@@ -13,6 +13,8 @@
     using Application.Features.TournamentContext.Team.Common;
     using Application.Features.TournamentContext.Tournament.Queries.TournamentMatches;
     using Application.Features.TournamentContext.Tournament.Queries.TournamentTeams;
+    using FootballTournamentSystem.Application.Features.TournamentContext.Tournament.Queries.All;
+    using FootballTournamentSystem.Application.Features.TournamentContext.Tournament.Common;
 
     [ApiController]
     [Route("[controller]")]
@@ -39,8 +41,8 @@
 
         [HttpGet]
         [Route(nameof(All))]
-        public async Task<ActionResult<IEnumerable<GetGroupMatchOutputModel>>> All(
-            [FromQuery] GetGroupMatchesQuery query)
+        public async Task<ActionResult<IEnumerable<TournamentOutputModel>>> All(
+            [FromQuery] GetAllTournamentsQuery query)
             => await this.Send(query);
 
         [HttpGet]
