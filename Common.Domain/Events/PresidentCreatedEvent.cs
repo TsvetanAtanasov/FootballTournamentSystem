@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace Common.Domain.Events
+﻿namespace Common.Domain.Events
 {
+    using System;
+
     public class PresidentCreatedEvent : IDomainEvent
     {
         public PresidentCreatedEvent(Guid presidentId, int teamId)

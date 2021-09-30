@@ -24,6 +24,14 @@
             await this.Data.SaveChangesAsync(cancellationToken);
         }
 
+        public async Task AddPlayerToTeam(int teamId, Guid playerId, CancellationToken cancellationToken)
+        {
+            Team team = await this.GetTeamById(teamId);
+            team.AddPlayer(playerId);
+
+            await this.Data.SaveChangesAsync(cancellationToken);
+        }
+
         public async Task<Team> GetTeamById(int teamId, CancellationToken cancellationToken = default)
         {
             return await this.Data.Teams.FirstOrDefaultAsync(t => t.Id == teamId, cancellationToken);

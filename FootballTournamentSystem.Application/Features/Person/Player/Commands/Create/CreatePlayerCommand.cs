@@ -52,15 +52,17 @@
                     .WithHeight(request.Height)
                     .WithWeight(request.Weight)
                     .WithImageUrl(request.ImageUrl)
+                    .WithTeamId(request.TeamId)
                     .Build();
 
                 await this.playerRepository.Save(player, cancellationToken);
 
-                if (request.TeamId != 0)
-                {
-                    var team = await this.teamRepository.GetTeamById(request.TeamId);
-                    team.AddPlayer(player.Id);
-                }
+                //There is a question about this code in the notes
+                //if (request.TeamId != 0)
+                //{
+                //    var team = await this.teamRepository.GetTeamById(request.TeamId);
+                //    team.AddPlayer(player.Id);
+                //}
 
                 return new CreatePlayerOutputModel(player.Id);
             }

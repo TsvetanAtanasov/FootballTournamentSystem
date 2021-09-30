@@ -14,5 +14,7 @@
         IPlayerFactory WithWeight(double weight);
 
         IPlayerFactory WithImageUrl(string imageUrl);
+
+        IPlayerFactory WithTeamId(int teamId);
     }
 }

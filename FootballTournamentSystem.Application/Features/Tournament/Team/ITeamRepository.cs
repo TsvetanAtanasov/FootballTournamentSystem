@@ -11,5 +11,7 @@
         Task<Team> GetTeamById(int teamId, CancellationToken cancellationToken = default);
 
         Task AddPresidentToTeam(int teamId, Guid presidentId, CancellationToken cancellationToken = default);
+
+        Task AddPlayerToTeam(int teamId, Guid playerId, CancellationToken cancellationToken = default);
     }
 }

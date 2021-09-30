@@ -9,6 +9,7 @@
         private double height = default!;
         private double weight = default!;
         private string imageUrl = default!;
+        private int teamId = default!;
 
         public IPlayerFactory WithFirstName(string firstName)
         {
@@ -37,6 +38,12 @@
         public IPlayerFactory WithImageUrl(string imageUrl)
         {
             this.imageUrl = imageUrl;
+            return this;
+        }
+
+        public IPlayerFactory WithTeamId(int teamId)
+        {
+            this.teamId = teamId;
             return this;
         }
 

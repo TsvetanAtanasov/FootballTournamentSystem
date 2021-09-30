@@ -1,5 +1,6 @@
 ﻿namespace FootballTournamentSystem.Domain.Models.Person.Player
 {
+    using Common.Domain.Events;
     using FootballTournamentSystem.Domain.Exceptions;
     using global::Common.Domain.Models;
 
@@ -12,6 +13,8 @@
 
             this.Height = height;
             this.Weight = weight;
+
+            this.RaiseEvent(new PlayerCreatedEvent(this.Id, this.TeamId));
         }
 
         private Player()
@@ -25,6 +28,8 @@
         public double Weight { get; }
 
         public int PlayerStatisticsId { get; private set; }
+
+        public int TeamId { get; private set; }
 
         public void AddPlayerStatistics(int statisticsId) => this.PlayerStatisticsId = statisticsId;
 
