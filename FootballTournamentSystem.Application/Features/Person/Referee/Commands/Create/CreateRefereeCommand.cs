@@ -4,7 +4,7 @@
     using System.Threading;
     using System.Threading.Tasks;
     using Domain.Factories.Person.Referee;
-    using Application.Features.TournamentContext.Match;
+    using Application.Features.Tournament.Match;
 
     public class CreateRefereeCommand : IRequest<CreateRefereeOutputModel>
     {

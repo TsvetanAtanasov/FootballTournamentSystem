@@ -3,7 +3,7 @@
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using System.Threading.Tasks;
-    using Application.Features.StatisticsContext.TournamentStatistics.Create;
+    using Application.Features.Statistics.TournamentStatistics.Create;
 
     [ApiController]
     [Route("[controller]")]

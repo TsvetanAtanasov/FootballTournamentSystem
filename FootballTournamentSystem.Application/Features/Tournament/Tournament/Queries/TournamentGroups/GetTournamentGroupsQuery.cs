@@ -1,9 +1,9 @@
-﻿namespace FootballTournamentSystem.Application.Features.TournamentContext.Tournament.Queries.TournamentGroups
+﻿namespace FootballTournamentSystem.Application.Features.Tournament.Tournament.Queries.TournamentGroups
 {
     using System.Collections.Generic;
     using System.Threading;
     using System.Threading.Tasks;
-    using FootballTournamentSystem.Application.Features.TournamentContext.Tournament;
+    using FootballTournamentSystem.Application.Features.Tournament.Tournament;
     using global::Common.Application;
     using MediatR;
 

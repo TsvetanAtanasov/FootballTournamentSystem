@@ -1,7 +1,7 @@
-﻿namespace FootballTournamentSystem.Domain.Factories.TournamentContext.Tournament
+﻿namespace FootballTournamentSystem.Domain.Factories.Tournament.Tournament
 {
     using global::Common.Domain;
-    using Models.TournamentContext.Tournament;
+    using Models.Tournament.Tournament;
 
     public interface ITournamentFactory : IFactory<Tournament>
     {

@@ -1,11 +1,11 @@
-﻿namespace FootballTournamentSystem.Application.Features.TournamentContext.Tournament.Queries.TournamentTeams
+﻿namespace FootballTournamentSystem.Application.Features.Tournament.Tournament.Queries.TournamentTeams
 {
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading;
     using System.Threading.Tasks;
-    using Features.TournamentContext.Team.Common;
-    using Features.TournamentContext.Tournament;
+    using Features.Tournament.Team.Common;
+    using Features.Tournament.Tournament;
     using global::Common.Application;
     using MediatR;
 

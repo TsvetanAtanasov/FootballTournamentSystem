@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.Application.Features.TournamentContext.Tournament.Commands.Delete
+﻿namespace FootballTournamentSystem.Application.Features.Tournament.Tournament.Commands.Delete
 {
     using global::Common.Application;
     using MediatR;

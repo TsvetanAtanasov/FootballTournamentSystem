@@ -1,8 +1,8 @@
-﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Configurations.TournamentContext.Match
+﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Configurations.Tournament.Match
 {
-    using Domain.Models.TournamentContext.Match;
-    using Domain.Models.StatisticsContext.PlayerStatistics;
-    using Domain.Models.StatisticsContext.MatchStatistics;
+    using Domain.Models.Tournament.Match;
+    using Domain.Models.Statistics.PlayerStatistics;
+    using Domain.Models.Statistics.MatchStatistics;
     using Domain.Models.Person.Referee;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;

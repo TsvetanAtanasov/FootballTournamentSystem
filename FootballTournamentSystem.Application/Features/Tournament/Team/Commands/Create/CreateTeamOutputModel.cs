@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.Application.Features.TournamentContext.Team.Commands.Create
+﻿namespace FootballTournamentSystem.Application.Features.Tournament.Team.Commands.Create
 {
     public class CreateTeamOutputModel
     {

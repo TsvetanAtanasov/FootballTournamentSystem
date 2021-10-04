@@ -1,7 +1,7 @@
-﻿namespace FootballTournamentSystem.Domain.Factories.StatisticsContext.MatchStatistics
+﻿namespace FootballTournamentSystem.Domain.Factories.Statistics.MatchStatistics
 {
     using global::Common.Domain;
-    using Models.StatisticsContext.MatchStatistics;
+    using Models.Statistics.MatchStatistics;
 
     public interface IMatchStatisticsFactory : IFactory<MatchStatistics>
     {

@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.Application.Features.TournamentContext.Match.Commands.AddRefereeToMatch
+﻿namespace FootballTournamentSystem.Application.Features.Tournament.Match.Commands.AddRefereeToMatch
 {
     using MediatR;
     using System;

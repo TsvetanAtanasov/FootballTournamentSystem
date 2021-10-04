@@ -1,7 +1,7 @@
-﻿namespace FootballTournamentSystem.Application.Features.TournamentContext.Team
+﻿namespace FootballTournamentSystem.Application.Features.Tournament.Team
 {
     using Application.Contracts;
-    using Domain.Models.TournamentContext.Team;
+    using Domain.Models.Tournament.Team;
     using System;
     using System.Threading;
     using System.Threading.Tasks;

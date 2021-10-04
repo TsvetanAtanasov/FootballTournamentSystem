@@ -1,8 +1,8 @@
-﻿namespace FootballTournamentSystem.Domain.Factories.TournamentContext.Match
+﻿namespace FootballTournamentSystem.Domain.Factories.Tournament.Match
 {
     using Models.Person.Referee;
-    using Models.TournamentContext.Match;
-    using Models.TournamentContext.Team;
+    using Models.Tournament.Match;
+    using Models.Tournament.Team;
 
     internal class MatchFactory : IMatchFactory
     {

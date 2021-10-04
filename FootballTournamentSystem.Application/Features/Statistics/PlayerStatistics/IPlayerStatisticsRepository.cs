@@ -1,7 +1,7 @@
-﻿namespace FootballTournamentSystem.Application.Features.StatisticsContext.PlayerStatistics
+﻿namespace FootballTournamentSystem.Application.Features.Statistics.PlayerStatistics
 {
     using Application.Contracts;
-    using Domain.Models.StatisticsContext.PlayerStatistics;
+    using Domain.Models.Statistics.PlayerStatistics;
 
     public interface IPlayerStatisticsRepository : IRepository<PlayerStatistics>
     {

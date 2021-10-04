@@ -1,7 +1,7 @@
 ﻿namespace FootballTournamentSystem.Application.Features.Person.Coach.Commands.Create
 {
     using Domain.Factories.Person.Coach;
-    using Application.Features.TournamentContext.Team;
+    using Application.Features.Tournament.Team;
     using MediatR;
     using System.Threading;
     using System.Threading.Tasks;

@@ -1,6 +1,6 @@
-﻿namespace FootballTournamentSystem.Domain.Models.TournamentContext.Tournament
+﻿namespace FootballTournamentSystem.Domain.Models.Tournament.Tournament
 {
-    using Domain.Models.TournamentContext.Match;
+    using Domain.Models.Tournament.Match;
     using Domain.Exceptions;
     using System.Collections.Generic;
     using System.Linq;

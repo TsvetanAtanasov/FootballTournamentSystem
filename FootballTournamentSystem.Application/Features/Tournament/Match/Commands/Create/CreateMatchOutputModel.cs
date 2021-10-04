@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.Application.Features.TournamentContext.Match.Commands.Create
+﻿namespace FootballTournamentSystem.Application.Features.Tournament.Match.Commands.Create
 {
     public class CreateMatchOutputModel
     {

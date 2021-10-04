@@ -1,7 +1,7 @@
-﻿namespace FootballTournamentSystem.Application.Features.TournamentContext.Match
+﻿namespace FootballTournamentSystem.Application.Features.Tournament.Match
 {
     using Application.Contracts;
-    using Domain.Models.TournamentContext.Match;
+    using Domain.Models.Tournament.Match;
     using System.Threading;
     using System.Threading.Tasks;
 

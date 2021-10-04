@@ -1,8 +1,8 @@
 ﻿namespace FootballTournamentSystem.Infrastructure.Persistence.DbContextInterfaces
 {
-    using Domain.Models.StatisticsContext.TournamentStatistics;
-    using Domain.Models.StatisticsContext.PlayerStatistics;
-    using Domain.Models.StatisticsContext.MatchStatistics;
+    using Domain.Models.Statistics.TournamentStatistics;
+    using Domain.Models.Statistics.PlayerStatistics;
+    using Domain.Models.Statistics.MatchStatistics;
     using Microsoft.EntityFrameworkCore;
     using Common.Infrastructure.Persistence;
 

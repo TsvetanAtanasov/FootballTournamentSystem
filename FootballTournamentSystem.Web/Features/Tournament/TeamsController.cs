@@ -3,7 +3,7 @@
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using System.Threading.Tasks;
-    using Application.Features.TournamentContext.Team.Commands.Create;
+    using Application.Features.Tournament.Team.Commands.Create;
 
     [ApiController]
     [Route("[controller]")]

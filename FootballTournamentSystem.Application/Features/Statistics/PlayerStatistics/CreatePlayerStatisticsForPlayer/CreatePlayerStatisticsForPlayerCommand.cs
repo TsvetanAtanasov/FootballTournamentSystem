@@ -1,11 +1,11 @@
-﻿namespace FootballTournamentSystem.Application.Features.StatisticsContext.PlayerStatistics.CreatePlayerStatisticsForPlayer
+﻿namespace FootballTournamentSystem.Application.Features.Statistics.PlayerStatistics.CreatePlayerStatisticsForPlayer
 {
     using MediatR;
     using System.Threading;
     using System.Threading.Tasks;
-    using Application.Features.StatisticsContext.PlayerStatistics.Common;
+    using Application.Features.Statistics.PlayerStatistics.Common;
     using Application.Features.Person.Player;
-    using Domain.Factories.StatisticsContext.PlayerStatistics;
+    using Domain.Factories.Statistics.PlayerStatistics;
     using System;
 
     public class CreatePlayerStatisticsForPlayerCommand : IRequest<CreatePlayerStatisticsOutputModel>

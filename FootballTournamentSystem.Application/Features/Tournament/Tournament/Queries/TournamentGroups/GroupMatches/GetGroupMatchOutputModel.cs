@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.Application.Features.TournamentContext.Tournament.Queries.TournamentGroups.GroupMatches
+﻿namespace FootballTournamentSystem.Application.Features.Tournament.Tournament.Queries.TournamentGroups.GroupMatches
 {
     public class GetGroupMatchOutputModel
     {

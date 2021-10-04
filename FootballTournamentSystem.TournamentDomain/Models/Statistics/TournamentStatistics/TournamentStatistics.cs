@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.Domain.Models.StatisticsContext.TournamentStatistics
+﻿namespace FootballTournamentSystem.Domain.Models.Statistics.TournamentStatistics
 {
     using FootballTournamentSystem.Domain.Exceptions;
     using global::Common.Domain;

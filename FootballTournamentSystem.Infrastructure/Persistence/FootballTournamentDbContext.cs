@@ -11,12 +11,12 @@
     using Domain.Models.Person.Player;
     using Domain.Models.Person.President;
     using Domain.Models.Person.Referee;
-    using Domain.Models.StatisticsContext.MatchStatistics;
-    using Domain.Models.StatisticsContext.PlayerStatistics;
-    using Domain.Models.StatisticsContext.TournamentStatistics;
-    using Domain.Models.TournamentContext.Match;
-    using Domain.Models.TournamentContext.Team;
-    using Domain.Models.TournamentContext.Tournament;
+    using Domain.Models.Statistics.MatchStatistics;
+    using Domain.Models.Statistics.PlayerStatistics;
+    using Domain.Models.Statistics.TournamentStatistics;
+    using Domain.Models.Tournament.Match;
+    using Domain.Models.Tournament.Team;
+    using Domain.Models.Tournament.Tournament;
     using Infrastructure.Persistence.DbContextInterfaces;
     using Microsoft.EntityFrameworkCore;
 

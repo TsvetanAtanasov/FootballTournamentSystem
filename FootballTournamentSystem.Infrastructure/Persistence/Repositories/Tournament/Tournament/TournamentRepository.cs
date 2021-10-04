@@ -1,12 +1,12 @@
-﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Repositories.TournamentContext.Tournament
+﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Repositories.Tournament.Tournament
 {
-    using Domain.Models.TournamentContext.Tournament;
-    using Application.Features.TournamentContext.Tournament;
-    using Application.Features.TournamentContext.Tournament.Queries.TournamentGroups.GroupMatches;
-    using Application.Features.TournamentContext.Team.Common;
-    using Application.Features.TournamentContext.Tournament.Queries.TournamentGroups;
-    using Application.Features.TournamentContext.Tournament.Queries.TournamentMatches;
-    using Application.Features.TournamentContext.Tournament.Common;
+    using Domain.Models.Tournament.Tournament;
+    using Application.Features.Tournament.Tournament;
+    using Application.Features.Tournament.Tournament.Queries.TournamentGroups.GroupMatches;
+    using Application.Features.Tournament.Team.Common;
+    using Application.Features.Tournament.Tournament.Queries.TournamentGroups;
+    using Application.Features.Tournament.Tournament.Queries.TournamentMatches;
+    using Application.Features.Tournament.Tournament.Common;
     using System.Threading.Tasks;
     using System.Threading;
     using System.Collections.Generic;

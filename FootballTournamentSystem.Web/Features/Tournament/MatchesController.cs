@@ -3,8 +3,8 @@
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using System.Threading.Tasks;
-    using Application.Features.TournamentContext.Match.Commands.Create;
-    using Application.Features.TournamentContext.Match.Commands.AddRefereeToMatch;
+    using Application.Features.Tournament.Match.Commands.Create;
+    using Application.Features.Tournament.Match.Commands.AddRefereeToMatch;
 
     [ApiController]
     [Route("[controller]")]

@@ -1,6 +1,6 @@
-﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Configurations.StatisticsContext.PlayerStatistics
+﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Configurations.Statistics.PlayerStatistics
 {
-    using Domain.Models.StatisticsContext.PlayerStatistics;
+    using Domain.Models.Statistics.PlayerStatistics;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

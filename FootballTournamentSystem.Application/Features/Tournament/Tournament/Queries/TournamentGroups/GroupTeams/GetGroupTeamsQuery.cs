@@ -1,10 +1,10 @@
-﻿namespace FootballTournamentSystem.Application.Features.TournamentContext.Tournament.Queries.TournamentGroups.GroupTeams
+﻿namespace FootballTournamentSystem.Application.Features.Tournament.Tournament.Queries.TournamentGroups.GroupTeams
 {
     using MediatR;
     using System.Collections.Generic;
     using System.Threading;
     using System.Threading.Tasks;
-    using Features.TournamentContext.Team.Common;
+    using Features.Tournament.Team.Common;
     using global::Common.Application;
 
     public class GetGroupTeamsQuery : EntityCommand<int>, IRequest<IEnumerable<TeamOutputModel>>

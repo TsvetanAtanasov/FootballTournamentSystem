@@ -1,6 +1,6 @@
-﻿namespace FootballTournamentSystem.Domain.Models.TournamentContext.Match
+﻿namespace FootballTournamentSystem.Domain.Models.Tournament.Match
 {
-    using FootballTournamentSystem.Domain.Models.TournamentContext.Team;
+    using FootballTournamentSystem.Domain.Models.Tournament.Team;
     using global::Common.Domain;
     using global::Common.Domain.Models;
     using System;

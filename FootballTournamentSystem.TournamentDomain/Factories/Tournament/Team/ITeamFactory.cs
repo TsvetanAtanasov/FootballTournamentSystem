@@ -1,9 +1,9 @@
-﻿namespace FootballTournamentSystem.Domain.Factories.TournamentContext.Team
+﻿namespace FootballTournamentSystem.Domain.Factories.Tournament.Team
 {
     using FootballTournamentSystem.Domain.Models.Person.Coach;
     using FootballTournamentSystem.Domain.Models.Person.President;
     using global::Common.Domain;
-    using Models.TournamentContext.Team;
+    using Models.Tournament.Team;
 
     public interface ITeamFactory : IFactory<Team>
     {

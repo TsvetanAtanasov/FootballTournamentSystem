@@ -1,20 +1,20 @@
-﻿namespace FootballTournamentSystem.Web.Features.TournamentContext
+﻿namespace FootballTournamentSystem.Web.Features.Tournament
 {
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using System.Threading.Tasks;
     using System.Collections.Generic;
-    using Application.Features.TournamentContext.Tournament.Commands.Create;
-    using Application.Features.TournamentContext.Tournament.Commands.Delete;
-    using Application.Features.TournamentContext.Tournament.Commands.TournamentGroups.AddGroupToTournament;
-    using Application.Features.TournamentContext.Tournament.Queries.TournamentGroups.GroupMatches;
-    using Application.Features.TournamentContext.Tournament.Queries.TournamentGroups;
-    using Application.Features.TournamentContext.Tournament.Queries.TournamentGroups.GroupTeams;
-    using Application.Features.TournamentContext.Team.Common;
-    using Application.Features.TournamentContext.Tournament.Queries.TournamentMatches;
-    using Application.Features.TournamentContext.Tournament.Queries.TournamentTeams;
-    using FootballTournamentSystem.Application.Features.TournamentContext.Tournament.Queries.All;
-    using FootballTournamentSystem.Application.Features.TournamentContext.Tournament.Common;
+    using Application.Features.Tournament.Tournament.Commands.Create;
+    using Application.Features.Tournament.Tournament.Commands.Delete;
+    using Application.Features.Tournament.Tournament.Commands.TournamentGroups.AddGroupToTournament;
+    using Application.Features.Tournament.Tournament.Queries.TournamentGroups.GroupMatches;
+    using Application.Features.Tournament.Tournament.Queries.TournamentGroups;
+    using Application.Features.Tournament.Tournament.Queries.TournamentGroups.GroupTeams;
+    using Application.Features.Tournament.Team.Common;
+    using Application.Features.Tournament.Tournament.Queries.TournamentMatches;
+    using Application.Features.Tournament.Tournament.Queries.TournamentTeams;
+    using FootballTournamentSystem.Application.Features.Tournament.Tournament.Queries.All;
+    using FootballTournamentSystem.Application.Features.Tournament.Tournament.Common;
 
     [ApiController]
     [Route("[controller]")]

@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.Application.Features.TournamentContext.Tournament.Queries.TournamentGroups
+﻿namespace FootballTournamentSystem.Application.Features.Tournament.Tournament.Queries.TournamentGroups
 {
     using System.Collections.Generic;
 

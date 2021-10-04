@@ -1,6 +1,6 @@
-﻿namespace FootballTournamentSystem.Domain.Factories.StatisticsContext.PlayerStatistics
+﻿namespace FootballTournamentSystem.Domain.Factories.Statistics.PlayerStatistics
 {
-    using Models.StatisticsContext.PlayerStatistics;
+    using Models.Statistics.PlayerStatistics;
 
     internal class PlayerStatisticsFactory : IPlayerStatisticsFactory
     {

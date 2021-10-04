@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.Domain.Models.TournamentContext.Team
+﻿namespace FootballTournamentSystem.Domain.Models.Tournament.Team
 {
     using System;
     using System.Collections.Generic;

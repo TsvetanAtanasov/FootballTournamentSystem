@@ -1,8 +1,8 @@
-﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Repositories.StatisticsContext.MatchStatistics
+﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Repositories.Statistics.MatchStatistics
 {
     using Common.Infrastructure.Persistence;
-    using Domain.Models.StatisticsContext.MatchStatistics;
-    using FootballTournamentSystem.Application.Features.StatisticsContext.MatchStatistics;
+    using Domain.Models.Statistics.MatchStatistics;
+    using FootballTournamentSystem.Application.Features.Statistics.MatchStatistics;
 
     internal class MatchStatisticsRepository : FootballTournamentDataRepository<MatchStatistics>, IMatchStatisticsRepository
     {

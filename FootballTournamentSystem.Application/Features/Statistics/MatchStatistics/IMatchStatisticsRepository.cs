@@ -1,7 +1,7 @@
-﻿namespace FootballTournamentSystem.Application.Features.StatisticsContext.MatchStatistics
+﻿namespace FootballTournamentSystem.Application.Features.Statistics.MatchStatistics
 {
     using Application.Contracts;
-    using Domain.Models.StatisticsContext.MatchStatistics;
+    using Domain.Models.Statistics.MatchStatistics;
 
     public interface IMatchStatisticsRepository : IRepository<MatchStatistics>
     {

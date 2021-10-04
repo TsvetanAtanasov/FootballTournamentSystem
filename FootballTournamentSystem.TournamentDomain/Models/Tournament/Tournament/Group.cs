@@ -1,7 +1,7 @@
-﻿namespace FootballTournamentSystem.Domain.Models.TournamentContext.Tournament
+﻿namespace FootballTournamentSystem.Domain.Models.Tournament.Tournament
 {
-    using FootballTournamentSystem.Domain.Models.TournamentContext.Team;
-    using FootballTournamentSystem.Domain.Models.TournamentContext.Match;
+    using FootballTournamentSystem.Domain.Models.Tournament.Team;
+    using FootballTournamentSystem.Domain.Models.Tournament.Match;
     using FootballTournamentSystem.Domain.Exceptions;
     using System.Collections.Generic;
     using System.Linq;

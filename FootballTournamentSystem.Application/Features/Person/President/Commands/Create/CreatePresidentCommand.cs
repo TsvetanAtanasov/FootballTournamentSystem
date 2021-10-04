@@ -4,7 +4,7 @@
     using System.Threading;
     using System.Threading.Tasks;
     using Domain.Factories.Person.President;
-    using Application.Features.TournamentContext.Team;
+    using Application.Features.Tournament.Team;
 
     public class CreatePresidentCommand : IRequest<CreatePresidentOutputModel>
     {

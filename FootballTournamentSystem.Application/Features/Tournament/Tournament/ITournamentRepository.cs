@@ -1,15 +1,15 @@
-﻿namespace FootballTournamentSystem.Application.Features.TournamentContext.Tournament
+﻿namespace FootballTournamentSystem.Application.Features.Tournament.Tournament
 {
     using Contracts;
-    using Domain.Models.TournamentContext.Tournament;
-    using Features.TournamentContext.Tournament.Common;
-    using Features.TournamentContext.Tournament.Queries.TournamentGroups;
-    using Features.TournamentContext.Tournament.Queries.TournamentMatches;
-    using Features.TournamentContext.Team.Common;
+    using Domain.Models.Tournament.Tournament;
+    using Features.Tournament.Tournament.Common;
+    using Features.Tournament.Tournament.Queries.TournamentGroups;
+    using Features.Tournament.Tournament.Queries.TournamentMatches;
+    using Features.Tournament.Team.Common;
     using System.Collections.Generic;
     using System.Threading;
     using System.Threading.Tasks;
-    using FootballTournamentSystem.Application.Features.TournamentContext.Tournament.Queries.TournamentGroups.GroupMatches;
+    using FootballTournamentSystem.Application.Features.Tournament.Tournament.Queries.TournamentGroups.GroupMatches;
 
     public interface ITournamentRepository : IRepository<Tournament>
     {

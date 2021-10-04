@@ -1,6 +1,6 @@
-﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Configurations.TournamentContext.Team
+﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Configurations.Tournament.Team
 {
-    using Domain.Models.TournamentContext.Team;
+    using Domain.Models.Tournament.Team;
     using Domain.Models.Person.President;
     using Domain.Models.Person.Coach;
     using Domain.Models.Person.Player;

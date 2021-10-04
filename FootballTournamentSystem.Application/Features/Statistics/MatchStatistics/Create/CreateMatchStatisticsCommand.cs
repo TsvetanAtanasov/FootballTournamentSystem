@@ -1,13 +1,13 @@
-﻿namespace FootballTournamentSystem.Application.Features.StatisticsContext.MatchStatistics.Create
+﻿namespace FootballTournamentSystem.Application.Features.Statistics.MatchStatistics.Create
 {
     using MediatR;
     using System.Threading;
     using System.Threading.Tasks;
     using System.Collections.Generic;
-    using Domain.Factories.StatisticsContext.TournamentStatistics;
-    using Domain.Factories.StatisticsContext.MatchStatistics;
-    using Application.Features.TournamentContext.Tournament;
-    using Application.Features.TournamentContext.Match;
+    using Domain.Factories.Statistics.TournamentStatistics;
+    using Domain.Factories.Statistics.MatchStatistics;
+    using Application.Features.Tournament.Tournament;
+    using Application.Features.Tournament.Match;
 
     public class CreateMatchStatisticsCommand : IRequest<CreateMatchStatisticsOutputModel>
     {

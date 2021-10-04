@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.Application.Features.TournamentContext.Tournament.Queries.All
+﻿namespace FootballTournamentSystem.Application.Features.Tournament.Tournament.Queries.All
 {
     using Tournament.Common;
     using MediatR;

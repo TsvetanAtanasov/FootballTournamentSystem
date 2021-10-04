@@ -1,10 +1,9 @@
 ﻿namespace FootballTournamentSystem.Application.Features.Tournament.Team.Handlers
 {
-    using Common.Application;
-    using Common.Domain.Events;
-    using TournamentContext.Team;
     using System.Threading.Tasks;
     using System.Threading;
+    using global::Common.Domain.Events;
+    using global::Common.Application;
 
     public class PlayerCreatedHandler : IEventHandler<PlayerCreatedEvent>
     {

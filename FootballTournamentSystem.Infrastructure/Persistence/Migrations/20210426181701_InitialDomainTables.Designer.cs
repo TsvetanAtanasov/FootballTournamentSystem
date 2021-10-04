@@ -80,7 +80,7 @@ namespace FootballTournamentSystem.Infrastructure.Persistence.Migrations
                     b.ToTable("Referees");
                 });
 
-            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.StatisticsContext.MatchStatistics.MatchStatistics", b =>
+            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.Statistics.MatchStatistics.MatchStatistics", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -98,7 +98,7 @@ namespace FootballTournamentSystem.Infrastructure.Persistence.Migrations
                     b.ToTable("MatchStatistics");
                 });
 
-            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.StatisticsContext.PlayerStatistics.PlayerStatistics", b =>
+            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.Statistics.PlayerStatistics.PlayerStatistics", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -119,7 +119,7 @@ namespace FootballTournamentSystem.Infrastructure.Persistence.Migrations
                     b.ToTable("PlayerStatistics");
                 });
 
-            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.StatisticsContext.TournamentStatistics.TournamentStatistics", b =>
+            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.Statistics.TournamentStatistics.TournamentStatistics", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -140,7 +140,7 @@ namespace FootballTournamentSystem.Infrastructure.Persistence.Migrations
                     b.ToTable("TournamentStatistics");
                 });
 
-            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.TournamentContext.Match.Match", b =>
+            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.Tournament.Match.Match", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -192,7 +192,7 @@ namespace FootballTournamentSystem.Infrastructure.Persistence.Migrations
                     b.ToTable("Matches");
                 });
 
-            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.TournamentContext.Team.Team", b =>
+            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.Tournament.Team.Team", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -250,7 +250,7 @@ namespace FootballTournamentSystem.Infrastructure.Persistence.Migrations
                     b.ToTable("Teams");
                 });
 
-            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.TournamentContext.Tournament.Final", b =>
+            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.Tournament.Tournament.Final", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -267,7 +267,7 @@ namespace FootballTournamentSystem.Infrastructure.Persistence.Migrations
                     b.ToTable("Finals");
                 });
 
-            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.TournamentContext.Tournament.Group", b =>
+            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.Tournament.Tournament.Group", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -289,7 +289,7 @@ namespace FootballTournamentSystem.Infrastructure.Persistence.Migrations
                     b.ToTable("Groups");
                 });
 
-            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.TournamentContext.Tournament.QuarterFinals", b =>
+            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.Tournament.Tournament.QuarterFinals", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -301,7 +301,7 @@ namespace FootballTournamentSystem.Infrastructure.Persistence.Migrations
                     b.ToTable("QuarterFinals");
                 });
 
-            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.TournamentContext.Tournament.RoundOf16", b =>
+            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.Tournament.Tournament.RoundOf16", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -313,7 +313,7 @@ namespace FootballTournamentSystem.Infrastructure.Persistence.Migrations
                     b.ToTable("RoundOf16s");
                 });
 
-            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.TournamentContext.Tournament.SemiFinals", b =>
+            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.Tournament.Tournament.SemiFinals", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -325,7 +325,7 @@ namespace FootballTournamentSystem.Infrastructure.Persistence.Migrations
                     b.ToTable("SemiFinals");
                 });
 
-            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.TournamentContext.Tournament.Tournament", b =>
+            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.Tournament.Tournament.Tournament", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -376,32 +376,32 @@ namespace FootballTournamentSystem.Infrastructure.Persistence.Migrations
 
             modelBuilder.Entity("FootballTournamentSystem.Domain.Models.Person.Player.Player", b =>
                 {
-                    b.HasOne("FootballTournamentSystem.Domain.Models.StatisticsContext.PlayerStatistics.PlayerStatistics", null)
+                    b.HasOne("FootballTournamentSystem.Domain.Models.Statistics.PlayerStatistics.PlayerStatistics", null)
                         .WithMany()
                         .HasForeignKey("PlayerStatisticsId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.TournamentContext.Match.Match", b =>
+            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.Tournament.Match.Match", b =>
                 {
-                    b.HasOne("FootballTournamentSystem.Domain.Models.TournamentContext.Tournament.Group", null)
+                    b.HasOne("FootballTournamentSystem.Domain.Models.Tournament.Tournament.Group", null)
                         .WithMany("Matches")
                         .HasForeignKey("GroupId");
 
-                    b.HasOne("FootballTournamentSystem.Domain.Models.StatisticsContext.MatchStatistics.MatchStatistics", null)
+                    b.HasOne("FootballTournamentSystem.Domain.Models.Statistics.MatchStatistics.MatchStatistics", null)
                         .WithMany()
                         .HasForeignKey("MatchStatisticsId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("FootballTournamentSystem.Domain.Models.StatisticsContext.PlayerStatistics.PlayerStatistics", null)
+                    b.HasOne("FootballTournamentSystem.Domain.Models.Statistics.PlayerStatistics.PlayerStatistics", null)
                         .WithMany()
                         .HasForeignKey("PlayerStatisticsId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("FootballTournamentSystem.Domain.Models.TournamentContext.Tournament.QuarterFinals", null)
+                    b.HasOne("FootballTournamentSystem.Domain.Models.Tournament.Tournament.QuarterFinals", null)
                         .WithMany("Matches")
                         .HasForeignKey("QuarterFinalsId");
 
@@ -411,20 +411,20 @@ namespace FootballTournamentSystem.Infrastructure.Persistence.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("FootballTournamentSystem.Domain.Models.TournamentContext.Tournament.RoundOf16", null)
+                    b.HasOne("FootballTournamentSystem.Domain.Models.Tournament.Tournament.RoundOf16", null)
                         .WithMany("Matches")
                         .HasForeignKey("RoundOf16Id");
 
-                    b.HasOne("FootballTournamentSystem.Domain.Models.TournamentContext.Tournament.SemiFinals", null)
+                    b.HasOne("FootballTournamentSystem.Domain.Models.Tournament.Tournament.SemiFinals", null)
                         .WithMany("Matches")
                         .HasForeignKey("SemiFinalsId");
 
-                    b.HasOne("FootballTournamentSystem.Domain.Models.TournamentContext.Tournament.Tournament", null)
+                    b.HasOne("FootballTournamentSystem.Domain.Models.Tournament.Tournament.Tournament", null)
                         .WithMany("Matches")
                         .HasForeignKey("TournamentId");
                 });
 
-            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.TournamentContext.Team.Team", b =>
+            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.Tournament.Team.Team", b =>
                 {
                     b.HasOne("FootballTournamentSystem.Domain.Models.Person.Coach.Coach", null)
                         .WithMany()
@@ -432,11 +432,11 @@ namespace FootballTournamentSystem.Infrastructure.Persistence.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("FootballTournamentSystem.Domain.Models.TournamentContext.Tournament.Group", null)
+                    b.HasOne("FootballTournamentSystem.Domain.Models.Tournament.Tournament.Group", null)
                         .WithMany("Teams")
                         .HasForeignKey("GroupId");
 
-                    b.HasOne("FootballTournamentSystem.Domain.Models.TournamentContext.Match.Match", null)
+                    b.HasOne("FootballTournamentSystem.Domain.Models.Tournament.Match.Match", null)
                         .WithMany("Teams")
                         .HasForeignKey("MatchId");
 
@@ -447,45 +447,45 @@ namespace FootballTournamentSystem.Infrastructure.Persistence.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.TournamentContext.Tournament.Final", b =>
+            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.Tournament.Tournament.Final", b =>
                 {
-                    b.HasOne("FootballTournamentSystem.Domain.Models.TournamentContext.Match.Match", "Match")
+                    b.HasOne("FootballTournamentSystem.Domain.Models.Tournament.Match.Match", "Match")
                         .WithMany()
                         .HasForeignKey("MatchId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.TournamentContext.Tournament.Group", b =>
+            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.Tournament.Tournament.Group", b =>
                 {
-                    b.HasOne("FootballTournamentSystem.Domain.Models.TournamentContext.Tournament.Tournament", null)
+                    b.HasOne("FootballTournamentSystem.Domain.Models.Tournament.Tournament.Tournament", null)
                         .WithMany("Groups")
                         .HasForeignKey("TournamentId");
                 });
 
-            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.TournamentContext.Tournament.Tournament", b =>
+            modelBuilder.Entity("FootballTournamentSystem.Domain.Models.Tournament.Tournament.Tournament", b =>
                 {
-                    b.HasOne("FootballTournamentSystem.Domain.Models.TournamentContext.Tournament.Final", "Final")
+                    b.HasOne("FootballTournamentSystem.Domain.Models.Tournament.Tournament.Final", "Final")
                         .WithMany()
                         .HasForeignKey("FinalId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("FootballTournamentSystem.Domain.Models.TournamentContext.Tournament.QuarterFinals", "QuarterFinals")
+                    b.HasOne("FootballTournamentSystem.Domain.Models.Tournament.Tournament.QuarterFinals", "QuarterFinals")
                         .WithMany()
                         .HasForeignKey("QuarterFinalsId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("FootballTournamentSystem.Domain.Models.TournamentContext.Tournament.RoundOf16", "RoundOf16")
+                    b.HasOne("FootballTournamentSystem.Domain.Models.Tournament.Tournament.RoundOf16", "RoundOf16")
                         .WithMany()
                         .HasForeignKey("RoundOf16Id")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("FootballTournamentSystem.Domain.Models.TournamentContext.Tournament.SemiFinals", "SemiFinals")
+                    b.HasOne("FootballTournamentSystem.Domain.Models.Tournament.Tournament.SemiFinals", "SemiFinals")
                         .WithMany()
                         .HasForeignKey("SemiFinalsId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("FootballTournamentSystem.Domain.Models.StatisticsContext.TournamentStatistics.TournamentStatistics", null)
+                    b.HasOne("FootballTournamentSystem.Domain.Models.Statistics.TournamentStatistics.TournamentStatistics", null)
                         .WithMany()
                         .HasForeignKey("TournamentStatisticsId")
                         .OnDelete(DeleteBehavior.Restrict)

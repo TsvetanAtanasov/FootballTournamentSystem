@@ -1,8 +1,8 @@
-﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Repositories.StatisticsContext.PlayerStatistics
+﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Repositories.Statistics.PlayerStatistics
 {
     using Common.Infrastructure.Persistence;
-    using Domain.Models.StatisticsContext.PlayerStatistics;
-    using FootballTournamentSystem.Application.Features.StatisticsContext.PlayerStatistics;
+    using Domain.Models.Statistics.PlayerStatistics;
+    using FootballTournamentSystem.Application.Features.Statistics.PlayerStatistics;
 
     internal class PlayerStatisticsRepository : FootballTournamentDataRepository<PlayerStatistics>, IPlayerStatisticsRepository
     {

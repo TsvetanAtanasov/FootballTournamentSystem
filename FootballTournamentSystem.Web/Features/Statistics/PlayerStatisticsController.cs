@@ -3,9 +3,9 @@
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using System.Threading.Tasks;
-    using Application.Features.StatisticsContext.PlayerStatistics.CreatePlayerStatisticsForMatch;
-    using Application.Features.StatisticsContext.PlayerStatistics.Common;
-    using Application.Features.StatisticsContext.PlayerStatistics.CreatePlayerStatisticsForPlayer;
+    using Application.Features.Statistics.PlayerStatistics.CreatePlayerStatisticsForMatch;
+    using Application.Features.Statistics.PlayerStatistics.Common;
+    using Application.Features.Statistics.PlayerStatistics.CreatePlayerStatisticsForPlayer;
 
     [ApiController]
     [Route("[controller]")]

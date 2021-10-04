@@ -1,8 +1,8 @@
-﻿namespace FootballTournamentSystem.Domain.Factories.StatisticsContext.TournamentStatistics
+﻿namespace FootballTournamentSystem.Domain.Factories.Statistics.TournamentStatistics
 {
-    using Models.TournamentContext.Team;
+    using Models.Tournament.Team;
     using Models.Person.Player;
-    using Models.StatisticsContext.TournamentStatistics;
+    using Models.Statistics.TournamentStatistics;
     using global::Common.Domain;
 
     public interface ITournamentStatisticsFactory : IFactory<TournamentStatistics>

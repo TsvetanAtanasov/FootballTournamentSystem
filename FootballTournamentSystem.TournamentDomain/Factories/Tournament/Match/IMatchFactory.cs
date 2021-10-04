@@ -1,9 +1,9 @@
-﻿namespace FootballTournamentSystem.Domain.Factories.TournamentContext.Match
+﻿namespace FootballTournamentSystem.Domain.Factories.Tournament.Match
 {
     using global::Common.Domain;
     using Models.Person.Referee;
-    using Models.TournamentContext.Match;
-    using Models.TournamentContext.Team;
+    using Models.Tournament.Match;
+    using Models.Tournament.Team;
 
     public interface IMatchFactory : IFactory<Match>
     {

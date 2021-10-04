@@ -1,10 +1,10 @@
-﻿namespace FootballTournamentSystem.Application.Features.TournamentContext.Team.Commands.Create
+﻿namespace FootballTournamentSystem.Application.Features.Tournament.Team.Commands.Create
 {
-    using Application.Features.TournamentContext.Team.Common;
+    using Application.Features.Tournament.Team.Common;
     using MediatR;
     using System.Threading;
     using System.Threading.Tasks;
-    using Domain.Factories.TournamentContext.Team;
+    using Domain.Factories.Tournament.Team;
 
     public class CreateTeamCommand : TeamCommand<CreateTeamCommand>, IRequest<CreateTeamOutputModel>
     {

@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.Application.Features.StatisticsContext.PlayerStatistics.Common
+﻿namespace FootballTournamentSystem.Application.Features.Statistics.PlayerStatistics.Common
 {
     public class CreatePlayerStatisticsOutputModel
     {

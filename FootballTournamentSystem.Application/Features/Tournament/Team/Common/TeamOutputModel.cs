@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.Application.Features.TournamentContext.Team.Common
+﻿namespace FootballTournamentSystem.Application.Features.Tournament.Team.Common
 {
     public class TeamOutputModel
     {

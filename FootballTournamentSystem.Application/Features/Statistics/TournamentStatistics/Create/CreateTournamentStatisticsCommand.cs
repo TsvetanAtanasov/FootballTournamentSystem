@@ -1,12 +1,12 @@
-﻿namespace FootballTournamentSystem.Application.Features.StatisticsContext.TournamentStatistics.Create
+﻿namespace FootballTournamentSystem.Application.Features.Statistics.TournamentStatistics.Create
 {
     using MediatR;
     using System.Threading;
     using System.Threading.Tasks;
     using Domain.Factories.Person.President;
-    using Domain.Factories.StatisticsContext.TournamentStatistics;
-    using Application.Features.TournamentContext.Team;
-    using Application.Features.TournamentContext.Tournament;
+    using Domain.Factories.Statistics.TournamentStatistics;
+    using Application.Features.Tournament.Team;
+    using Application.Features.Tournament.Tournament;
 
     public class CreateTournamentStatisticsCommand : IRequest<CreateTournamentStatisticsOutputModel>
     {

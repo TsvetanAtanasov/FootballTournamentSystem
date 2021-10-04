@@ -1,8 +1,8 @@
-﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Repositories.TournamentContext.Match
+﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Repositories.Tournament.Match
 {
     using Common.Infrastructure.Persistence;
-    using Domain.Models.TournamentContext.Match;
-    using FootballTournamentSystem.Application.Features.TournamentContext.Match;
+    using Domain.Models.Tournament.Match;
+    using FootballTournamentSystem.Application.Features.Tournament.Match;
     using Microsoft.EntityFrameworkCore;
     using System.Threading;
     using System.Threading.Tasks;

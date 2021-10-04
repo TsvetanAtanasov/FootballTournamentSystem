@@ -1,6 +1,6 @@
-﻿namespace FootballTournamentSystem.Application.Features.TournamentContext.Tournament.Common
+﻿namespace FootballTournamentSystem.Application.Features.Tournament.Tournament.Common
 {
-    using Domain.Models.TournamentContext.Tournament;
+    using Domain.Models.Tournament.Tournament;
 
     public class TournamentOutputModel
     {

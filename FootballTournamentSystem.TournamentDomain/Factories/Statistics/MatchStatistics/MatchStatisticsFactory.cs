@@ -1,6 +1,6 @@
-﻿namespace FootballTournamentSystem.Domain.Factories.StatisticsContext.MatchStatistics
+﻿namespace FootballTournamentSystem.Domain.Factories.Statistics.MatchStatistics
 {
-    using Models.StatisticsContext.MatchStatistics;
+    using Models.Statistics.MatchStatistics;
 
     internal class MatchStatisticsFactory : IMatchStatisticsFactory
     {

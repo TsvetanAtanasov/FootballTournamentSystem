@@ -1,6 +1,6 @@
-﻿namespace FootballTournamentSystem.Domain.Factories.TournamentContext.Tournament
+﻿namespace FootballTournamentSystem.Domain.Factories.Tournament.Tournament
 {
-    using FootballTournamentSystem.Domain.Models.TournamentContext.Tournament;
+    using FootballTournamentSystem.Domain.Models.Tournament.Tournament;
 
     internal class TournamentFactory : ITournamentFactory
     {
