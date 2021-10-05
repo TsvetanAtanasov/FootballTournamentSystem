@@ -47,12 +47,6 @@
 
                 await this.coachRepository.Save(coach, cancellationToken);
 
-                if (request.TeamId != 0)
-                {
-                    var team = await this.teamRepository.GetTeamById(request.TeamId);
-                    team.AddCoach(coach.Id);
-                }
-
                 return new CreateCoachOutputModel(coach.Id);
             }
         }

@@ -7,6 +7,7 @@
         private string firstName = default!;
         private string lastName = default!;
         private string imageUrl = default!;
+        private int teamId = default!;
 
         public ICoachFactory WithFirstName(string firstName)
         {
@@ -26,6 +27,12 @@
             return this;
         }
 
-        public Coach Build() => new Coach(this.firstName, this.lastName, this.imageUrl);
+        public ICoachFactory WithTeamId(int teamId)
+        {
+            this.teamId = teamId;
+            return this;
+        }
+
+        public Coach Build() => new Coach(this.firstName, this.lastName, this.imageUrl, this.teamId);
     }
 }

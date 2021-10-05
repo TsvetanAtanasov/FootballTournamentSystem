@@ -7,7 +7,7 @@
 
     public abstract class Person : Entity<Guid>, IAggregateRoot
     {
-        public Person(string firstName, string lastName, string imageUrl)
+        internal Person(string firstName, string lastName, string imageUrl)
         {
             this.Validate(firstName, lastName, imageUrl);
 
