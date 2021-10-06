@@ -1,8 +1,8 @@
 ﻿namespace FootballTournamentSystem.Domain.Models.Tournament.Match
 {
     using FootballTournamentSystem.Domain.Models.Tournament.Team;
-    using global::Common.Domain;
-    using global::Common.Domain.Models;
+    using Core.Domain;
+    using Core.Domain.Models;
     using System;
     using System.Collections.Generic;
     using System.Linq;

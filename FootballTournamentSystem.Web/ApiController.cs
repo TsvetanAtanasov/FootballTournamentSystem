@@ -2,7 +2,7 @@
 {
     using System.Threading.Tasks;
     using FootballTournamentSystem.Web.Common;
-    using global::Common.Application;
+    using Core.Application;
     using MediatR;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.DependencyInjection;

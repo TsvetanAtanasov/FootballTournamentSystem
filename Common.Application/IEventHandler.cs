@@ -1,7 +1,7 @@
-﻿namespace Common.Application
+﻿namespace Core.Application
 {
     using System.Threading.Tasks;
-    using Common.Domain;
+    using Core.Domain;
 
     public interface IEventHandler<in TEvent>
         where TEvent : IDomainEvent

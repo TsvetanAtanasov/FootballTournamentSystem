@@ -5,7 +5,7 @@
     using FootballTournamentSystem.Domain.Exceptions;
     using System.Collections.Generic;
     using System.Linq;
-    using global::Common.Domain.Models;
+    using Core.Domain.Models;
 
     public class Group : Entity<int>
     {

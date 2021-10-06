@@ -1,4 +1,4 @@
-﻿namespace Common.Infrastructure.Persistence
+﻿namespace Core.Infrastructure.Persistence
 {
     using System.Threading;
     using System.Threading.Tasks;

@@ -1,7 +1,7 @@
 ﻿namespace FootballTournamentSystem.Application
 {
     using System.Reflection;
-    using Common.Application.Configuration;
+    using Core.Application.Configuration;
     using MediatR;
     using AutoMapper;
     using Microsoft.Extensions.DependencyInjection;

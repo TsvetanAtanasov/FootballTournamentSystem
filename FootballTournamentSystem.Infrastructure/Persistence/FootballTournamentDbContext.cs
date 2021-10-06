@@ -5,8 +5,8 @@
     using System.Reflection;
     using System.Threading;
     using System.Threading.Tasks;
-    using Common.Domain.Models;
-    using Common.Infrastructure.Events;
+    using Core.Domain.Models;
+    using Core.Infrastructure.Events;
     using Domain.Models.Person.Coach;
     using Domain.Models.Person.Player;
     using Domain.Models.Person.President;

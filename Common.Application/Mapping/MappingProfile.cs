@@ -1,4 +1,4 @@
-﻿namespace Common.Application.Mapping
+﻿namespace Core.Application.Mapping
 {
     using System;
     using System.Linq;

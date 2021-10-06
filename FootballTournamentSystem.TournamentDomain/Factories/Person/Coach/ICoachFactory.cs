@@ -1,6 +1,6 @@
 ﻿namespace FootballTournamentSystem.Domain.Factories.Person.Coach
 {
-    using global::Common.Domain;
+    using Core.Domain;
     using Models.Person.Coach;
 
     public interface ICoachFactory : IFactory<Coach>

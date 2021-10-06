@@ -1,11 +1,11 @@
-﻿namespace Common.Infrastructure.Events
+﻿namespace Core.Infrastructure.Events
 {
     using System;
     using System.Collections.Concurrent;
     using System.Reflection;
     using System.Threading.Tasks;
-    using Common.Application;
-    using Common.Domain;
+    using Core.Application;
+    using Core.Domain;
     using Microsoft.Extensions.DependencyInjection;
 
     // TODO: make internal

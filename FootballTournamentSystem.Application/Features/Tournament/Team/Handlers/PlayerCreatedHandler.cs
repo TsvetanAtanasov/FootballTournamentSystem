@@ -2,8 +2,8 @@
 {
     using System.Threading.Tasks;
     using System.Threading;
-    using global::Common.Domain.Events;
-    using global::Common.Application;
+    using Core.Domain.Events;
+    using Core.Application;
 
     public class PlayerCreatedHandler : IEventHandler<PlayerCreatedEvent>
     {

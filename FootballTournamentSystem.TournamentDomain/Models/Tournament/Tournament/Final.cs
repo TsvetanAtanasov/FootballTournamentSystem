@@ -1,7 +1,7 @@
 ﻿namespace FootballTournamentSystem.Domain.Models.Tournament.Tournament
 {
     using FootballTournamentSystem.Domain.Models.Tournament.Match;
-    using global::Common.Domain.Models;
+    using Core.Domain.Models;
 
     public class Final : Entity<int>
     {

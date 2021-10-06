@@ -2,8 +2,8 @@
 {
     using System.Threading.Tasks;
     using System.Threading;
-    using global::Common.Application;
-    using global::Common.Domain.Events;
+    using Core.Application;
+    using Core.Domain.Events;
 
     public class CoachCreatedHandler : IEventHandler<CoachCreatedEvent>
     {

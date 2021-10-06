@@ -1,6 +1,5 @@
 ﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Repositories.Person.Referee
 {
-    using Common.Infrastructure.Persistence;
     using Domain.Models.Person.Referee;
     using FootballTournamentSystem.Application.Features.Person.Referee;
 

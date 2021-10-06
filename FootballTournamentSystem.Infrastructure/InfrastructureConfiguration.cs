@@ -1,7 +1,7 @@
 ﻿namespace FootballTournamentSystem.Infrastructure
 {
     using Application.Contracts;
-    using Common.Infrastructure.Events;
+    using Core.Infrastructure.Events;
     using FootballTournamentSystem.Application.Features.Person.Coach;
     using FootballTournamentSystem.Application.Features.Person.Player;
     using FootballTournamentSystem.Application.Features.Person.President;

@@ -4,7 +4,7 @@
     using Domain.Models.Statistics.PlayerStatistics;
     using Domain.Models.Statistics.MatchStatistics;
     using Microsoft.EntityFrameworkCore;
-    using Common.Infrastructure.Persistence;
+    using Core.Infrastructure.Persistence;
 
     internal interface IStatisticsDbContext : IDbContext
     {

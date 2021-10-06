@@ -1,8 +1,8 @@
 ﻿namespace FootballTournamentSystem.Domain.Models.Statistics.MatchStatistics
 {
     using FootballTournamentSystem.Domain.Exceptions;
-    using global::Common.Domain;
-    using global::Common.Domain.Models;
+    using Core.Domain;
+    using Core.Domain.Models;
     using System.Collections.Generic;
     using System.Linq;
 

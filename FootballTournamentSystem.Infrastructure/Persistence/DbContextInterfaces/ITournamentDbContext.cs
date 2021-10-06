@@ -4,7 +4,7 @@
     using Domain.Models.Tournament.Match;
     using Microsoft.EntityFrameworkCore;
     using Domain.Models.Tournament.Team;
-    using Common.Infrastructure.Persistence;
+    using Core.Infrastructure.Persistence;
 
     internal interface ITournamentDbContext : IDbContext
     {

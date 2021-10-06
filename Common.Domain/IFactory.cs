@@ -1,4 +1,4 @@
-﻿namespace Common.Domain
+﻿namespace Core.Domain
 {
     public interface IFactory<out TEntity>
         where TEntity : IAggregateRoot

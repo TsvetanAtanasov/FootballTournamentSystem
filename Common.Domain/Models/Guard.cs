@@ -1,7 +1,7 @@
-﻿namespace Common.Domain.Models
+﻿namespace Core.Domain.Models
 {
     using System;
-    using Common.Domain;
+    using Core.Domain;
 
     public static class Guard
     {

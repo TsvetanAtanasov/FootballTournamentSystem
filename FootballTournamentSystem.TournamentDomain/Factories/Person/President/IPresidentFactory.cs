@@ -1,6 +1,6 @@
 ﻿namespace FootballTournamentSystem.Domain.Factories.Person.President
 {
-    using global::Common.Domain;
+    using Core.Domain;
     using Models.Person.President;
 
     public interface IPresidentFactory : IFactory<President>

@@ -1,4 +1,4 @@
-﻿namespace Common.Infrastructure.Events
+﻿namespace Core.Infrastructure.Events
 {
     using System.Threading.Tasks;
     using Domain;

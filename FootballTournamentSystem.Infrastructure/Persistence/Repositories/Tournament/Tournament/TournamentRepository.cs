@@ -12,7 +12,6 @@
     using System.Collections.Generic;
     using System.Linq;
     using Microsoft.EntityFrameworkCore;
-    using Common.Infrastructure.Persistence;
 
     internal class TournamentRepository : FootballTournamentDataRepository<Tournament>, ITournamentRepository
     {

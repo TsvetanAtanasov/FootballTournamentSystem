@@ -1,4 +1,4 @@
-﻿namespace Common.Domain
+﻿namespace Core.Domain
 {
     using System;
 

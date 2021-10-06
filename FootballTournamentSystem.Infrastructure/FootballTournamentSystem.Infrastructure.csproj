@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Common.Infrastructure\Common.Infrastructure.csproj" />
+    <ProjectReference Include="..\Common.Infrastructure\Core.Infrastructure.csproj" />
     <ProjectReference Include="..\FootballTournamentSystem.Application\FootballTournamentSystem.Application.csproj" />
   </ItemGroup>
 

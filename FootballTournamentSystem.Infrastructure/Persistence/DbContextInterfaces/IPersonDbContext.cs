@@ -5,7 +5,7 @@
     using Domain.Models.Person.Player;
     using Domain.Models.Person.Coach;
     using Microsoft.EntityFrameworkCore;
-    using Common.Infrastructure.Persistence;
+    using Core.Infrastructure.Persistence;
 
     internal interface IPersonDbContext : IDbContext
     {

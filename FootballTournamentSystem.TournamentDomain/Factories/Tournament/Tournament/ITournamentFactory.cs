@@ -1,6 +1,6 @@
 ﻿namespace FootballTournamentSystem.Domain.Factories.Tournament.Tournament
 {
-    using global::Common.Domain;
+    using Core.Domain;
     using Models.Tournament.Tournament;
 
     public interface ITournamentFactory : IFactory<Tournament>

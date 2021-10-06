@@ -1,6 +1,6 @@
 ﻿namespace FootballTournamentSystem.Domain.Models.Person.President
 {
-    using Common.Domain.Events;
+    using Core.Domain.Events;
 
     public class President : Person
     {

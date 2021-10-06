@@ -1,6 +1,6 @@
 ﻿namespace FootballTournamentSystem.Domain.Factories.Tournament.Match
 {
-    using global::Common.Domain;
+    using Core.Domain;
     using Models.Person.Referee;
     using Models.Tournament.Match;
     using Models.Tournament.Team;

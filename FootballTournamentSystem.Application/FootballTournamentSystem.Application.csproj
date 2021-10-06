@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Common.Application\Common.Application.csproj" />
+    <ProjectReference Include="..\Common.Application\Core.Application.csproj" />
     <ProjectReference Include="..\FootballTournamentSystem.TournamentDomain\FootballTournamentSystem.Domain.csproj" />
   </ItemGroup>
 

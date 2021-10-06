@@ -4,7 +4,7 @@
     using System.Threading;
     using System.Threading.Tasks;
     using FootballTournamentSystem.Application.Features.Tournament.Tournament;
-    using global::Common.Application;
+    using Core.Application;
     using MediatR;
 
     public class GetTournamentGroupsQuery : EntityCommand<int>, IRequest<IEnumerable<GetTournamentGroupOutputModel>>

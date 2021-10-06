@@ -3,7 +3,7 @@
     using Models.Tournament.Team;
     using Models.Person.Player;
     using Models.Statistics.TournamentStatistics;
-    using global::Common.Domain;
+    using Core.Domain;
 
     public interface ITournamentStatisticsFactory : IFactory<TournamentStatistics>
     {

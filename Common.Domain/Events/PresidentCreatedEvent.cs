@@ -1,4 +1,4 @@
-﻿namespace Common.Domain.Events
+﻿namespace Core.Domain.Events
 {
     using System;
 

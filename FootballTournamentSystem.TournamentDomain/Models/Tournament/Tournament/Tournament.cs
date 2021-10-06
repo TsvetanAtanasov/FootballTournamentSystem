@@ -5,8 +5,8 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    using global::Common.Domain;
-    using global::Common.Domain.Models;
+    using Core.Domain;
+    using Core.Domain.Models;
 
     public class Tournament : Entity<int>, IAggregateRoot
     {

@@ -1,8 +1,8 @@
 ﻿namespace FootballTournamentSystem.Domain.Models.Person.Player
 {
-    using Common.Domain.Events;
+    using Core.Domain.Events;
     using FootballTournamentSystem.Domain.Exceptions;
-    using global::Common.Domain.Models;
+    using Core.Domain.Models;
 
     public class Player : Person
     {

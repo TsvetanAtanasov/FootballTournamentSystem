@@ -1,9 +1,9 @@
-﻿namespace Common.Infrastructure.Persistence
+﻿namespace Core.Infrastructure.Persistence
 {
     using System.Linq;
     using System.Threading;
     using System.Threading.Tasks;
-    using Common.Domain;
+    using Core.Domain;
 
     public abstract class DataRepository<TDbContext, TEntity> : IDomainRepository<TEntity>
         where TDbContext : IDbContext

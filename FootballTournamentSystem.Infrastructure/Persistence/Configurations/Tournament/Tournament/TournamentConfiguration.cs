@@ -4,7 +4,7 @@
     using Domain.Models.Statistics.TournamentStatistics;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
-    using Common.Domain.Models;
+    using Core.Domain.Models;
 
     internal class TournamentConfiguration : IEntityTypeConfiguration<Tournament>
     {

@@ -1,6 +1,6 @@
 ﻿namespace FootballTournamentSystem.Domain.Factories.Statistics.PlayerStatistics
 {
-    using global::Common.Domain;
+    using Core.Domain;
     using Models.Statistics.PlayerStatistics;
 
     public interface IPlayerStatisticsFactory : IFactory<PlayerStatistics>

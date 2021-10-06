@@ -1,8 +1,8 @@
 ﻿namespace FootballTournamentSystem.Domain.Models.Person
 {
     using FootballTournamentSystem.Domain.Exceptions;
-    using Common.Domain;
-    using Common.Domain.Models;
+    using Core.Domain;
+    using Core.Domain.Models;
     using System;
 
     public abstract class Person : Entity<Guid>, IAggregateRoot

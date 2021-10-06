@@ -1,7 +1,7 @@
 ﻿namespace FootballTournamentSystem.Web.Common
 {
     using System.Threading.Tasks;
-    using global::Common.Application;
+    using Core.Application;
     using Microsoft.AspNetCore.Mvc;
 
     public static class ResultExtensions

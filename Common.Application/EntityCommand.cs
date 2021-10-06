@@ -1,4 +1,4 @@
-﻿namespace Common.Application
+﻿namespace Core.Application
 {
     public class EntityCommand<TId>
     {

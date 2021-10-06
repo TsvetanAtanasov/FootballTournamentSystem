@@ -1,4 +1,4 @@
-﻿namespace Common.Application.Configuration
+﻿namespace Core.Application.Configuration
 {
     using System.Reflection;
     using AutoMapper;

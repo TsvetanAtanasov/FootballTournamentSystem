@@ -1,4 +1,4 @@
-﻿namespace Common.Domain.Models
+﻿namespace Core.Domain.Models
 {
     public class ModelConstants
     {

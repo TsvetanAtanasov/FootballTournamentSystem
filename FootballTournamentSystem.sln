@@ -13,13 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballTournamentSystem.We
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballTournamentSystem.Infrastructure", "FootballTournamentSystem.Infrastructure\FootballTournamentSystem.Infrastructure.csproj", "{EB2198A1-C2A4-4F94-AF1D-7C607B8DDB1F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{49C0F965-86D9-4A9A-BA14-5FC47642B286}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{49C0F965-86D9-4A9A-BA14-5FC47642B286}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Domain", "Common.Domain\Common.Domain.csproj", "{75CE30DA-C5C6-4498-BB66-FA2E5C8FB237}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Domain", "Common.Domain\Core.Domain.csproj", "{75CE30DA-C5C6-4498-BB66-FA2E5C8FB237}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Application", "Common.Application\Common.Application.csproj", "{12575289-299F-4B5C-880A-5567203A8738}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Application", "Common.Application\Core.Application.csproj", "{12575289-299F-4B5C-880A-5567203A8738}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Infrastructure", "Common.Infrastructure\Common.Infrastructure.csproj", "{CCBC8648-6B3D-4280-89CC-98A57999FE5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Infrastructure", "Common.Infrastructure\Core.Infrastructure.csproj", "{CCBC8648-6B3D-4280-89CC-98A57999FE5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,6 +1,5 @@
 ﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Repositories.Statistics.PlayerStatistics
 {
-    using Common.Infrastructure.Persistence;
     using Domain.Models.Statistics.PlayerStatistics;
     using FootballTournamentSystem.Application.Features.Statistics.PlayerStatistics;
 

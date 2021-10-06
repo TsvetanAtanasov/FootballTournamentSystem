@@ -1,4 +1,4 @@
-﻿namespace Common.Application
+﻿namespace Core.Application
 {
     using System;
     using System.Collections.Generic;

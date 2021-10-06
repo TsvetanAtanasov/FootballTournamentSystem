@@ -5,7 +5,7 @@
     using System.Threading;
     using System.Threading.Tasks;
     using Features.Tournament.Team.Common;
-    using global::Common.Application;
+    using Core.Application;
 
     public class GetGroupTeamsQuery : EntityCommand<int>, IRequest<IEnumerable<TeamOutputModel>>
     {

@@ -3,10 +3,9 @@
     using Domain.Models.Tournament.Team;
     using Domain.Models.Person.President;
     using Domain.Models.Person.Coach;
-    using Domain.Models.Person.Player;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
-    using Common.Domain.Models;
+    using Core.Domain.Models;
 
     internal class TeamConfiguration : IEntityTypeConfiguration<Team>
     {

@@ -1,6 +1,5 @@
 ﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Repositories.Tournament.Match
 {
-    using Common.Infrastructure.Persistence;
     using Domain.Models.Tournament.Match;
     using FootballTournamentSystem.Application.Features.Tournament.Match;
     using Microsoft.EntityFrameworkCore;

@@ -6,7 +6,7 @@
     using System.Threading.Tasks;
     using Features.Tournament.Team.Common;
     using Features.Tournament.Tournament;
-    using global::Common.Application;
+    using Core.Application;
     using MediatR;
 
     public class GetTournamentTeamsQuery : EntityCommand<int>, IRequest<IEnumerable<TeamOutputModel>>
