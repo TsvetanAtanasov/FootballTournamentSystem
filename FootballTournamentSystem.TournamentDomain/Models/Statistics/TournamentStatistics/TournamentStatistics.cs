@@ -1,6 +1,6 @@
 ﻿namespace FootballTournamentSystem.Domain.Models.Statistics.TournamentStatistics
 {
-    using FootballTournamentSystem.Domain.Exceptions;
+    using Core.Domain.Exceptions;
     using Core.Domain;
     using Core.Domain.Models;
 

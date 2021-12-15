@@ -4,10 +4,7 @@
     using System.Threading;
     using System.Threading.Tasks;
     using System.Collections.Generic;
-    using Domain.Factories.Statistics.TournamentStatistics;
     using Domain.Factories.Statistics.MatchStatistics;
-    using Application.Features.Tournament.Tournament;
-    using Application.Features.Tournament.Match;
 
     public class CreateMatchStatisticsCommand : IRequest<CreateMatchStatisticsOutputModel>
     {

@@ -1,7 +1,7 @@
 ﻿namespace FootballTournamentSystem.Domain.Models.Person.Player
 {
     using Core.Domain.Events;
-    using FootballTournamentSystem.Domain.Exceptions;
+    using Core.Domain.Exceptions;
     using Core.Domain.Models;
 
     public class Player : Person

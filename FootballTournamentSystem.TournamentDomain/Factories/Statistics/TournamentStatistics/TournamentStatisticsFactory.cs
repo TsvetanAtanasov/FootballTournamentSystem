@@ -1,7 +1,5 @@
 ﻿namespace FootballTournamentSystem.Domain.Factories.Statistics.TournamentStatistics
 {
-    using Models.Person.Player;
-    using Models.Tournament.Team;
     using Models.Statistics.TournamentStatistics;
 
     internal class TournamentStatisticsFactory : ITournamentStatisticsFactory

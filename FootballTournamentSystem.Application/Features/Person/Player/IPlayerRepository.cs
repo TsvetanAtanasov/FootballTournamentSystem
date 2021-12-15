@@ -3,7 +3,7 @@
     using System;
     using System.Threading;
     using System.Threading.Tasks;
-    using Application.Contracts;
+    using Core.Application.Contracts;
     using Domain.Models.Person.Player;
 
     public interface IPlayerRepository : IRepository<Player>
