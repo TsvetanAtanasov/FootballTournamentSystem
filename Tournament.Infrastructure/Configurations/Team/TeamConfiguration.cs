@@ -1,8 +1,6 @@
-﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Configurations.Tournament.Team
+﻿namespace FootballTournamentSystem.Tournament.Infrastructure.Configurations.Team
 {
-    using Domain.Models.Tournament.Team;
-    using Domain.Models.Person.President;
-    using Domain.Models.Person.Coach;
+    using FootballTournamentSystem.Tournament.Domain.Models.Team;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
     using Core.Domain.Models;
@@ -42,17 +40,19 @@
                 .Property(t => t.GroupPoints)
                 .IsRequired();
 
-            builder
-                .HasOne<President>()
-                .WithMany()
-                .HasForeignKey(t => t.PresidentId)
-                .OnDelete(DeleteBehavior.Restrict);
+            //TODO: check how to make the connection with entities from other microservices
 
-            builder
-                .HasOne<Coach>()
-                .WithMany()
-                .HasForeignKey(t => t.CoachId)
-                .OnDelete(DeleteBehavior.Restrict);
+            //builder
+            //    .HasOne<President>()
+            //    .WithMany()
+            //    .HasForeignKey(t => t.PresidentId)
+            //    .OnDelete(DeleteBehavior.Restrict);
+
+            //builder
+            //    .HasOne<Coach>()
+            //    .WithMany()
+            //    .HasForeignKey(t => t.CoachId)
+            //    .OnDelete(DeleteBehavior.Restrict);
 
             //builder
             //    .HasMany<Player>()

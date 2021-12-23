@@ -3,10 +3,7 @@
     using MediatR;
     using System.Threading;
     using System.Threading.Tasks;
-    using Domain.Factories.Person.President;
     using Domain.Factories.Statistics.TournamentStatistics;
-    using Application.Features.Tournament.Team;
-    using Application.Features.Tournament.Tournament;
 
     public class CreateTournamentStatisticsCommand : IRequest<CreateTournamentStatisticsOutputModel>
     {
@@ -29,16 +26,13 @@
         public class CreateTournamentStatisticsCommandHandler : IRequestHandler<CreateTournamentStatisticsCommand, CreateTournamentStatisticsOutputModel>
         {
             private readonly ITournamentStatisticsRepository tournamentStatisticsRepository;
-            private readonly ITournamentRepository tournamentRepository;
             private readonly ITournamentStatisticsFactory tournamentStatisticsFactory;
 
             public CreateTournamentStatisticsCommandHandler(
                 ITournamentStatisticsRepository tournamentStatisticsRepository,
-                ITournamentRepository tournamentRepository,
                 ITournamentStatisticsFactory tournamentStatisticsFactory)
             {
                 this.tournamentStatisticsRepository = tournamentStatisticsRepository;
-                this.tournamentRepository = tournamentRepository;
                 this.tournamentStatisticsFactory = tournamentStatisticsFactory;
             }
 
@@ -52,9 +46,9 @@
                 tournamentStatistics.AddWinnerTeam(request.WinnerTeamId);
 
                 await this.tournamentStatisticsRepository.Save(tournamentStatistics, cancellationToken);
-
-                var tournament = await this.tournamentRepository.GetTournamentById(request.TournamentId);
-                tournament.AddTournamentStatistics(tournamentStatistics.Id);
+                // TODO: add event
+                //var tournament = await this.tournamentRepository.GetTournamentById(request.TournamentId);
+                //tournament.AddTournamentStatistics(tournamentStatistics.Id);
 
                 return new CreateTournamentStatisticsOutputModel(tournamentStatistics.Id);
             }

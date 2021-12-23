@@ -1,6 +1,6 @@
-﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Configurations.Tournament.Tournament
+﻿namespace FootballTournamentSystem.Tournament.Infrastructure.Configurations.Tournament
 {
-    using Domain.Models.Tournament.Tournament;
+    using FootballTournamentSystem.Tournament.Domain.Models.Tournament;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

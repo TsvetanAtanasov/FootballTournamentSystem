@@ -4,7 +4,6 @@
     using System.Threading;
     using System.Threading.Tasks;
     using Domain.Factories.Person.President;
-    using Application.Features.Tournament.Team;
 
     public class CreatePresidentCommand : IRequest<CreatePresidentOutputModel>
     {
@@ -27,13 +26,11 @@
         public class CreatePresidentCommandHandler : IRequestHandler<CreatePresidentCommand, CreatePresidentOutputModel>
         {
             private readonly IPresidentRepository presidentRepository;
-            private readonly ITeamRepository teamRepository;
             private readonly IPresidentFactory presidentFactory;
 
-            public CreatePresidentCommandHandler(IPresidentRepository presidentRepository, ITeamRepository teamRepository, IPresidentFactory presidentFactory)
+            public CreatePresidentCommandHandler(IPresidentRepository presidentRepository, IPresidentFactory presidentFactory)
             {
                 this.presidentRepository = presidentRepository;
-                this.teamRepository = teamRepository;
                 this.presidentFactory = presidentFactory;
             }
 

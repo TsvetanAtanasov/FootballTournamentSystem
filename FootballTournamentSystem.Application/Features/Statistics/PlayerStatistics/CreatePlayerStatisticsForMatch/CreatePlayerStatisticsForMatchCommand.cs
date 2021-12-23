@@ -3,10 +3,7 @@
     using MediatR;
     using System.Threading;
     using System.Threading.Tasks;
-    using Application.Features.Tournament.Match;
-    using Application.Features.Statistics.MatchStatistics;
     using Application.Features.Statistics.PlayerStatistics.Common;
-    using Domain.Factories.Statistics.MatchStatistics;
     using FootballTournamentSystem.Domain.Factories.Statistics.PlayerStatistics;
 
     public class CreatePlayerStatisticsForMatchCommand : IRequest<CreatePlayerStatisticsOutputModel>
@@ -30,16 +27,13 @@
         public class CreatePlayerStatisticsCommandHandler : IRequestHandler<CreatePlayerStatisticsForMatchCommand, CreatePlayerStatisticsOutputModel>
         {
             private readonly IPlayerStatisticsRepository playerStatisticsRepository;
-            private readonly IMatchRepository matchRepository;
             private readonly IPlayerStatisticsFactory playerStatisticsFactory;
 
             public CreatePlayerStatisticsCommandHandler(
                 IPlayerStatisticsRepository playerStatisticsRepository,
-                IMatchRepository matchRepository,
                 IPlayerStatisticsFactory playerStatisticsFactory)
             {
                 this.playerStatisticsRepository = playerStatisticsRepository;
-                this.matchRepository = matchRepository;
                 this.playerStatisticsFactory = playerStatisticsFactory;
             }
 
@@ -52,9 +46,9 @@
                     .Build();
 
                 await this.playerStatisticsRepository.Save(playerStatistics, cancellationToken);
-
-                var match = await this.matchRepository.GetMatchById(request.MatchId);
-                match.AddPlayerStatistics(playerStatistics.Id);
+                // TODO: add event
+                //var match = await this.matchRepository.GetMatchById(request.MatchId);
+                //match.AddPlayerStatistics(playerStatistics.Id);
 
                 // save match also?
 

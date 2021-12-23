@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Repositories.Tournament.Match
+﻿namespace FootballTournamentSystem.Tournament.Infrastructure.Repositories.Match
 {
     using Domain.Models.Tournament.Match;
     using FootballTournamentSystem.Application.Features.Tournament.Match;

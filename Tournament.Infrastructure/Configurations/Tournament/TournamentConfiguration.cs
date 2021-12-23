@@ -1,7 +1,6 @@
-﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Configurations.Tournament.Tournament
+﻿namespace FootballTournamentSystem.Tournament.Infrastructure.Configurations.Tournament
 {
-    using Domain.Models.Tournament.Tournament;
-    using Domain.Models.Statistics.TournamentStatistics;
+    using FootballTournamentSystem.Tournament.Domain.Models.Tournament;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
     using Core.Domain.Models;
@@ -57,12 +56,6 @@
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder
-                .HasOne<TournamentStatistics>()
-                .WithMany()
-                .HasForeignKey(t => t.TournamentStatisticsId)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            builder
                 .HasMany(t => t.Groups)
                 .WithOne()
                 .Metadata
@@ -75,6 +68,8 @@
                 .Metadata
                 .PrincipalToDependent
                 .SetField("matches");
+
+            //TODO: check how to do tournament statistics relation
         }
     }
 }

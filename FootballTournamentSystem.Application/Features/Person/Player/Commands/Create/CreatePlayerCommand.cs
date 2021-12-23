@@ -1,7 +1,6 @@
 ﻿namespace FootballTournamentSystem.Application.Features.Person.Player.Commands.Create
 {
     using Domain.Factories.Person.Player;
-    using Application.Features.Tournament.Team;
     using MediatR;
     using System.Threading;
     using System.Threading.Tasks;
@@ -34,13 +33,11 @@
         public class CreatePlayerCommandHandler : IRequestHandler<CreatePlayerCommand, CreatePlayerOutputModel>
         {
             private readonly IPlayerRepository playerRepository;
-            private readonly ITeamRepository teamRepository;
             private readonly IPlayerFactory playerFactory;
 
-            public CreatePlayerCommandHandler(IPlayerRepository playerRepository, ITeamRepository teamRepository, IPlayerFactory playerFactory)
+            public CreatePlayerCommandHandler(IPlayerRepository playerRepository, IPlayerFactory playerFactory)
             {
                 this.playerRepository = playerRepository;
-                this.teamRepository = teamRepository;
                 this.playerFactory = playerFactory;
             }
 

@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Repositories.Tournament.Tournament
+﻿namespace FootballTournamentSystem.Tournament.Infrastructure.Repositories.Tournament
 {
     using Domain.Models.Tournament.Tournament;
     using Application.Features.Tournament.Tournament;

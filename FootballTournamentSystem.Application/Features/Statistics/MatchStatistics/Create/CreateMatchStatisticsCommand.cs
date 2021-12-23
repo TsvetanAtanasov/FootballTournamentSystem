@@ -30,16 +30,13 @@
         public class CreateMatchStatisticsCommandHandler : IRequestHandler<CreateMatchStatisticsCommand, CreateMatchStatisticsOutputModel>
         {
             private readonly IMatchStatisticsRepository matchStatisticsRepository;
-            private readonly IMatchRepository matchRepository;
             private readonly IMatchStatisticsFactory matchStatisticsFactory;
 
             public CreateMatchStatisticsCommandHandler(
                 IMatchStatisticsRepository matchStatisticsRepository,
-                IMatchRepository matchRepository,
                 IMatchStatisticsFactory matchStatisticsFactory)
             {
                 this.matchStatisticsRepository = matchStatisticsRepository;
-                this.matchRepository = matchRepository;
                 this.matchStatisticsFactory = matchStatisticsFactory;
             }
 
@@ -55,8 +52,8 @@
 
                 await this.matchStatisticsRepository.Save(matchStatistics, cancellationToken);
 
-                var match = await this.matchRepository.GetMatchById(request.MatchId);
-                match.AddMatchStatistics(matchStatistics.Id);
+                // TODO: add event
+                // match.AddMatchStatistics(matchStatistics.Id);
 
                 // save match also?
 

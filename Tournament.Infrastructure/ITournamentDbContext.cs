@@ -1,9 +1,9 @@
-﻿namespace FootballTournamentSystem.Infrastructure.Persistence.DbContextInterfaces
+﻿namespace FootballTournamentSystem.Tournament.Infrastructure.Tournament
 {
-    using Domain.Models.Tournament.Tournament;
-    using Domain.Models.Tournament.Match;
+    using FootballTournamentSystem.Tournament.Domain.Models.Tournament;
+    using FootballTournamentSystem.Tournament.Domain.Models.Match;
     using Microsoft.EntityFrameworkCore;
-    using Domain.Models.Tournament.Team;
+    using FootballTournamentSystem.Tournament.Domain.Models.Team;
     using Core.Infrastructure.Persistence;
 
     internal interface ITournamentDbContext : IDbContext

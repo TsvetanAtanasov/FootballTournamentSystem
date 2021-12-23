@@ -1,7 +1,6 @@
 ﻿namespace FootballTournamentSystem.Application.Features.Person.Coach.Commands.Create
 {
     using Domain.Factories.Person.Coach;
-    using Application.Features.Tournament.Team;
     using MediatR;
     using System.Threading;
     using System.Threading.Tasks;
@@ -27,13 +26,11 @@
         public class CreateCoachCommandHandler : IRequestHandler<CreateCoachCommand, CreateCoachOutputModel>
         {
             private readonly ICoachRepository coachRepository;
-            private readonly ITeamRepository teamRepository;
             private readonly ICoachFactory coachFactory;
 
-            public CreateCoachCommandHandler(ICoachRepository coachRepository, ITeamRepository teamRepository, ICoachFactory coachFactory)
+            public CreateCoachCommandHandler(ICoachRepository coachRepository, ICoachFactory coachFactory)
             {
                 this.coachRepository = coachRepository;
-                this.teamRepository = teamRepository;
                 this.coachFactory = coachFactory;
             }
 
