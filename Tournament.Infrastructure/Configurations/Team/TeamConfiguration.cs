@@ -39,27 +39,6 @@
             builder
                 .Property(t => t.GroupPoints)
                 .IsRequired();
-
-            //TODO: check how to make the connection with entities from other microservices
-
-            //builder
-            //    .HasOne<President>()
-            //    .WithMany()
-            //    .HasForeignKey(t => t.PresidentId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //builder
-            //    .HasOne<Coach>()
-            //    .WithMany()
-            //    .HasForeignKey(t => t.CoachId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //builder
-            //    .HasMany<Player>()
-            //    .WithOne()
-            //    .Metadata
-            //    .PrincipalToDependent
-            //    .SetField("playerIds");
         }
     }
 }

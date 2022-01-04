@@ -18,24 +18,6 @@
                 .Metadata
                 .PrincipalToDependent
                 .SetField("teams");
-
-            //builder
-            //    .HasOne<PlayerStatistics>()
-            //    .WithMany()
-            //    .HasForeignKey(t => t.PlayerStatisticsId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //builder
-            //    .HasOne<MatchStatistics>()
-            //    .WithMany()
-            //    .HasForeignKey(t => t.MatchStatisticsId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //builder
-            //    .HasOne<Referee>()
-            //    .WithMany()
-            //    .HasForeignKey(t => t.RefereeId)
-            //    .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

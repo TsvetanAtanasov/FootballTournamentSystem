@@ -1,21 +1,23 @@
 ﻿namespace FootballTournamentSystem.Tournament.Infrastructure.Repositories.Tournament
 {
-    using Domain.Models.Tournament.Tournament;
-    using Application.Features.Tournament.Tournament;
-    using Application.Features.Tournament.Tournament.Queries.TournamentGroups.GroupMatches;
-    using Application.Features.Tournament.Team.Common;
-    using Application.Features.Tournament.Tournament.Queries.TournamentGroups;
-    using Application.Features.Tournament.Tournament.Queries.TournamentMatches;
-    using Application.Features.Tournament.Tournament.Common;
     using System.Threading.Tasks;
     using System.Threading;
     using System.Collections.Generic;
     using System.Linq;
     using Microsoft.EntityFrameworkCore;
+    using FootballTournamentSystem.Application.Features.Tournament.Tournament;
+    using FootballTournamentSystem.Tournament.Domain.Models.Tournament;
+    using FootballTournamentSystem.Tournament.Application.Features.Tournament.Queries.TournamentGroups.GroupMatches;
+    using FootballTournamentSystem.Tournament.Application.Features.Team.Common;
+    using FootballTournamentSystem.Tournament.Application.Features.Tournament.Queries.TournamentGroups;
+    using FootballTournamentSystem.Tournament.Application.Features.Tournament.Queries.TournamentMatches;
+    using FootballTournamentSystem.Tournament.Application.Features.Tournament.Common;
+    using Core.Infrastructure.Persistence;
+    using FootballTournamentSystem.Tournament.Infrastructure.Persistance;
 
     internal class TournamentRepository : FootballTournamentDataRepository<Tournament>, ITournamentRepository
     {
-        public TournamentRepository(FootballTournamentDbContext db)
+        public TournamentRepository(TournamentDbContext db)
             : base(db)
         {
 
@@ -50,37 +52,40 @@
 
         public async Task<IEnumerable<TeamOutputModel>> GetGroupTeams(int groupId, CancellationToken cancellationToken = default)
         {
+
+            //TODO add event
+
             var group = await this.Data.Groups.FirstOrDefaultAsync(g => g.Id == groupId, cancellationToken);
             var teams = group.Teams;
             var result = new List<TeamOutputModel>();
 
             var teamIds = teams.Select(t => t.Id).ToList();
 
-            var presidents = await this.Data
-                .Presidents
-                .Where(pr => teamIds.Contains(pr.TeamId))
-                .ToListAsync();
+            //var presidents = await this.Data
+            //    .Presidents
+            //    .Where(pr => teamIds.Contains(pr.TeamId))
+            //    .ToListAsync();
 
-            foreach (var team in teams)
-            {
-                // TODO: bulk get presidents?
-                var president = await this.Data.Presidents.FindAsync(team.PresidentId);
-                var coach = await this.Data.Coaches.FindAsync(team.CoachId);
-                result.Add(new TeamOutputModel(
-                    team.Id,
-                    team.Name,
-                    team.LogoUrl,
-                    team.YearFounded,
-                    president.FirstName,
-                    president.LastName,
-                    president.ImageUrl,
-                    coach.FirstName,
-                    coach.LastName,
-                    coach.ImageUrl,
-                    team.Country,
-                    team.Stadium,
-                    team.GroupPoints));
-            }
+            //foreach (var team in teams)
+            //{
+            //    // TODO: bulk get presidents?
+            //    var president = await this.Data.Presidents.FindAsync(team.PresidentId);
+            //    var coach = await this.Data.Coaches.FindAsync(team.CoachId);
+            //    result.Add(new TeamOutputModel(
+            //        team.Id,
+            //        team.Name,
+            //        team.LogoUrl,
+            //        team.YearFounded,
+            //        president.FirstName,
+            //        president.LastName,
+            //        president.ImageUrl,
+            //        coach.FirstName,
+            //        coach.LastName,
+            //        coach.ImageUrl,
+            //        team.Country,
+            //        team.Stadium,
+            //        team.GroupPoints));
+            //}
 
             return await result.AsQueryable().ToListAsync();
         }

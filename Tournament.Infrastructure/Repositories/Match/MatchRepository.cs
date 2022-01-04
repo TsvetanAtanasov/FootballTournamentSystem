@@ -1,14 +1,16 @@
 ﻿namespace FootballTournamentSystem.Tournament.Infrastructure.Repositories.Match
 {
-    using Domain.Models.Tournament.Match;
-    using FootballTournamentSystem.Application.Features.Tournament.Match;
     using Microsoft.EntityFrameworkCore;
     using System.Threading;
     using System.Threading.Tasks;
+    using FootballTournamentSystem.Tournament.Application.Features.Match;
+    using FootballTournamentSystem.Tournament.Domain.Models.Match;
+    using Core.Infrastructure.Persistence;
+    using FootballTournamentSystem.Tournament.Infrastructure.Persistance;
 
     internal class MatchRepository : FootballTournamentDataRepository<Match>, IMatchRepository
     {
-        public MatchRepository(FootballTournamentDbContext db)
+        public MatchRepository(TournamentDbContext db)
             : base(db)
         {
 

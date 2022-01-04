@@ -1,5 +1,6 @@
 ﻿namespace FootballTournamentSystem.Infrastructure.Persistence.Repositories.Person.Player
 {
+    using Core.Infrastructure.Persistence;
     using Domain.Models.Person.Player;
     using FootballTournamentSystem.Application.Features.Person.Player;
     using Microsoft.EntityFrameworkCore;

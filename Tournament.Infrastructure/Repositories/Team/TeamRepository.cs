@@ -1,15 +1,17 @@
 ﻿namespace FootballTournamentSystem.Tournament.Infrastructure.Repositories.Team
 {
-    using Domain.Models.Tournament.Team;
-    using FootballTournamentSystem.Application.Features.Tournament.Team;
     using Microsoft.EntityFrameworkCore;
     using System;
     using System.Threading;
     using System.Threading.Tasks;
+    using FootballTournamentSystem.Tournament.Application.Features.Team;
+    using FootballTournamentSystem.Tournament.Domain.Models.Team;
+    using Core.Infrastructure.Persistence;
+    using FootballTournamentSystem.Tournament.Infrastructure.Persistance;
 
     internal class TeamRepository : FootballTournamentDataRepository<Team>, ITeamRepository
     {
-        public TeamRepository(FootballTournamentDbContext db)
+        public TeamRepository(TournamentDbContext db)
             : base(db)
         {
 

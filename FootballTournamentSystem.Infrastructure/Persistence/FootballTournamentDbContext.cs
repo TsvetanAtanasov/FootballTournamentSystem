@@ -14,15 +14,11 @@
     using Domain.Models.Statistics.MatchStatistics;
     using Domain.Models.Statistics.PlayerStatistics;
     using Domain.Models.Statistics.TournamentStatistics;
-    using Domain.Models.Tournament.Match;
-    using Domain.Models.Tournament.Team;
-    using Domain.Models.Tournament.Tournament;
     using Infrastructure.Persistence.DbContextInterfaces;
     using Microsoft.EntityFrameworkCore;
 
     // Return to internal when extracting microservices
     public class FootballTournamentDbContext : DbContext,
-        ITournamentDbContext,
         IStatisticsDbContext,
         IPersonDbContext
     {
@@ -38,23 +34,6 @@
 
             this.savesChangesTracker = new Stack<object>();
         }
-
-        // Tournament Context
-        public DbSet<Tournament> Tournaments { get; set; } = default!;
-
-        public DbSet<SemiFinals> SemiFinals { get; set; } = default!;
-
-        public DbSet<RoundOf16> RoundOf16s { get; set; } = default!;
-
-        public DbSet<QuarterFinals> QuarterFinals { get; set; } = default!;
-
-        public DbSet<Group> Groups { get; set; } = default!;
-
-        public DbSet<Final> Finals { get; set; } = default!;
-
-        public DbSet<Match> Matches { get; set; } = default!;
-
-        public DbSet<Team> Teams { get; set; } = default!;
 
         // Statistics Context
         public DbSet<TournamentStatistics> TournamentStatistics { get; set; } = default!;

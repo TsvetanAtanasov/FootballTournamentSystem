@@ -68,8 +68,6 @@
                 .Metadata
                 .PrincipalToDependent
                 .SetField("matches");
-
-            //TODO: check how to do tournament statistics relation
         }
     }
 }
