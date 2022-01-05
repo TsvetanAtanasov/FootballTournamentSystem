@@ -5,13 +5,13 @@
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using FootballTournamentSystem.Tournament.Infrastructure.Persistance;
-    using Core.Infrastructure.Persistence;
     using FootballTournamentSystem.Application.Features.Tournament.Tournament;
     using FootballTournamentSystem.Tournament.Infrastructure.Repositories.Tournament;
     using FootballTournamentSystem.Tournament.Application.Features.Team;
     using FootballTournamentSystem.Tournament.Infrastructure.Repositories.Team;
     using FootballTournamentSystem.Tournament.Application.Features.Match;
     using FootballTournamentSystem.Tournament.Infrastructure.Repositories.Match;
+    using FootballTournamentSystem.Tournament.Infrastructure.Repositories;
 
     public static class InfrastructureConfiguration
     {

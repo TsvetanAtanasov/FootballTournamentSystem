@@ -1,7 +1,7 @@
 ﻿namespace FootballTournamentSystem.Tournament.Infrastructure.Persistance
 {
     using Microsoft.EntityFrameworkCore;
-    using FootballTournamentSystem.Tournament.Infrastructure.Tournament;
+    using FootballTournamentSystem.Tournament.Infrastructure;
     using FootballTournamentSystem.Tournament.Domain.Models.Tournament;
     using FootballTournamentSystem.Tournament.Domain.Models.Match;
     using FootballTournamentSystem.Tournament.Domain.Models.Team;

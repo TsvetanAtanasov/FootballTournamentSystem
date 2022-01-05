@@ -39,12 +39,6 @@
                         configuration.GetConnectionString("DefaultConnection"),
                         b => b.MigrationsAssembly(typeof(FootballTournamentDbContext).Assembly.FullName)))
                 .AddTransient<IEventDispatcher, EventDispatcher>()
-                .AddTransient<ITournamentRepository, TournamentRepository>()
-                .AddTransient<ITeamRepository, TeamRepository>()
-                .AddTransient<IMatchRepository, MatchRepository>()
-                .AddTransient<IMatchStatisticsRepository, MatchStatisticsRepository>()
-                .AddTransient<IPlayerStatisticsRepository, PlayerStatisticsRepository>()
-                .AddTransient<ITournamentStatisticsRepository, TournamentStatisticsRepository>()
                 .AddTransient<ICoachRepository, CoachRepository>()
                 .AddTransient<IPlayerRepository, PlayerRepository>()
                 .AddTransient<IPresidentRepository, PresidentRepository>()

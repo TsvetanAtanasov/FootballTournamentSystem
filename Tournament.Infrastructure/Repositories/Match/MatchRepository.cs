@@ -5,8 +5,8 @@
     using System.Threading.Tasks;
     using FootballTournamentSystem.Tournament.Application.Features.Match;
     using FootballTournamentSystem.Tournament.Domain.Models.Match;
-    using Core.Infrastructure.Persistence;
     using FootballTournamentSystem.Tournament.Infrastructure.Persistance;
+    using FootballTournamentSystem.Tournament.Infrastructure.Repositories;
 
     internal class MatchRepository : FootballTournamentDataRepository<Match>, IMatchRepository
     {

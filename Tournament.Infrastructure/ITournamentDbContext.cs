@@ -1,4 +1,4 @@
-﻿namespace FootballTournamentSystem.Tournament.Infrastructure.Tournament
+﻿namespace FootballTournamentSystem.Tournament.Infrastructure
 {
     using FootballTournamentSystem.Tournament.Domain.Models.Tournament;
     using FootballTournamentSystem.Tournament.Domain.Models.Match;

@@ -35,13 +35,6 @@
             this.savesChangesTracker = new Stack<object>();
         }
 
-        // Statistics Context
-        public DbSet<TournamentStatistics> TournamentStatistics { get; set; } = default!;
-
-        public DbSet<PlayerStatistics> PlayerStatistics { get; set; } = default!;
-
-        public DbSet<MatchStatistics> MatchStatistics { get; set; } = default!;
-
         // Person Context
         public DbSet<Referee> Referees { get; set; } = default!;
 

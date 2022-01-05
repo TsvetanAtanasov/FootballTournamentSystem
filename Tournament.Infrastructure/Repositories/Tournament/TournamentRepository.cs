@@ -12,8 +12,8 @@
     using FootballTournamentSystem.Tournament.Application.Features.Tournament.Queries.TournamentGroups;
     using FootballTournamentSystem.Tournament.Application.Features.Tournament.Queries.TournamentMatches;
     using FootballTournamentSystem.Tournament.Application.Features.Tournament.Common;
-    using Core.Infrastructure.Persistence;
     using FootballTournamentSystem.Tournament.Infrastructure.Persistance;
+    using FootballTournamentSystem.Tournament.Infrastructure.Repositories;
 
     internal class TournamentRepository : FootballTournamentDataRepository<Tournament>, ITournamentRepository
     {

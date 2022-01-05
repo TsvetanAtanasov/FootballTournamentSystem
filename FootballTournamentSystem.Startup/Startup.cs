@@ -1,6 +1,6 @@
 namespace FootballTournamentSystem.Startup
 {
-    using FootballTournamentSystem.Application;
+    using Core.Application.Configuration;
     using Core.Domain;
     using FootballTournamentSystem.Infrastructure;
     using Microsoft.AspNetCore.Builder;

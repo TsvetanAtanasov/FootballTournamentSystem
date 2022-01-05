@@ -6,8 +6,8 @@
     using System.Threading.Tasks;
     using FootballTournamentSystem.Tournament.Application.Features.Team;
     using FootballTournamentSystem.Tournament.Domain.Models.Team;
-    using Core.Infrastructure.Persistence;
     using FootballTournamentSystem.Tournament.Infrastructure.Persistance;
+    using FootballTournamentSystem.Tournament.Infrastructure.Repositories;
 
     internal class TeamRepository : FootballTournamentDataRepository<Team>, ITeamRepository
     {
