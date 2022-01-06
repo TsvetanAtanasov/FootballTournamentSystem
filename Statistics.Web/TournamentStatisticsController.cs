@@ -1,9 +1,10 @@
-﻿namespace FootballTournamentSystem.Web.Features.Statistics
+﻿namespace FootballTournamentSystem.Statistics.Web
 {
+    using Core.Web;
+    using FootballTournamentSystem.Statistics.Application.Features.TournamentStatistics.Commands.Create;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using System.Threading.Tasks;
-    using Application.Features.Statistics.TournamentStatistics.Create;
 
     [ApiController]
     [Route("[controller]")]
