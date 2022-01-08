@@ -3,16 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballTournamentSystem.Domain", "FootballTournamentSystem.TournamentDomain\FootballTournamentSystem.Domain.csproj", "{0E2E7C4A-D05E-4944-ABB7-3CA2962047FB}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballTournamentSystem.Application", "FootballTournamentSystem.Application\FootballTournamentSystem.Application.csproj", "{D2F40609-EEF4-4B15-8522-A9DC858A10DB}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballTournamentSystem.Startup", "FootballTournamentSystem.Startup\FootballTournamentSystem.Startup.csproj", "{D83C3C4D-6A75-4509-AB20-A9A3394B7EDF}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballTournamentSystem.Web", "FootballTournamentSystem.Web\FootballTournamentSystem.Web.csproj", "{80E18FE8-4270-4240-828E-22EAF5605BE8}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballTournamentSystem.Infrastructure", "FootballTournamentSystem.Infrastructure\FootballTournamentSystem.Infrastructure.csproj", "{EB2198A1-C2A4-4F94-AF1D-7C607B8DDB1F}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{49C0F965-86D9-4A9A-BA14-5FC47642B286}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Domain", "Common.Domain\Core.Domain.csproj", "{75CE30DA-C5C6-4498-BB66-FA2E5C8FB237}"
@@ -43,21 +33,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Statistics.Application", "S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Statistics.Infrastructure", "Statistics.Infrastructure\Statistics.Infrastructure.csproj", "{BD8764D2-F242-4EBF-AF69-896012CD6F96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Statistics.Web", "Statistics.Web\Statistics.Web.csproj", "{9E2A160A-913E-49F1-A2C2-4B91D62A3B5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Statistics.Web", "Statistics.Web\Statistics.Web.csproj", "{9E2A160A-913E-49F1-A2C2-4B91D62A3B5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Statistics.Startup", "Statistics.Startup\Statistics.Startup.csproj", "{D731A102-8578-499A-9829-96039038A7CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Statistics.Startup", "Statistics.Startup\Statistics.Startup.csproj", "{D731A102-8578-499A-9829-96039038A7CA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Person", "Person", "{A594987E-B654-4C4B-9586-6F30124B4334}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Person.Domain", "Person.Domain\Person.Domain.csproj", "{F1F1F14B-9CF3-4514-BA56-C8542E6FC607}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Person.Domain", "Person.Domain\Person.Domain.csproj", "{F1F1F14B-9CF3-4514-BA56-C8542E6FC607}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Person.Application", "Person.Application\Person.Application.csproj", "{805CBC09-BB55-4B47-A162-65D7DCCA1F85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Person.Application", "Person.Application\Person.Application.csproj", "{805CBC09-BB55-4B47-A162-65D7DCCA1F85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Person.Infrastructure", "Person.Infrastructure\Person.Infrastructure.csproj", "{015C2D5A-5F41-4D0C-B278-AF66161F54AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Person.Infrastructure", "Person.Infrastructure\Person.Infrastructure.csproj", "{015C2D5A-5F41-4D0C-B278-AF66161F54AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Person.Web", "Person.Web\Person.Web.csproj", "{2644CF9A-C3AF-4B89-8B65-FF5A5F5CF54D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Person.Web", "Person.Web\Person.Web.csproj", "{2644CF9A-C3AF-4B89-8B65-FF5A5F5CF54D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Person.Startup", "Person.Startup\Person.Startup.csproj", "{8567768F-0B27-425F-891D-0016CC8A02D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Person.Startup", "Person.Startup\Person.Startup.csproj", "{8567768F-0B27-425F-891D-0016CC8A02D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,26 +55,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0E2E7C4A-D05E-4944-ABB7-3CA2962047FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0E2E7C4A-D05E-4944-ABB7-3CA2962047FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0E2E7C4A-D05E-4944-ABB7-3CA2962047FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0E2E7C4A-D05E-4944-ABB7-3CA2962047FB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D2F40609-EEF4-4B15-8522-A9DC858A10DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D2F40609-EEF4-4B15-8522-A9DC858A10DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D2F40609-EEF4-4B15-8522-A9DC858A10DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D2F40609-EEF4-4B15-8522-A9DC858A10DB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D83C3C4D-6A75-4509-AB20-A9A3394B7EDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D83C3C4D-6A75-4509-AB20-A9A3394B7EDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D83C3C4D-6A75-4509-AB20-A9A3394B7EDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D83C3C4D-6A75-4509-AB20-A9A3394B7EDF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{80E18FE8-4270-4240-828E-22EAF5605BE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{80E18FE8-4270-4240-828E-22EAF5605BE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{80E18FE8-4270-4240-828E-22EAF5605BE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{80E18FE8-4270-4240-828E-22EAF5605BE8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EB2198A1-C2A4-4F94-AF1D-7C607B8DDB1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EB2198A1-C2A4-4F94-AF1D-7C607B8DDB1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EB2198A1-C2A4-4F94-AF1D-7C607B8DDB1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EB2198A1-C2A4-4F94-AF1D-7C607B8DDB1F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{75CE30DA-C5C6-4498-BB66-FA2E5C8FB237}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{75CE30DA-C5C6-4498-BB66-FA2E5C8FB237}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75CE30DA-C5C6-4498-BB66-FA2E5C8FB237}.Release|Any CPU.ActiveCfg = Release|Any CPU
