@@ -13,6 +13,7 @@
     using FootballTournamentSystem.Person.Application.Features.President;
     using FootballTournamentSystem.Person.Infrastructure.Repositories.Referee;
     using FootballTournamentSystem.Person.Infrastructure.Repositories.President;
+    using MassTransit;
 
     public static class InfrastructureConfiguration
     {
@@ -28,6 +29,14 @@
                 .AddTransient<IPlayerRepository, PlayerRepository>()
                 .AddTransient<IPresidentRepository, PresidentRepository>()
                 .AddTransient<IRefereeRepository, RefereeRepository>()
-                .AddTransient(typeof(IRepository<>), typeof(FootballTournamentDataRepository<>));
+                .AddTransient(typeof(IRepository<>), typeof(FootballTournamentDataRepository<>))
+                .AddMassTransit(mt =>
+                {
+                    mt.AddBus(bus => Bus.Factory.CreateUsingRabbitMq(rmq =>
+                    {
+                        rmq.Host("rabbitmq://localhost");
+                    }));
+                })
+                .AddMassTransitHostedService();
     }
 }

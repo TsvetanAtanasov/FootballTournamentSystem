@@ -1,6 +1,8 @@
 ﻿namespace FootballTournamentSystem.Person.Application.Features.Coach.Commands.Create
 {
+    using Core.Application.Messages;
     using FootballTournamentSystem.Person.Domain.Factories.Coach;
+    using MassTransit;
     using MediatR;
     using System.Threading;
     using System.Threading.Tasks;
@@ -27,11 +29,16 @@
         {
             private readonly ICoachRepository coachRepository;
             private readonly ICoachFactory coachFactory;
+            private readonly IBus publisher;
 
-            public CreateCoachCommandHandler(ICoachRepository coachRepository, ICoachFactory coachFactory)
+            public CreateCoachCommandHandler(
+                ICoachRepository coachRepository,
+                ICoachFactory coachFactory,
+                IBus publisher)
             {
                 this.coachRepository = coachRepository;
                 this.coachFactory = coachFactory;
+                this.publisher = publisher;
             }
 
             public async Task<CreateCoachOutputModel> Handle(CreateCoachCommand request, CancellationToken cancellationToken)
@@ -40,9 +47,16 @@
                     .WithFirstName(request.FirstName)
                     .WithLastName(request.LastName)
                     .WithImageUrl(request.ImageUrl)
+                    .WithTeamId(request.TeamId)
                     .Build();
 
                 await this.coachRepository.Save(coach, cancellationToken);
+
+                await this.publisher.Publish(new CoachCreatedMessage
+                {
+                    TeamId = coach.TeamId,
+                    CoachId = coach.Id
+                });
 
                 return new CreateCoachOutputModel(coach.Id);
             }

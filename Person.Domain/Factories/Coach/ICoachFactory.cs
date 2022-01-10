@@ -10,5 +10,7 @@
         ICoachFactory WithLastName(string lastName);
 
         ICoachFactory WithImageUrl(string imageUrl);
+
+        ICoachFactory WithTeamId(int teamId);
     }
 }

@@ -12,6 +12,7 @@
     using FootballTournamentSystem.Tournament.Application.Features.Match;
     using FootballTournamentSystem.Tournament.Infrastructure.Repositories.Match;
     using FootballTournamentSystem.Tournament.Infrastructure.Repositories;
+    using MassTransit;
 
     public static class InfrastructureConfiguration
     {
@@ -26,6 +27,14 @@
                 .AddTransient<ITournamentRepository, TournamentRepository>()
                 .AddTransient<ITeamRepository, TeamRepository>()
                 .AddTransient<IMatchRepository, MatchRepository>()
-                .AddTransient(typeof(IRepository<>), typeof(FootballTournamentDataRepository<>));
+                .AddTransient(typeof(IRepository<>), typeof(FootballTournamentDataRepository<>))
+                .AddMassTransit(mt =>
+                            {
+                                mt.AddBus(bus => Bus.Factory.CreateUsingRabbitMq(rmq =>
+                                {
+                                    rmq.Host("rabbitmq://localhost");
+                                }));
+                            })
+                .AddMassTransitHostedService();
     }
 }
