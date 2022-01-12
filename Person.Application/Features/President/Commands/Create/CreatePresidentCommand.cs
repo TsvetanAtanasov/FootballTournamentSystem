@@ -4,6 +4,8 @@
     using System.Threading;
     using System.Threading.Tasks;
     using FootballTournamentSystem.Person.Domain.Factories.President;
+    using MassTransit;
+    using Core.Application.Messages;
 
     public class CreatePresidentCommand : IRequest<CreatePresidentOutputModel>
     {
@@ -27,11 +29,16 @@
         {
             private readonly IPresidentRepository presidentRepository;
             private readonly IPresidentFactory presidentFactory;
+            private readonly IBus publisher;
 
-            public CreatePresidentCommandHandler(IPresidentRepository presidentRepository, IPresidentFactory presidentFactory)
+            public CreatePresidentCommandHandler(
+                IPresidentRepository presidentRepository, 
+                IPresidentFactory presidentFactory,
+                IBus publisher)
             {
                 this.presidentRepository = presidentRepository;
                 this.presidentFactory = presidentFactory;
+                this.publisher = publisher;
             }
 
             public async Task<CreatePresidentOutputModel> Handle(CreatePresidentCommand request, CancellationToken cancellationToken)
@@ -44,6 +51,12 @@
                     .Build();
 
                 await this.presidentRepository.Save(president, cancellationToken);
+
+                await this.publisher.Publish(new PresidentCreatedMessage
+                {
+                    PresidentId = president.Id,
+                    TeamId = president.TeamId
+                });
 
                 return new CreatePresidentOutputModel(president.Id);
             }

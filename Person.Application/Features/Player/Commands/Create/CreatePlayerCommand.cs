@@ -1,6 +1,8 @@
 ﻿namespace FootballTournamentSystem.Person.Application.Features.Player.Commands.Create
 {
+    using Core.Application.Messages;
     using FootballTournamentSystem.Person.Domain.Factories.Player;
+    using MassTransit;
     using MediatR;
     using System.Threading;
     using System.Threading.Tasks;
@@ -34,11 +36,16 @@
         {
             private readonly IPlayerRepository playerRepository;
             private readonly IPlayerFactory playerFactory;
+            private readonly IBus publisher;
 
-            public CreatePlayerCommandHandler(IPlayerRepository playerRepository, IPlayerFactory playerFactory)
+            public CreatePlayerCommandHandler(
+                IPlayerRepository playerRepository,
+                IPlayerFactory playerFactory,
+                IBus publisher)
             {
                 this.playerRepository = playerRepository;
                 this.playerFactory = playerFactory;
+                this.publisher = publisher;
             }
 
             public async Task<CreatePlayerOutputModel> Handle(CreatePlayerCommand request, CancellationToken cancellationToken)
@@ -53,6 +60,12 @@
                     .Build();
 
                 await this.playerRepository.Save(player, cancellationToken);
+
+                await this.publisher.Publish(new PlayerCreatedMessage
+                {
+                    PlayerId = player.Id,
+                    TeamId = player.TeamId
+                });
 
                 //There is a question about this code in the notes
                 //if (request.TeamId != 0)

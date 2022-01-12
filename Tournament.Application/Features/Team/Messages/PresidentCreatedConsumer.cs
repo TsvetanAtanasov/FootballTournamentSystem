@@ -7,18 +7,18 @@
     using FootballTournamentSystem.Tournament.Application.Features.Team;
 
 
-    public class CoachCreatedConsumer : IConsumer<CoachCreatedMessage>
+    public class PresidentCreatedConsumer : IConsumer<PresidentCreatedMessage>
     {
         private readonly ITeamRepository teamRepository;
         private readonly CancellationToken cancellationToken;
 
-        public CoachCreatedConsumer(ITeamRepository teamRepository, CancellationToken cancellationToken)
+        public PresidentCreatedConsumer(ITeamRepository teamRepository, CancellationToken cancellationToken)
         {
             this.teamRepository = teamRepository;
             this.cancellationToken = cancellationToken;
         }
 
-        public Task Consume(ConsumeContext<CoachCreatedMessage> context)
-            => this.teamRepository.AddCoachToTeam(context.Message.TeamId, context.Message.CoachId, this.cancellationToken);
+        public Task Consume(ConsumeContext<PresidentCreatedMessage> context)
+            => this.teamRepository.AddPresidentToTeam(context.Message.TeamId, context.Message.PresidentId, this.cancellationToken);
     }
 }
