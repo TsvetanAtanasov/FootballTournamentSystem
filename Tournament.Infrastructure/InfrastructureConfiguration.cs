@@ -14,6 +14,8 @@
     using FootballTournamentSystem.Tournament.Infrastructure.Repositories;
     using MassTransit;
     using FootballTournamentSystem.Tournament.Application.Features.Team.Messages;
+    using Core.Infrastructure;
+    using System;
 
     public static class InfrastructureConfiguration
     {
@@ -29,33 +31,6 @@
                 .AddTransient<ITeamRepository, TeamRepository>()
                 .AddTransient<IMatchRepository, MatchRepository>()
                 .AddTransient(typeof(IRepository<>), typeof(FootballTournamentDataRepository<>))
-                .AddMassTransit(mt =>
-                            {
-                                mt.AddConsumer<CoachCreatedConsumer>();
-                                mt.AddConsumer<PlayerCreatedConsumer>();
-                                mt.AddConsumer<PresidentCreatedConsumer>();
-
-                                mt.AddBus(bus => Bus.Factory.CreateUsingRabbitMq(rmq =>
-                                {
-                                    rmq.Host("rabbitmq://localhost");
-
-                                    rmq.ReceiveEndpoint(nameof(CoachCreatedConsumer), endpoint =>
-                                    {
-                                        endpoint.ConfigureConsumer<CoachCreatedConsumer>(bus);
-                                    });
-
-                                    rmq.ReceiveEndpoint(nameof(PlayerCreatedConsumer), endpoint =>
-                                    {
-                                        endpoint.ConfigureConsumer<PlayerCreatedConsumer>(bus);
-                                    });
-
-
-                                    rmq.ReceiveEndpoint(nameof(PresidentCreatedConsumer), endpoint =>
-                                    {
-                                        endpoint.ConfigureConsumer<PresidentCreatedConsumer>(bus);
-                                    });
-                                }));
-                            })
-                .AddMassTransitHostedService();
+                .AddMessaging(consumers: new Type[] { typeof(CoachCreatedConsumer), typeof(PlayerCreatedConsumer), typeof(PresidentCreatedConsumer) });
     }
 }
