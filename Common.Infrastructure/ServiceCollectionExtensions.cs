@@ -19,7 +19,7 @@
                     {
                         rmq.Host("rabbitmq://localhost");
 
-                        consumers.ForEach(consumer => rmq.ReceiveEndpoint(consumer.Name, endpoint =>
+                        consumers.ForEach(consumer => rmq.ReceiveEndpoint(consumer.FullName, endpoint =>
                         {
                             endpoint.ConfigureConsumer(bus, consumer);
                         }));
