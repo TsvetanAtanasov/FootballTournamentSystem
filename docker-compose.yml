@@ -1,0 +1,86 @@
+version: "3.8"
+
+services:
+    data:
+        container_name: sqlserver
+        image: mcr.microsoft.com/mssql/server:2019-latest
+        ports:
+            - "1433:1433"
+        environment:
+            - ACCEPT_EULA=Y
+            - SA_PASSWORD=yourStrongPassword12!@
+        volumes:
+            - sqldata:/var/opt/mssql/server
+        networks:
+            - footballtournamentsystem-network
+            
+    messages:
+        container_name: rabbitmq
+        image: rabbitmq:3-management
+        ports:
+            - "5672:5672"
+        hostname: "rabbitmq"
+        environment:
+            - RABBITMQ_DEFAULT_USER=rabbitmquser
+            - RABBITMQ_DEFAULT_PASS=rabbitmqPassword12!
+        volumes:
+            - rabbitmq:/var/lib/rabbitmq/mnesia
+        networks: 
+            - footballtournamentsystem-network
+            
+    tournament:
+        container_name: tournament
+        build:
+            dockerfile: ./Tournament.Startup/Dockerfile
+        ports:
+            - "5001:80"
+        environment:
+            - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=TournamentContext;User Id=sa; Password=yourStrongPassword12!@;Trusted_Connection=True;MultipleActiveResultSets=true
+        restart: on-failure
+        volumes:
+            - ./.aspnet/tournament/DataProtection-Keys:/root/.aspnet/DataProtection-Keys
+        networks:
+            - footballtournamentsystem-network
+        depends_on:
+            - sqlserver
+            
+    person:
+        container_name: person
+        build:
+            dockerfile: ./Person.Startup/Dockerfile
+        ports:
+            - "5003:80"
+        environment:
+            - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=PersonContext;User Id=sa; Password=yourStrongPassword12!@;Trusted_Connection=True;MultipleActiveResultSets=true
+        restart: on-failure
+        volumes:
+            - ./.aspnet/person/DataProtection-Keys:/root/.aspnet/DataProtection-Keys
+        networks:
+            - footballtournamentsystem-network
+        depends_on:
+            - sqlserver
+            
+    statistics:
+        container_name: statistics
+        build:
+            dockerfile: ./Statistics.Startup/Dockerfile
+        ports:
+            - "5005:80"
+        environment:
+            - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=StatisticsContext;User Id=sa; Password=yourStrongPassword12!@;Trusted_Connection=True;MultipleActiveResultSets=true
+        restart: on-failure
+        volumes:
+            - ./.aspnet/statistics/DataProtection-Keys:/root/.aspnet/DataProtection-Keys
+        networks:
+            - footballtournamentsystem-network
+        depends_on:
+            - sqlserver
+            
+            
+
+networks:
+    footballtournamentsystem-network:
+    
+volumes:
+    sqldata:
+    rabbitmq:
