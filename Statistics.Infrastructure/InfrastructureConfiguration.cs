@@ -1,5 +1,6 @@
 ﻿namespace FootballTournamentSystem.Infrastructure
 {
+    using System;
     using Core.Application.Contracts;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
@@ -22,7 +23,12 @@
                 .AddDbContext<StatisticsDbContext>(options => options
                     .UseSqlServer(
                         configuration.GetConnectionString("DefaultConnection"),
-                        b => b.MigrationsAssembly(typeof(StatisticsDbContext).Assembly.FullName)))
+                        sqlOptions => sqlOptions
+                            .EnableRetryOnFailure(
+                                maxRetryCount: 10,
+                                maxRetryDelay: TimeSpan.FromSeconds(30),
+                                errorNumbersToAdd: null)
+                        /*b => b.MigrationsAssembly(typeof(StatisticsDbContext).Assembly.FullName)*/))
                 .AddTransient<IMatchStatisticsRepository, MatchStatisticsRepository>()
                 .AddTransient<IPlayerStatisticsRepository, PlayerStatisticsRepository>()
                 .AddTransient<ITournamentStatisticsRepository, TournamentStatisticsRepository>()

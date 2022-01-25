@@ -1,6 +1,7 @@
 ﻿namespace Core.Infrastructure
 {
     using System;
+    using GreenPipes;
     using MassTransit;
     using Microsoft.Extensions.DependencyInjection;
 
@@ -25,6 +26,9 @@
 
                         consumers.ForEach(consumer => rmq.ReceiveEndpoint(consumer.FullName, endpoint =>
                         {
+                            endpoint.PrefetchCount = 6;
+                            endpoint.UseMessageRetry(retry => retry.Interval(5, 200));
+
                             endpoint.ConfigureConsumer(bus, consumer);
                         }));
                     }));

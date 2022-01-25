@@ -6,8 +6,9 @@
     using FootballTournamentSystem.Person.Domain.Models.Player;
     using FootballTournamentSystem.Person.Domain.Models.President;
     using FootballTournamentSystem.Person.Domain.Models.Referee;
+    using Core.Infrastructure.Data;
 
-    public class PersonDbContext : DbContext,
+    public class PersonDbContext : MessageDbContext,
         IPersonDbContext
     {
         public PersonDbContext(DbContextOptions<PersonDbContext> options)
@@ -23,10 +24,6 @@
 
         public DbSet<Coach> Coaches { get; set; } = default!;
 
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-            base.OnModelCreating(builder);
-        }
+        protected override Assembly ConfigurationsAssembly => Assembly.GetExecutingAssembly();
     }
 }

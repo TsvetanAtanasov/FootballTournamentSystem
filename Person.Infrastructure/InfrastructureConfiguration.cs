@@ -1,5 +1,6 @@
 ﻿namespace FootballTournamentSystem.Infrastructure
 {
+    using System;
     using Core.Application.Contracts;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
@@ -24,7 +25,12 @@
                 .AddDbContext<PersonDbContext>(options => options
                     .UseSqlServer(
                         configuration.GetConnectionString("DefaultConnection"),
-                        b => b.MigrationsAssembly(typeof(PersonDbContext).Assembly.FullName)))
+                        sqlOptions => sqlOptions
+                            .EnableRetryOnFailure(
+                                maxRetryCount: 10,
+                                maxRetryDelay: TimeSpan.FromSeconds(30),
+                                errorNumbersToAdd: null)
+                        /*b => b.MigrationsAssembly(typeof(PersonDbContext).Assembly.FullName)*/))
                 .AddTransient<ICoachRepository, CoachRepository>()
                 .AddTransient<IPlayerRepository, PlayerRepository>()
                 .AddTransient<IPresidentRepository, PresidentRepository>()
