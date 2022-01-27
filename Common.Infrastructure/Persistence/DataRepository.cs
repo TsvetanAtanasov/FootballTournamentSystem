@@ -16,10 +16,10 @@
 
         protected IQueryable<TEntity> All() => this.Data.Set<TEntity>();
 
-        public Task MarkMessageAsPublished(int id)
+        public async Task MarkMessageAsPublished(int id)
         {
             var message = await this.Data.FindAsync<Message>(id);
-            message.Published = true;
+            message.MarkAsPublished(message.Id);
 
             await this.Data.SaveChangesAsync();
         }

@@ -24,7 +24,7 @@
             => services
                 .AddDbContext<PersonDbContext>(options => options
                     .UseSqlServer(
-                        configuration.GetConnectionString("DefaultConnection"),
+                        configuration.GetDefaultConnectionString(),
                         sqlOptions => sqlOptions
                             .EnableRetryOnFailure(
                                 maxRetryCount: 10,
@@ -36,6 +36,6 @@
                 .AddTransient<IPresidentRepository, PresidentRepository>()
                 .AddTransient<IRefereeRepository, RefereeRepository>()
                 .AddTransient(typeof(IRepository<>), typeof(FootballTournamentDataRepository<>))
-                .AddMessaging();
+                .AddMessaging(configuration);
     }
 }

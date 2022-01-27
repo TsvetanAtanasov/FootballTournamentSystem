@@ -24,7 +24,7 @@
             => services
                 .AddDbContext<TournamentDbContext>(options => options
                     .UseSqlServer(
-                        configuration.GetConnectionString("DefaultConnection"),
+                        configuration.GetDefaultConnectionString(),
                         sqlOptions => sqlOptions
                             .EnableRetryOnFailure(
                                 maxRetryCount: 10,
@@ -35,6 +35,6 @@
                 .AddTransient<ITeamRepository, TeamRepository>()
                 .AddTransient<IMatchRepository, MatchRepository>()
                 .AddTransient(typeof(IRepository<>), typeof(FootballTournamentDataRepository<>))
-                .AddMessaging(consumers: new Type[] { typeof(CoachCreatedConsumer), typeof(PlayerCreatedConsumer), typeof(PresidentCreatedConsumer) });
+                .AddMessaging(configuration, consumers: new Type[] { typeof(CoachCreatedConsumer), typeof(PlayerCreatedConsumer), typeof(PresidentCreatedConsumer) });
     }
 }

@@ -1,6 +1,7 @@
 ﻿namespace FootballTournamentSystem.Person.Application.Features.Coach.Commands.Create
 {
     using Core.Application.Messages;
+    using Core.Domain.Models;
     using FootballTournamentSystem.Person.Domain.Factories.Coach;
     using MassTransit;
     using MediatR;
@@ -50,13 +51,19 @@
                     .WithTeamId(request.TeamId)
                     .Build();
 
-                await this.coachRepository.Save(coach, cancellationToken);
-
-                await this.publisher.Publish(new CoachCreatedMessage
+                var messageData = new CoachCreatedMessage
                 {
                     TeamId = coach.TeamId,
                     CoachId = coach.Id
-                });
+                };
+
+                var message = new Message(messageData);
+
+                await this.coachRepository.Save(coach, cancellationToken, message);
+
+                await this.publisher.Publish(messageData);
+
+                await this.coachRepository.MarkMessageAsPublished(message.Id);
 
                 return new CreateCoachOutputModel(coach.Id);
             }

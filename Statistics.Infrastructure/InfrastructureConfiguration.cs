@@ -13,6 +13,7 @@
     using FootballTournamentSystem.Statistics.Application.Features.TournamentStatistics;
     using FootballTournamentSystem.Statistics.Infrastructure.Repositories.TournamentStatistics;
     using FootballTournamentSystem.Statistics.Infrastructure.Repositories;
+    using Core.Infrastructure;
 
     public static class InfrastructureConfiguration
     {
@@ -22,7 +23,7 @@
             => services
                 .AddDbContext<StatisticsDbContext>(options => options
                     .UseSqlServer(
-                        configuration.GetConnectionString("DefaultConnection"),
+                        configuration.GetDefaultConnectionString(),
                         sqlOptions => sqlOptions
                             .EnableRetryOnFailure(
                                 maxRetryCount: 10,
