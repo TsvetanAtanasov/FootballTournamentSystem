@@ -3,7 +3,9 @@ namespace FootballTournamentSystem.Startup
     using Core.Application.Configuration;
     using Core.Domain;
     using FootballTournamentSystem.Infrastructure;
+    using HealthChecks.UI.Client;
     using Microsoft.AspNetCore.Builder;
+    using Microsoft.AspNetCore.Diagnostics.HealthChecks;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
@@ -44,6 +46,11 @@ namespace FootballTournamentSystem.Startup
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapHealthChecks("/health", new HealthCheckOptions
+                {
+                    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+                });
+
                 endpoints.MapControllers();
             });
         }
