@@ -1,4 +1,4 @@
-﻿namespace Core.Application.Messages
+﻿namespace Core.Infrastructure.Messages
 {
     using Core.Domain.Models;
     using Hangfire;

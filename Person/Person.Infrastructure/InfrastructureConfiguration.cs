@@ -22,15 +22,6 @@
             this IServiceCollection services,
             IConfiguration configuration)
             => services
-                .AddDbContext<PersonDbContext>(options => options
-                    .UseSqlServer(
-                        configuration.GetDefaultConnectionString(),
-                        sqlOptions => sqlOptions
-                            .MigrationsAssembly(typeof(PersonDbContext).Assembly.FullName)
-                            .EnableRetryOnFailure(
-                                maxRetryCount: 10,
-                                maxRetryDelay: TimeSpan.FromSeconds(30),
-                                errorNumbersToAdd: null)))
                 .AddTransient<ICoachRepository, CoachRepository>()
                 .AddTransient<IPlayerRepository, PlayerRepository>()
                 .AddTransient<IPresidentRepository, PresidentRepository>()

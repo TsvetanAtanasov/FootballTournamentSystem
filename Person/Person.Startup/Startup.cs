@@ -1,8 +1,9 @@
 namespace FootballTournamentSystem.Startup
 {
-    using Core.Application.Configuration;
     using Core.Domain;
+    using Core.Infrastructure;
     using FootballTournamentSystem.Infrastructure;
+    using FootballTournamentSystem.Person.Infrastructure.Persistance;
     using HealthChecks.UI.Client;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -25,9 +26,8 @@ namespace FootballTournamentSystem.Startup
         {
             services
                 .AddDomain()
-                .AddApplication(this.Configuration)
-                .AddStatisticsInfrastructure(this.Configuration)
-                .AddControllers();
+                .AddWebService<PersonDbContext>(this.Configuration)
+                .AddStatisticsInfrastructure(this.Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
