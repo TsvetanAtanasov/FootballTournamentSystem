@@ -1,9 +1,8 @@
 ﻿namespace FootballTournamentSystem.Identity.Services
 {
     using System.Threading.Tasks;
-    using CarRentalSystem.Services;
+    using Core.Application;
     using Data.Models;
-    using Models.Identity;
 
     public interface IIdentityService
     {

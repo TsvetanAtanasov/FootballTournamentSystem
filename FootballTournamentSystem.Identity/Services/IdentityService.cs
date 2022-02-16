@@ -2,10 +2,9 @@
 {
     using System.Linq;
     using System.Threading.Tasks;
-    using CarRentalSystem.Services;
+    using Core.Application;
     using Data.Models;
     using Microsoft.AspNetCore.Identity;
-    using Models.Identity;
 
     public class IdentityService : IIdentityService
     {

@@ -132,16 +132,16 @@
                 })
                 .AddMassTransitHostedService();
 
-            services
-                .AddHangfire(config => config
-                    .SetDataCompatibilityLevel(CompatibilityLevel.Version_170)
-                    .UseSimpleAssemblyNameTypeSerializer()
-                    .UseRecommendedSerializerSettings()
-                    .UseSqlServerStorage(configuration.GetDefaultConnectionString()));
+            //services
+            //    .AddHangfire(config => config
+            //        .SetDataCompatibilityLevel(CompatibilityLevel.Version_170)
+            //        .UseSimpleAssemblyNameTypeSerializer()
+            //        .UseRecommendedSerializerSettings()
+            //        .UseSqlServerStorage(configuration.GetDefaultConnectionString()));
 
-            services.AddHangfireServer();
+            //services.AddHangfireServer();
 
-            services.AddHostedService<MessagesHostedService>();
+            //services.AddHostedService<MessagesHostedService>();
 
             return services;
         }

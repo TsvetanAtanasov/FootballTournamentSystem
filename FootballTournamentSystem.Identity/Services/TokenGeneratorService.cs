@@ -1,16 +1,15 @@
 ﻿namespace FootballTournamentSystem.Identity.Services
 {
-    public class JwtTokenGeneratorService
-    {
-          using System;
+    using System;
+    using System.Security.Claims;
+    using System.Linq;
+    using System.Text;
     using System.Collections.Generic;
     using System.IdentityModel.Tokens.Jwt;
-    using System.Linq;
-    using System.Security.Claims;
-    using System.Text;
-    using Data.Models;
     using Microsoft.Extensions.Options;
     using Microsoft.IdentityModel.Tokens;
+    using Core.Application.Configuration;
+    using FootballTournamentSystem.Identity.Data.Models;
 
     public class TokenGeneratorService : ITokenGeneratorService
     {
@@ -50,5 +49,4 @@
             return encryptedToken;
         }
     }
-}
 }

@@ -1,17 +1,14 @@
 namespace FootballTournamentSystem.Startup
 {
-    using Core.Application.Configuration;
     using Core.Domain;
     using Core.Infrastructure;
+    using Core.Web;
     using FootballTournamentSystem.Infrastructure;
     using FootballTournamentSystem.Statistics.Infrastructure.Persistance;
-    using HealthChecks.UI.Client;
     using Microsoft.AspNetCore.Builder;
-    using Microsoft.AspNetCore.Diagnostics.HealthChecks;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
-    using Microsoft.Extensions.Hosting;
 
     public class Startup
     {
@@ -31,29 +28,11 @@ namespace FootballTournamentSystem.Startup
                 .AddStatisticsInfrastructure(this.Configuration);
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-
-            app.UseHttpsRedirection();
-
-            app.UseRouting();
-
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapHealthChecks("/health", new HealthCheckOptions
-                {
-                    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
-                });
-
-                endpoints.MapControllers();
-            });
+            app
+             .UseWebService(env)
+             .Initialize();
         }
     }
 }
