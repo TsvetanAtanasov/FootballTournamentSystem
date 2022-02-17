@@ -11,6 +11,7 @@
     public class PlayerController : ApiController
     {
         [HttpPost]
+        [Route(nameof(Create))]
         [Authorize]
         public async Task<ActionResult<CreatePlayerOutputModel>> Create(
             CreatePlayerCommand command)

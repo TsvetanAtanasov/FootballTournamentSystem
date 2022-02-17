@@ -115,17 +115,10 @@
 
                     mt.AddBus(bus => Bus.Factory.CreateUsingRabbitMq(rmq =>
                     {
-                        rmq.Host("rabbitmq", host =>
-                        {
-                            host.Username("rabbitmq");
-                            host.Password("rabbitmq");
-                        });
+                        rmq.Host("localhost");
 
                         consumers.ForEach(consumer => rmq.ReceiveEndpoint(consumer.FullName, endpoint =>
                         {
-                            endpoint.PrefetchCount = 6;
-                            endpoint.UseMessageRetry(retry => retry.Interval(5, 200));
-
                             endpoint.ConfigureConsumer(bus, consumer);
                         }));
                     }));
