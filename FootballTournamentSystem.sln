@@ -53,9 +53,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Domain", "Core\Core.Do
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{C8CC5C3B-ECD2-4DB1-93CE-BA6DB7DE658B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballTournamentSystem.Identity", "FootballTournamentSystem.Identity\FootballTournamentSystem.Identity.csproj", "{6AA4D63A-8689-446E-A450-40AFAAC1BDA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballTournamentSystem.Identity", "FootballTournamentSystem.Identity\FootballTournamentSystem.Identity.csproj", "{6AA4D63A-8689-446E-A450-40AFAAC1BDA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Identity", "Core.Identity\Core.Identity.csproj", "{2B1139A5-2213-4F69-B65A-F167648A0DF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Identity", "Core.Identity\Core.Identity.csproj", "{2B1139A5-2213-4F69-B65A-F167648A0DF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballTournamentSystem.Person.Gateway", "FootballTournamentSystem.Person.Gateway\FootballTournamentSystem.Person.Gateway.csproj", "{692B9E8C-F61F-4F5A-892A-F350DEE38AD3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -151,6 +153,10 @@ Global
 		{2B1139A5-2213-4F69-B65A-F167648A0DF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B1139A5-2213-4F69-B65A-F167648A0DF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B1139A5-2213-4F69-B65A-F167648A0DF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{692B9E8C-F61F-4F5A-892A-F350DEE38AD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{692B9E8C-F61F-4F5A-892A-F350DEE38AD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{692B9E8C-F61F-4F5A-892A-F350DEE38AD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{692B9E8C-F61F-4F5A-892A-F350DEE38AD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

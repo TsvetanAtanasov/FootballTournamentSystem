@@ -2,7 +2,12 @@
 {
     public class PersonOutputModel
     {
-        //TODO: IMapfrom later
+        public PersonOutputModel(string firstName, string lastName, string imageUrl)
+        {
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.ImageUrl = imageUrl;
+        }
 
         public string FirstName { get; set; } = default!;
 
