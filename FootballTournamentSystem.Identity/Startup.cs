@@ -10,6 +10,7 @@ namespace FootballTournamentSystem.Identity
     using FootballTournamentSystem.Identity.Infrastructure;
     using FootballTournamentSystem.Identity.Services;
     using Core.Web;
+    using Core.Application.Configuration;
 
     public class Startup
     {
@@ -24,6 +25,7 @@ namespace FootballTournamentSystem.Identity
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddWebService<IdentityDbContext>(this.Configuration)
+                .AddApplication<Startup>(this.Configuration)
                 .AddUserStorage()
                 .AddTransient<IIdentityService, IdentityService>()
                 .AddTransient<ITokenGeneratorService, TokenGeneratorService>();

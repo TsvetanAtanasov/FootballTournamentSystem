@@ -8,14 +8,14 @@
 
     public static class ApplicationConfiguration
     {
-        public static IServiceCollection AddApplication(
+        public static IServiceCollection AddApplication<TAssemblyType>(
             this IServiceCollection services,
             IConfiguration configuration)
             => services
                 .Configure<ApplicationSettings>(
                     configuration.GetSection(nameof(ApplicationSettings)),
                     options => options.BindNonPublicProperties = true)
-                .AddAutoMapper(Assembly.GetExecutingAssembly())
-                .AddMediatR(Assembly.GetExecutingAssembly());
+                .AddAutoMapper(typeof(TAssemblyType).Assembly)
+                .AddMediatR(typeof(TAssemblyType).Assembly);
     }
 }

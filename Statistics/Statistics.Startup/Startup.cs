@@ -1,9 +1,11 @@
 namespace FootballTournamentSystem.Startup
 {
+    using Core.Application.Configuration;
     using Core.Domain;
     using Core.Infrastructure;
     using Core.Web;
     using FootballTournamentSystem.Infrastructure;
+    using FootballTournamentSystem.Statistics.Application.Features.TournamentStatistics.Commands.Create;
     using FootballTournamentSystem.Statistics.Infrastructure.Persistance;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
@@ -24,6 +26,7 @@ namespace FootballTournamentSystem.Startup
         {
             services
                 .AddDomain()
+                .AddApplication<CreateTournamentStatisticsCommand>(this.Configuration)
                 .AddWebService<StatisticsDbContext>(this.Configuration)
                 .AddStatisticsInfrastructure(this.Configuration);
         }

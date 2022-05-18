@@ -31,66 +31,70 @@ services:
     tournament:
         container_name: tournament
         build:
+            context: ./
             dockerfile: ./Tournament/Tournament.Startup/Dockerfile
         ports:
             - "5001:80"
         environment:
-            - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=TournamentContext;User Id=sa; Password=yourStrongPassword12!@;Trusted_Connection=True;MultipleActiveResultSets=true
+            - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=TournamentContext;User Id=sa; Password=yourStrongPassword12!@;MultipleActiveResultSets=true
         restart: on-failure
         volumes:
             - ./.aspnet/tournament/DataProtection-Keys:/root/.aspnet/DataProtection-Keys
         networks:
             - footballtournamentsystem-network
         depends_on:
-            - sqlserver
+            - data
             
     person:
         container_name: person
         build:
+            context: ./
             dockerfile: ./Person/Person.Startup/Dockerfile
         ports:
             - "5003:80"
         environment:
-            - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=PersonContext;User Id=sa; Password=yourStrongPassword12!@;Trusted_Connection=True;MultipleActiveResultSets=true
+            - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=PersonContext;User Id=sa; Password=yourStrongPassword12!@;MultipleActiveResultSets=true
         restart: on-failure
         volumes:
             - ./.aspnet/person/DataProtection-Keys:/root/.aspnet/DataProtection-Keys
         networks:
             - footballtournamentsystem-network
         depends_on:
-            - sqlserver
+            - data
             
     statistics:
         container_name: statistics
         build:
+            context: ./
             dockerfile: ./Statistics/Statistics.Startup/Dockerfile
         ports:
             - "5005:80"
         environment:
-            - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=StatisticsContext;User Id=sa; Password=yourStrongPassword12!@;Trusted_Connection=True;MultipleActiveResultSets=true
+            - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=StatisticsContext;User Id=sa; Password=yourStrongPassword12!@;MultipleActiveResultSets=true
         restart: on-failure
         volumes:
             - ./.aspnet/statistics/DataProtection-Keys:/root/.aspnet/DataProtection-Keys
         networks:
             - footballtournamentsystem-network
         depends_on:
-            - sqlserver
+            - data
             
     identity:
         container_name: identity
         build:
+            context: ./
             dockerfile: ./FootballTournamentSystem.Identity/Dockerfile
         ports: 
             - "5007:80"
         environment:
-            - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=FootballTournamentSystemIdentity;User Id=sa; Password=yourStrongPassword12!@;Trusted_Connection=True;MultipleActiveResultSets=true
+            - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=FootballTournamentSystemIdentity;User Id=sa; Password=yourStrongPassword12!@;MultipleActiveResultSets=true
         restart: on-failure
         volumes:
             - ./.aspnet/identity/DataProtection-Keys:/root/.aspnet/DataProtection-Keys
         networks: 
             - footballtournamentsystem-network
         depends_on:
-            - sqlserver
+            - data
             
             
 

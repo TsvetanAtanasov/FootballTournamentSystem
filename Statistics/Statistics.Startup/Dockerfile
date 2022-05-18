@@ -20,10 +20,10 @@ COPY ["Core.Identity/Core.Identity.csproj", "Core.Identity/"]
 RUN dotnet restore "Statistics/Statistics.Startup/Statistics.Startup.csproj"
 COPY . .
 WORKDIR "/src/Statistics/Statistics.Startup"
-RUN dotnet build "Statistics.Startup.csproj" -c Release -o /app/build
+RUN dotnet build "Statistics.Startup.csproj" -c Debug -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Statistics.Startup.csproj" -c Release -o /app/publish
+RUN dotnet publish "Statistics.Startup.csproj" -c Debug -o /app/publish
 
 FROM base AS final
 WORKDIR /app

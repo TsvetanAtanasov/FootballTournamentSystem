@@ -25,7 +25,6 @@
             services
                 .AddDatabase<TDbContext>(configuration)
                 .AddTokenAuthentication(configuration)
-                .AddApplication(configuration)
                 .AddHealth(configuration)
                 .AddControllers();
 
@@ -115,10 +114,17 @@
 
                     mt.AddBus(bus => Bus.Factory.CreateUsingRabbitMq(rmq =>
                     {
-                        rmq.Host("localhost");
+                        rmq.Host("rabbitmq", host =>
+                        {
+                            host.Username("rabbitmquser");
+                            host.Password("rabbitmqPassword12!");
+                        });
 
                         consumers.ForEach(consumer => rmq.ReceiveEndpoint(consumer.FullName, endpoint =>
                         {
+                            endpoint.PrefetchCount = 6;
+                            endpoint.UseMessageRetry(retry => retry.Interval(5, 200));
+
                             endpoint.ConfigureConsumer(bus, consumer);
                         }));
                     }));

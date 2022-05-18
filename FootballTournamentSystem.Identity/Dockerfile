@@ -16,10 +16,10 @@ COPY ["Core/Core.Web/Core.Web.csproj", "Core/Core.Web/"]
 RUN dotnet restore "FootballTournamentSystem.Identity/FootballTournamentSystem.Identity.csproj"
 COPY . .
 WORKDIR "/src/FootballTournamentSystem.Identity"
-RUN dotnet build "FootballTournamentSystem.Identity.csproj" -c Release -o /app/build
+RUN dotnet build "FootballTournamentSystem.Identity.csproj" -c Debug -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "FootballTournamentSystem.Identity.csproj" -c Release -o /app/publish
+RUN dotnet publish "FootballTournamentSystem.Identity.csproj" -c Debug -o /app/publish
 
 FROM base AS final
 WORKDIR /app

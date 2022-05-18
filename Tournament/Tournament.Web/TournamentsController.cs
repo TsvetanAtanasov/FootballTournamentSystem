@@ -23,9 +23,14 @@
     {
         [HttpPost]
         [Authorize]
+        [Route(nameof(Create))]
         public async Task<ActionResult<CreateTournamentOutputModel>> Create(
-            CreateTournamentCommand command)
-            => await this.Send(command);
+            dynamic data)
+        {
+            // TODO: change code after testing
+            var command = new CreateTournamentCommand(32, "https://static01.nyt.com/images/2022/04/01/multimedia/world-cup-draw-tracker/world-cup-draw-tracker-mediumSquareAt3X.jpg");
+            return await this.Send(command);
+        }
 
         [HttpDelete]
         [Authorize]

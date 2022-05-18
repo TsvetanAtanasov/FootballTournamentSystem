@@ -20,10 +20,10 @@ COPY ["Core.Identity/Core.Identity.csproj", "Core.Identity/"]
 RUN dotnet restore "Tournament/Tournament.Startup/Tournament.Startup.csproj"
 COPY . .
 WORKDIR "/src/Tournament/Tournament.Startup"
-RUN dotnet build "Tournament.Startup.csproj" -c Release -o /app/build
+RUN dotnet build "Tournament.Startup.csproj" -c Debug -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Tournament.Startup.csproj" -c Release -o /app/publish
+RUN dotnet publish "Tournament.Startup.csproj" -c Debug -o /app/publish
 
 FROM base AS final
 WORKDIR /app
