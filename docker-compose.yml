@@ -30,6 +30,7 @@ services:
             
     tournament:
         container_name: tournament
+        image: tsvetan97/footballtournamentsystem-tournament-service:1.0
         build:
             context: ./
             dockerfile: ./Tournament/Tournament.Startup/Dockerfile
@@ -47,6 +48,7 @@ services:
             
     person:
         container_name: person
+        image: tsvetan97/footballtournamentsystem-person-service:1.0
         build:
             context: ./
             dockerfile: ./Person/Person.Startup/Dockerfile
@@ -64,6 +66,7 @@ services:
             
     statistics:
         container_name: statistics
+        image: tsvetan97/footballtournamentsystem-statistics-service:1.0
         build:
             context: ./
             dockerfile: ./Statistics/Statistics.Startup/Dockerfile
@@ -81,6 +84,7 @@ services:
             
     identity:
         container_name: identity
+        image: tsvetan97/footballtournamentsystem-identity-service:1.0
         build:
             context: ./
             dockerfile: ./FootballTournamentSystem.Identity/Dockerfile

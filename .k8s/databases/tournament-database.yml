@@ -1,0 +1,70 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: tournament-database-data
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+      
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: tournament-database
+spec:
+  clusterIP: None
+  ports:
+  - port: 1433
+    targetPort: 1433
+  selector:
+    database: tournament
+    
+---
+
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: tournament-database
+spec:
+  serviceName: tournament-database
+  selector:
+    matchLabels: 
+      database: tournament
+  template:
+    metadata:
+      labels:
+        database: tournament
+        system: database
+    spec:
+      terminationGracePeriodSeconds: 60
+      securityContext:
+        fsGroup: 10001
+      containers:
+      - name: tournament-database
+        image: mcr.microsoft.com/mssql/server:2019-latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 1433
+        resources:
+          limits:
+            memory: "2Gi"
+            cpu: "1000m"
+        env:
+        - name: ACCEPT_EULA
+          value: "Y"
+        - name: SA_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: environment-secrets
+              key: tournament-database-sa-password
+        volumeMounts:
+        - name: tournament-database-data
+          mountPath: /var/opt/mssql
+      volumes:
+      - name: tournament-database-data
+        persistentVolumeClaim:
+          claimName: tournament-database-data

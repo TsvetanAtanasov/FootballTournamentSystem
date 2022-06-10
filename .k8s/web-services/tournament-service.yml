@@ -1,0 +1,75 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: tournament-service-data
+spec:
+  accessModes:
+  - ReadWriteOnce
+  - ReadOnlyMany 
+  resources:
+    requests:
+      storage: 10Mi
+      
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: tournament-service
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 5001
+    targetPort: 80
+  selector:
+    web-service: tournament
+    
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tournament-service
+spec:
+  selector:
+    matchLabels:
+      web-service: tournament
+  template:
+    metadata:
+      labels:
+        web-service: tournament
+        system: server
+    spec:
+      containers:
+      - name: tournament-service
+        image: tsvetan97/footballtournamentsystem-tournament-service:1.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        env:
+        - name: ApplicationSettings__Secret
+          valueFrom:
+            secretKeyRef:
+              name: environment-secrets
+              key: security-token-secret
+        - name: ApplicationSettings__SeedInitialData
+          valueFrom:
+            configMapKeyRef:
+              name: environment-settings
+              key: seed-initial-data
+        - name: ConnectionStrings__DefaultConnection
+          valueFrom:
+            secretKeyRef:
+              name: environment-secrets
+              key: tournament-service-connection-string
+        volumeMounts:
+        - name: tournament-service-data
+          mountPath: /root/.aspnet/DataProtection-Keys
+      volumes:
+      - name: tournament-service-data
+        persistentVolumeClaim:
+          claimName: tournament-service-data
