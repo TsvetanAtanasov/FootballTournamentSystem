@@ -6,6 +6,10 @@ data:
  seed-initial-data: "True"
  event-bus-host: event-bus
  event-bus-user: rabbitmquser
+ watchdog-identity-health: http://identity-service:5007/health
+ watchdog-tournament-health: http://tournament-service:5001/health
+ watchdog-statistics-health: http://statistics-service:5005/health
+ watchdog-person-health: http://person-service:5003/health
  
 ---
 
