@@ -12,6 +12,7 @@
     {
         [HttpPost]
         [Authorize]
+        [Route(nameof(Create))]
         public async Task<ActionResult<CreatePresidentOutputModel>> Create(
             CreatePresidentCommand command)
             => await this.Send(command);

@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+ name: environment-settings
+data:
+ seed-initial-data: "True"
+ event-bus-host: event-bus
+ event-bus-user: rabbitmquser
+ watchdog-identity-health: http://identity-service:5007/health
+ watchdog-tournament-health: http://tournament-service:5001/health
+ watchdog-statistics-health: http://statistics-service:5005/health
+ watchdog-person-health: http://person-service:5003/health
+ 
+---
+
+apiVersion: v1
+kind: Secret
+metadata:
+ name: environment-secrets
+data:
+ identity-database-sa-password: aWRlbnRpdHlEYXRhYmFzZVBhc3N3b3JkMTIhQA==
+ tournament-database-sa-password: dG91cm5hbWVudERhdGFiYXNlUGFzc3dvcmQxMiFA
+ statistics-database-sa-password: c3RhdGlzdGljc0RhdGFiYXNlUGFzc3dvcmQxMiFA
+ person-database-sa-password: cGVyc29uRGF0YWJhc2VQYXNzd29yZDEyIUA=
+ security-token-secret: UzBNMyBNNEcxQyBVTjFDMFJOUyBHM04zUjRUM0QgVEgxUyBTM0NSM1Q=
+ identity-service-connection-string: U2VydmVyPWlkZW50aXR5LWRhdGFiYXNlO0RhdGFiYXNlPUZvb3RiYWxsVG91cm5hbWVudFN5c3RlbUlkZW50aXR5O1VzZXIgSWQ9c2E7UGFzc3dvcmQ9aWRlbnRpdHlEYXRhYmFzZVBhc3N3b3JkMTIhQDtNdWx0aXBsZUFjdGl2ZVJlc3VsdFNldHM9dHJ1ZQ==
+ tournament-service-connection-string: U2VydmVyPXRvdXJuYW1lbnQtZGF0YWJhc2U7RGF0YWJhc2U9VG91cm5hbWVudENvbnRleHQ7VXNlciBJZD1zYTtQYXNzd29yZD10b3VybmFtZW50RGF0YWJhc2VQYXNzd29yZDEyIUA7TXVsdGlwbGVBY3RpdmVSZXN1bHRTZXRzPXRydWU=
+ statistics-service-connection-string: U2VydmVyPXN0YXRpc3RpY3MtZGF0YWJhc2U7RGF0YWJhc2U9U3RhdGlzdGljc0NvbnRleHQ7VXNlciBJZD1zYTtQYXNzd29yZD1zdGF0aXN0aWNzRGF0YWJhc2VQYXNzd29yZDEyIUA7TXVsdGlwbGVBY3RpdmVSZXN1bHRTZXRzPXRydWU=
+ person-service-connection-string: U2VydmVyPXBlcnNvbi1kYXRhYmFzZTtEYXRhYmFzZT1QZXJzb25Db250ZXh0O1VzZXIgSWQ9c2E7UGFzc3dvcmQ9cGVyc29uRGF0YWJhc2VQYXNzd29yZDEyIUA7TXVsdGlwbGVBY3RpdmVSZXN1bHRTZXRzPXRydWU=
+ event-bus-password: cmFiYml0bXFQYXNzd29yZDEyIQ==

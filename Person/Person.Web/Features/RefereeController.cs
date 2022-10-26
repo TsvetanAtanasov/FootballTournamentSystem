@@ -12,6 +12,7 @@
     {
         [HttpPost]
         [Authorize]
+        [Route(nameof(Create))]
         public async Task<ActionResult<CreateRefereeOutputModel>> Create(
             CreateRefereeCommand command)
             => await this.Send(command);

@@ -18,6 +18,18 @@
             builder
                 .Property(t => t.Weight)
                 .IsRequired();
+
+            builder
+                .Property(t => t.FirstName)
+                .IsRequired();
+
+            builder
+                .Property(t => t.LastName)
+                .IsRequired();
+
+            builder
+                .Property(t => t.ImageUrl)
+                .IsRequired();
         }
     }
 }

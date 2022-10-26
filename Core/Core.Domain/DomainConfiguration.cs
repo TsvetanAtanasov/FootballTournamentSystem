@@ -4,10 +4,11 @@
 
     public static class DomainConfiguration
     {
-        public static IServiceCollection AddDomain(this IServiceCollection services)
+        public static IServiceCollection AddDomain<TAssemblyType>
+            (this IServiceCollection services)
             => services
                 .Scan(scan => scan
-                    .FromCallingAssembly()
+                    .FromAssemblyOf<TAssemblyType>()
                     .AddClasses(classes => classes
                         .AssignableTo(typeof(IFactory<>)))
                     .AsMatchingInterface()

@@ -39,9 +39,9 @@
         // Team's place in the group will be calculated by this property ( no need of group ranking )
         public int GroupPoints { get; }
 
-        public Guid PresidentId { get; set; }
+        public Guid? PresidentId { get; set; }
 
-        public Guid CoachId { get; private set; }
+        public Guid? CoachId { get; private set; }
 
         public IReadOnlyCollection<Guid> PlayerIds => this.playerIds.ToList().AsReadOnly();
 
@@ -79,7 +79,7 @@
             ModelConstants.Common.MaxNameLength,
             nameof(this.Stadium));
 
-            Guard.ForPositiveNumber<InvalidTeamException>(
+            Guard.ForNotNegativeNumber<InvalidTeamException>(
             groupPoints,
             nameof(this.GroupPoints));
         }

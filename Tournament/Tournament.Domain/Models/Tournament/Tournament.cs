@@ -42,7 +42,7 @@
 
         public Final? Final { get; private set; }
 
-        public int TournamentStatisticsId { get; private set; }
+        public int? TournamentStatisticsId { get; private set; }
 
         public IReadOnlyCollection<Group> Groups => this.groups.ToList().AsReadOnly();
 

@@ -8,11 +8,14 @@
 
     public class CreateTournamentCommand : IRequest<CreateTournamentOutputModel>
     {
-        public CreateTournamentCommand(int numberOfTeams, string imageUrl)
+        public CreateTournamentCommand(string name, int numberOfTeams, string imageUrl)
         {
+            this.Name = name;
             this.NumberOfTeams = numberOfTeams;
             this.ImageUrl = imageUrl;
         }
+
+        public string Name { get; }
 
         public int NumberOfTeams { get; }
 
@@ -32,6 +35,7 @@
             public async Task<CreateTournamentOutputModel> Handle(CreateTournamentCommand request, CancellationToken cancellationToken)
             {
                 var tournament = this.tournamentFactory
+                    .WithName(request.Name)
                     .WithNumberOfTeams(request.NumberOfTeams)
                     .WithImageUrl(request.ImageUrl)
                     .Build();

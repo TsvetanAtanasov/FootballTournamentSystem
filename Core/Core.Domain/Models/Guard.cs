@@ -62,6 +62,17 @@
             ThrowException<TException>($"{name} must be greater than 0.");
         }
 
+        public static void ForNotNegativeNumber<TException>(int number, string name = "Value")
+            where TException : BaseDomainException, new()
+        {
+            if (number >= 0)
+            {
+                return;
+            }
+
+            ThrowException<TException>($"{name} must be greater or equal to 0.");
+        }
+
         public static void ForPositiveNumber<TException>(double number, string name = "Value")
             where TException : BaseDomainException, new()
         {

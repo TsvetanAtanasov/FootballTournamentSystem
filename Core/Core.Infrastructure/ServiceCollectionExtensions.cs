@@ -25,7 +25,7 @@
             services
                 .AddDatabase<TDbContext>(configuration)
                 .AddTokenAuthentication(configuration)
-                .AddHealth(configuration)
+                //.AddHealth(configuration)
                 .AddControllers();
 
             return services;

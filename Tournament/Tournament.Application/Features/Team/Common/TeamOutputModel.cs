@@ -22,6 +22,7 @@
             this.LogoUrl = logoUrl;
             this.YearFounded = yearFounded;
             this.PresidentFirstName = presidentFirstName;
+            this.PresidentLastName = presidentLastName;
             this.PresidentImageUrl = presidentImageUrl;
             this.CoachFirstName = coachFirstName;
             this.CoachLastName = coachLastName;

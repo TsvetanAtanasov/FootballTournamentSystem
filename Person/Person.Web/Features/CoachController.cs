@@ -12,8 +12,11 @@
     {
         [HttpPost]
         [Authorize]
-        public async Task<ActionResult<CreateCoachOutputModel>> Create(
-            CreateCoachCommand command)
-            => await this.Send(command);
+        [Route(nameof(Create))]
+        public async Task<ActionResult<CreateCoachOutputModel>> Create()
+        {
+            var command = new CreateCoachCommand("Carlo", "Ancelotti", "https://d2x51gyc4ptf2q.cloudfront.net/content/uploads/2022/05/28021608/Real-Madrid-manager-Carlo-Ancelotti-issues-tactical-instructions.jpg", 4);
+            return await this.Send(command);
+        }
     }
 }

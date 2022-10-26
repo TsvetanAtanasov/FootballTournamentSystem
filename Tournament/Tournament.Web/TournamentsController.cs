@@ -25,12 +25,8 @@
         [Authorize]
         [Route(nameof(Create))]
         public async Task<ActionResult<CreateTournamentOutputModel>> Create(
-            dynamic data)
-        {
-            // TODO: change code after testing
-            var command = new CreateTournamentCommand(32, "https://static01.nyt.com/images/2022/04/01/multimedia/world-cup-draw-tracker/world-cup-draw-tracker-mediumSquareAt3X.jpg");
-            return await this.Send(command);
-        }
+            CreateTournamentCommand command)
+            => await this.Send(command);
 
         [HttpDelete]
         [Authorize]
@@ -38,9 +34,10 @@
         public async Task<ActionResult> Delete(
             [FromRoute] DeleteTournamentCommand command)
             => await this.Send(command);
-        
+
         [HttpPost]
         [Authorize]
+        [Route(nameof(AddGroupToTournament))]
         public async Task<ActionResult<AddGroupToTournamentOutputModel>> AddGroupToTournament(
             AddGroupToTournamentCommand command)
             => await this.Send(command);

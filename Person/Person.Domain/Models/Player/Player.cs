@@ -27,7 +27,7 @@
 
         public double Weight { get; }
 
-        public int PlayerStatisticsId { get; private set; }
+        public int? PlayerStatisticsId { get; private set; }
 
         public int TeamId { get; private set; }
 

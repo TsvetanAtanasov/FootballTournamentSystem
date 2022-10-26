@@ -40,6 +40,13 @@ spec:
         web-service: person
         system: server
     spec:
+      affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchLabels:
+                web-service: person
+            topologyKey: "kubernetes.io/hostname"
       containers:
       - name: person-service
         image: tsvetan97/footballtournamentsystem-person-service:1.0

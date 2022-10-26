@@ -33,11 +33,11 @@
         // for database connection
         public IReadOnlyCollection<Team> Teams => this.teams.ToList().AsReadOnly();
 
-        public int PlayerStatisticsId { get; private set; }
+        public int? PlayerStatisticsId { get; private set; }
 
-        public int MatchStatisticsId { get; private set; }
+        public int? MatchStatisticsId { get; private set; }
 
-        public Guid RefereeId { get; private set; }
+        public Guid? RefereeId { get; private set; }
 
         public void AddReferee(Guid refereeId) => this.RefereeId = refereeId;
 

@@ -5,6 +5,7 @@
     using System.Threading;
     using System.Threading.Tasks;
     using FootballTournamentSystem.Application.Features.Tournament.Tournament;
+    using System;
 
     public class DeleteTournamentCommand : EntityCommand<int>, IRequest<Result>
     {
@@ -24,7 +25,7 @@
 
                 if (!tournamentExists)
                 {
-                    return "Invalid tournament id";
+                    throw new InvalidOperationException("Invalid tournament id");
                 }
 
                return await this.tournamentRepository.Delete(request.Id, cancellationToken);

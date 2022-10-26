@@ -26,8 +26,13 @@
                     .AllowAnyMethod())
                 .UseAuthentication()
                 .UseAuthorization()
-                .UseEndpoints(endpoints => endpoints
-                    .MapControllers());
+                .UseEndpoints(endpoints =>
+                {
+                    // add health checks
+                    // endpoints.MapHealthChecks("/health");
+                    endpoints.MapControllers();
+                });
+
 
             return app;
         }

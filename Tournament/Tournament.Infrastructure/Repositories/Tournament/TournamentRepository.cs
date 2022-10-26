@@ -97,7 +97,12 @@
 
         public async Task<IEnumerable<GetTournamentGroupOutputModel>> GetTournamentGroups(int tournamentId, CancellationToken cancellationToken = default)
         {
-            var tournament = await this.Data.Tournaments.FirstOrDefaultAsync(t => t.Id == tournamentId, cancellationToken);
+            var tournament = await this.All().Where(t => t.Id == tournamentId).FirstOrDefaultAsync(cancellationToken);
+
+            if (tournament == null!)
+            {
+                return Enumerable.Empty<GetTournamentGroupOutputModel>();
+            }
             var groups = tournament.Groups;
             var result = new List<GetTournamentGroupOutputModel>();
 
