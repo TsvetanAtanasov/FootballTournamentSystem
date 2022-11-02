@@ -54,7 +54,7 @@
 
                 await this.publisher.Publish(new PresidentCreatedMessage
                 {
-                    PresidentId = president.Id,
+                    PresidentGuid = president.Guid,
                     TeamId = president.TeamId
                 });
 

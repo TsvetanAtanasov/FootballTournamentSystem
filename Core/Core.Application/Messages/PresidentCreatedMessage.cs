@@ -4,7 +4,7 @@
 
     public class PresidentCreatedMessage
     {
-        public Guid PresidentId { get; set; }
+        public Guid PresidentGuid { get; set; }
 
         public int TeamId { get; set; }
     }

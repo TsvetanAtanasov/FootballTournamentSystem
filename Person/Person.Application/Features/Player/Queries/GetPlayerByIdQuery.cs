@@ -30,7 +30,7 @@
                 CancellationToken cancellationToken)
             {
                 var player = await this.playerRepository.GetPlayerById(
-                    request.PlayerGuid,
+                    request.Id,
                     cancellationToken);
 
                 return new GetPlayerByIdOutputModel(player.FirstName, player.LastName, player.ImageUrl, player.TeamId);

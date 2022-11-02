@@ -17,6 +17,6 @@
         }
 
         public Task Consume(ConsumeContext<PlayerCreatedMessage> context)
-            => this.teamRepository.AddPlayerToTeam(context.Message.TeamId, context.Message.PlayerId);
+            => this.teamRepository.AddPlayerToTeam(context.Message.TeamId, context.Message.PlayerGuid);
     }
 }

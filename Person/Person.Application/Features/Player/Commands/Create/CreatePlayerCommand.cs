@@ -63,7 +63,7 @@
 
                 await this.publisher.Publish(new PlayerCreatedMessage
                 {
-                    PlayerId = player.Id,
+                    PlayerGuid = player.Guid,
                     TeamId = player.TeamId
                 });
 

@@ -4,7 +4,7 @@
 
     public class PlayerCreatedMessage
     {
-        public Guid PlayerId { get; set; }
+        public Guid PlayerGuid { get; set; }
 
         public int TeamId { get; set; }
     }

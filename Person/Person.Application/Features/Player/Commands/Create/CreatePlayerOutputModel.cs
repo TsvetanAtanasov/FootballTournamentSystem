@@ -4,11 +4,11 @@
 
     public class CreatePlayerOutputModel
     {
-        public CreatePlayerOutputModel(Guid playerId)
+        public CreatePlayerOutputModel(int playerId)
         {
             this.PlayerId = playerId;
         }
 
-        public Guid PlayerId { get; }
+        public int PlayerId { get; }
     }
 }

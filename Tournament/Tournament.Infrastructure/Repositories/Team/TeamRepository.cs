@@ -17,26 +17,26 @@
 
         }
 
-        public async Task AddPresidentToTeam(int teamId, Guid presidentId, CancellationToken cancellationToken)
+        public async Task AddPresidentToTeam(int teamId, Guid presidentGuid, CancellationToken cancellationToken)
         {
             Team team = await this.GetTeamById(teamId);
-            team.PresidentId = presidentId;
+            team.AddPresident(presidentGuid);
 
             await this.Data.SaveChangesAsync(cancellationToken);
         }
 
-        public async Task AddPlayerToTeam(int teamId, Guid playerId, CancellationToken cancellationToken)
+        public async Task AddPlayerToTeam(int teamId, Guid playerGuid, CancellationToken cancellationToken)
         {
             Team team = await this.GetTeamById(teamId);
-            team.AddPlayer(playerId);
+            team.AddPlayer(playerGuid);
 
             await this.Data.SaveChangesAsync(cancellationToken);
         }
 
-        public async Task AddCoachToTeam(int teamId, Guid coachId, CancellationToken cancellationToken)
+        public async Task AddCoachToTeam(int teamId, Guid coachGuid, CancellationToken cancellationToken)
         {
             Team team = await this.GetTeamById(teamId);
-            team.AddCoach(coachId);
+            team.AddCoach(coachGuid);
 
             await this.Data.SaveChangesAsync(cancellationToken);
         }

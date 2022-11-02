@@ -1,6 +1,5 @@
 ﻿namespace FootballTournamentSystem.Person.Domain.Models.Player
 {
-    using Core.Domain.Events;
     using Core.Domain.Exceptions;
     using Core.Domain.Models;
 
@@ -13,8 +12,6 @@
 
             this.Height = height;
             this.Weight = weight;
-
-            this.RaiseEvent(new PlayerCreatedEvent(this.Id, this.TeamId));
         }
 
         private Player()

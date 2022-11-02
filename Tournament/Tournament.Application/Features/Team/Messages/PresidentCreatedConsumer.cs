@@ -17,6 +17,6 @@
         }
 
         public Task Consume(ConsumeContext<PresidentCreatedMessage> context)
-            => this.teamRepository.AddPresidentToTeam(context.Message.TeamId, context.Message.PresidentId);
+            => this.teamRepository.AddPresidentToTeam(context.Message.TeamId, context.Message.PresidentGuid);
     }
 }

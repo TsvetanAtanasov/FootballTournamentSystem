@@ -17,6 +17,6 @@
         }
 
         public Task Consume(ConsumeContext<CoachCreatedMessage> context)
-            => this.teamRepository.AddCoachToTeam(context.Message.TeamId, context.Message.CoachId);
+            => this.teamRepository.AddCoachToTeam(context.Message.TeamId, context.Message.CoachGuid);
     }
 }

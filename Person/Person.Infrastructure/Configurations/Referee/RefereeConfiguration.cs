@@ -9,18 +9,22 @@
         public void Configure(EntityTypeBuilder<Referee> builder)
         {
             builder
-                .HasKey(t => t.Id);
+                .HasKey(r => r.Id);
 
             builder
-                .Property(t => t.FirstName)
+                .Property(r => r.Guid)
                 .IsRequired();
 
             builder
-                .Property(t => t.LastName)
+                .Property(r => r.FirstName)
                 .IsRequired();
 
             builder
-                .Property(t => t.ImageUrl)
+                .Property(r => r.LastName)
+                .IsRequired();
+
+            builder
+                .Property(r => r.ImageUrl)
                 .IsRequired();
         }
     }

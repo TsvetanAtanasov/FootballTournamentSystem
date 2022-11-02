@@ -72,7 +72,7 @@ namespace Tournament.Infrastructure.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<Guid?>("CoachId")
+                    b.Property<Guid?>("CoachGuid")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Country")
@@ -99,7 +99,7 @@ namespace Tournament.Infrastructure.Migrations
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
-                    b.Property<Guid?>("PresidentId")
+                    b.Property<Guid?>("PresidentGuid")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Stadium")

@@ -9,22 +9,22 @@
         public void Configure(EntityTypeBuilder<Coach> builder)
         {
             builder
-                .HasKey(t => t.Id);
+                .HasKey(c => c.Id);
 
             builder
-                .Property(t => t.Id)
-                .ValueGeneratedNever();
-
-            builder
-                .Property(t => t.FirstName)
+                .Property(c => c.Guid)
                 .IsRequired();
 
             builder
-                .Property(t => t.LastName)
+                .Property(c => c.FirstName)
                 .IsRequired();
 
             builder
-                .Property(t => t.ImageUrl)
+                .Property(c => c.LastName)
+                .IsRequired();
+
+            builder
+                .Property(c => c.ImageUrl)
                 .IsRequired();
         }
     }

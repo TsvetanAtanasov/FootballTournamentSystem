@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Tournament.Infrastructure.Migrations
 {
-    public partial class InitialTournamentContextTables : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -49,14 +49,14 @@ namespace Tournament.Infrastructure.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(maxLength: 20, nullable: false),
+                    Name = table.Column<string>(maxLength: 50, nullable: false),
                     NumberOfTeams = table.Column<int>(nullable: false),
                     ImageUrl = table.Column<string>(nullable: false),
                     RoundOf16Id = table.Column<int>(nullable: true),
                     QuarterFinalsId = table.Column<int>(nullable: true),
                     SemiFinalsId = table.Column<int>(nullable: true),
                     FinalId = table.Column<int>(nullable: true),
-                    TournamentStatisticsId = table.Column<int>(nullable: false)
+                    TournamentStatisticsId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -87,7 +87,7 @@ namespace Tournament.Infrastructure.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(maxLength: 20, nullable: false),
+                    Name = table.Column<string>(maxLength: 50, nullable: false),
                     TournamentId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
@@ -107,9 +107,9 @@ namespace Tournament.Infrastructure.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    PlayerStatisticsId = table.Column<int>(nullable: false),
-                    MatchStatisticsId = table.Column<int>(nullable: false),
-                    RefereeId = table.Column<Guid>(nullable: false),
+                    PlayerStatisticsId = table.Column<int>(nullable: true),
+                    MatchStatisticsId = table.Column<int>(nullable: true),
+                    RefereeId = table.Column<Guid>(nullable: true),
                     GroupId = table.Column<int>(nullable: true),
                     QuarterFinalsId = table.Column<int>(nullable: true),
                     RoundOf16Id = table.Column<int>(nullable: true),
@@ -176,14 +176,14 @@ namespace Tournament.Infrastructure.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(maxLength: 20, nullable: false),
+                    Name = table.Column<string>(maxLength: 50, nullable: false),
                     LogoUrl = table.Column<string>(maxLength: 2048, nullable: false),
                     YearFounded = table.Column<int>(nullable: false),
-                    Country = table.Column<string>(maxLength: 20, nullable: false),
-                    Stadium = table.Column<string>(maxLength: 20, nullable: false),
+                    Country = table.Column<string>(maxLength: 50, nullable: false),
+                    Stadium = table.Column<string>(maxLength: 50, nullable: false),
                     GroupPoints = table.Column<int>(nullable: false),
-                    PresidentId = table.Column<Guid>(nullable: false),
-                    CoachId = table.Column<Guid>(nullable: false),
+                    PresidentGuid = table.Column<Guid>(nullable: true),
+                    CoachGuid = table.Column<Guid>(nullable: true),
                     GroupId = table.Column<int>(nullable: true),
                     MatchId = table.Column<int>(nullable: true)
                 },

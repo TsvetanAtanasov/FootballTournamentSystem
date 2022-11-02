@@ -9,26 +9,30 @@
         public void Configure(EntityTypeBuilder<Player> builder)
         {
             builder
-                .HasKey(t => t.Id);
+                .HasKey(p => p.Id);
 
             builder
-                .Property(t => t.Height)
+                .Property(p => p.Guid)
                 .IsRequired();
 
             builder
-                .Property(t => t.Weight)
+                .Property(p => p.Height)
                 .IsRequired();
 
             builder
-                .Property(t => t.FirstName)
+                .Property(p => p.Weight)
                 .IsRequired();
 
             builder
-                .Property(t => t.LastName)
+                .Property(p => p.FirstName)
                 .IsRequired();
 
             builder
-                .Property(t => t.ImageUrl)
+                .Property(p => p.LastName)
+                .IsRequired();
+
+            builder
+                .Property(p => p.ImageUrl)
                 .IsRequired();
         }
     }

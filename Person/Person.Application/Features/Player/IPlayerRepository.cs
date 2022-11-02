@@ -8,6 +8,6 @@
 
     public interface IPlayerRepository : IRepository<Player>
     {
-        Task<Player> GetPlayerById(Guid playerId, CancellationToken cancellationToken = default);
+        Task<Player> GetPlayerById(int playerId, CancellationToken cancellationToken = default);
     }
 }

@@ -4,11 +4,11 @@
 
     public class CreateRefereeOutputModel
     {
-        public CreateRefereeOutputModel(Guid refereeId)
+        public CreateRefereeOutputModel(int refereeId)
         {
             this.RefereeId = refereeId;
         }
 
-        public Guid RefereeId { get; }
+        public int RefereeId { get; }
     }
 }

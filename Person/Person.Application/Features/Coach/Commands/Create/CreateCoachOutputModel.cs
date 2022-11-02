@@ -4,11 +4,11 @@
 
     public class CreateCoachOutputModel
     {
-        public CreateCoachOutputModel(Guid coachId)
+        public CreateCoachOutputModel(int coachId)
         {
             this.CoachId = coachId;
         }
 
-        public Guid CoachId { get; }
+        public int CoachId { get; }
     }
 }

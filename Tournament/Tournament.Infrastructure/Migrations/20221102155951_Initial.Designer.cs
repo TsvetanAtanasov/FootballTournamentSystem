@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Tournament.Infrastructure.Migrations
 {
     [DbContext(typeof(TournamentDbContext))]
-    [Migration("20221005132816_ChangeMaxNameLength")]
-    partial class ChangeMaxNameLength
+    [Migration("20221102155951_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -74,7 +74,7 @@ namespace Tournament.Infrastructure.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<Guid?>("CoachId")
+                    b.Property<Guid?>("CoachGuid")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Country")
@@ -101,7 +101,7 @@ namespace Tournament.Infrastructure.Migrations
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
-                    b.Property<Guid?>("PresidentId")
+                    b.Property<Guid?>("PresidentGuid")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Stadium")

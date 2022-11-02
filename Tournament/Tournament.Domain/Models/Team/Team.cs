@@ -10,7 +10,7 @@
 
     public class Team : Entity<int>, IAggregateRoot
     {
-        private readonly HashSet<Guid> playerIds;
+        private readonly HashSet<Guid> playerGuids;
 
         internal Team(string name, string logoUrl, int yearFounded, string country, string stadium, int groupPoints)
         {
@@ -23,7 +23,7 @@
             this.Stadium = stadium;
             this.GroupPoints = groupPoints;
 
-            this.playerIds = new HashSet<Guid>();
+            this.playerGuids = new HashSet<Guid>();
         }
 
         public string Name { get; }
@@ -39,17 +39,17 @@
         // Team's place in the group will be calculated by this property ( no need of group ranking )
         public int GroupPoints { get; }
 
-        public Guid? PresidentId { get; set; }
+        public Guid? PresidentGuid { get; set; }
 
-        public Guid? CoachId { get; private set; }
+        public Guid? CoachGuid { get; private set; }
 
-        public IReadOnlyCollection<Guid> PlayerIds => this.playerIds.ToList().AsReadOnly();
+        public IReadOnlyCollection<Guid> PlayerGuids => this.playerGuids.ToList().AsReadOnly();
 
-        public void AddPlayer(Guid playerId) => this.playerIds.Add(playerId);
+        public void AddPlayer(Guid playerGuid) => this.playerGuids.Add(playerGuid);
 
-        public void AddPresident(Guid presidentId) => this.PresidentId = presidentId;
+        public void AddPresident(Guid presidentGuid) => this.PresidentGuid = presidentGuid;
 
-        public void AddCoach(Guid coachId) => this.CoachId = coachId;
+        public void AddCoach(Guid coachGuid) => this.CoachGuid = coachGuid;
 
         private void Validate(string name, string logoUrl, int yearFounded, string country, string stadium, int groupPoints)
         {

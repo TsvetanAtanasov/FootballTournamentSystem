@@ -5,13 +5,13 @@
     using Core.Domain.Exceptions;
     using System;
 
-    public abstract class Person : Entity<Guid>, IAggregateRoot
+    public abstract class Person : Entity<int>, IAggregateRoot
     {
         internal Person(string firstName, string lastName, string imageUrl)
         {
             this.Validate(firstName, lastName, imageUrl);
 
-            this.Id = Guid.NewGuid();
+            this.Guid = Guid.NewGuid();
 
             this.FirstName = firstName;
             this.LastName = lastName;
@@ -24,6 +24,8 @@
             this.LastName = default!;
             this.ImageUrl = default!;
         }
+
+        public Guid Guid { get; }
 
         public string FirstName { get; }
 

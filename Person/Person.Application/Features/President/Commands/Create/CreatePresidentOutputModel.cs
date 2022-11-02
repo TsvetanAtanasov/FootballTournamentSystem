@@ -4,11 +4,11 @@
 
     public class CreatePresidentOutputModel
     {
-        public CreatePresidentOutputModel(Guid presidentId)
+        public CreatePresidentOutputModel(int presidentId)
         {
             this.PresidentId = presidentId;
         }
 
-        public Guid PresidentId { get; }
+        public int PresidentId { get; }
     }
 }

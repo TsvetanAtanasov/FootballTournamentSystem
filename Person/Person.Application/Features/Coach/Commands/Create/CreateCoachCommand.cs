@@ -54,7 +54,7 @@
                 var messageData = new CoachCreatedMessage
                 {
                     TeamId = coach.TeamId,
-                    CoachId = coach.Id
+                    CoachGuid = coach.Guid
                 };
 
                 var message = new Message(messageData);
