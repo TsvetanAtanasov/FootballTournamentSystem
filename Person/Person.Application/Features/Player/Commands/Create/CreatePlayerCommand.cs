@@ -1,6 +1,7 @@
 ﻿namespace FootballTournamentSystem.Person.Application.Features.Player.Commands.Create
 {
     using Core.Application.Messages;
+    using Core.Domain.Models;
     using FootballTournamentSystem.Person.Domain.Factories.Player;
     using MassTransit;
     using MediatR;
@@ -59,20 +60,19 @@
                     .WithTeamId(request.TeamId)
                     .Build();
 
-                await this.playerRepository.Save(player, cancellationToken);
-
-                await this.publisher.Publish(new PlayerCreatedMessage
+                var messageData = new PlayerCreatedMessage
                 {
-                    PlayerGuid = player.Guid,
-                    TeamId = player.TeamId
-                });
+                    TeamId = player.TeamId,
+                    PlayerGuid = player.Guid
+                };
 
-                //There is a question about this code in the notes
-                //if (request.TeamId != 0)
-                //{
-                //    var team = await this.teamRepository.GetTeamById(request.TeamId);
-                //    team.AddPlayer(player.Id);
-                //}
+                var message = new Message(messageData);
+
+                await this.playerRepository.Save(player, cancellationToken, message);
+
+                await this.publisher.Publish(messageData);
+
+                await this.playerRepository.MarkMessageAsPublished(message.Id);
 
                 return new CreatePlayerOutputModel(player.Id);
             }

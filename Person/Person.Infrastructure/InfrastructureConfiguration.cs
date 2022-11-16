@@ -18,7 +18,7 @@
 
     public static class InfrastructureConfiguration
     {
-        public static IServiceCollection AddStatisticsInfrastructure(
+        public static IServiceCollection AddPersonInfrastructure(
             this IServiceCollection services,
             IConfiguration configuration)
             => services

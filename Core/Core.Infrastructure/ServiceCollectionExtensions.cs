@@ -25,7 +25,7 @@
             services
                 .AddDatabase<TDbContext>(configuration)
                 .AddTokenAuthentication(configuration)
-                //.AddHealth(configuration)
+                .AddHealth(configuration)
                 .AddControllers();
 
             return services;
@@ -97,7 +97,7 @@
                 .AddSqlServer(configuration.GetDefaultConnectionString());
 
             healthChecks
-                .AddRabbitMQ(rabbitConnectionString: "amqp://rabbitmq:rabbitmq@rabbitmq/");
+                .AddRabbitMQ(rabbitConnectionString: "amqp://rabbitmquser:rabbitmqPassword12!@rabbitmq/");
 
             return services;
         }
@@ -131,16 +131,16 @@
                 })
                 .AddMassTransitHostedService();
 
-            //services
-            //    .AddHangfire(config => config
-            //        .SetDataCompatibilityLevel(CompatibilityLevel.Version_170)
-            //        .UseSimpleAssemblyNameTypeSerializer()
-            //        .UseRecommendedSerializerSettings()
-            //        .UseSqlServerStorage(configuration.GetDefaultConnectionString()));
+            services
+                .AddHangfire(config => config
+                    .SetDataCompatibilityLevel(CompatibilityLevel.Version_170)
+                    .UseSimpleAssemblyNameTypeSerializer()
+                    .UseRecommendedSerializerSettings()
+                    .UseSqlServerStorage(configuration.GetDefaultConnectionString()));
 
-            //services.AddHangfireServer();
+            services.AddHangfireServer();
 
-            //services.AddHostedService<MessagesHostedService>();
+            services.AddHostedService<MessagesHostedService>();
 
             return services;
         }

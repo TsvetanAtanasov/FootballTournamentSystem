@@ -29,7 +29,7 @@ namespace FootballTournamentSystem.Startup
                 .AddDomain<ICoachFactory>()
                 .AddApplication<CreateCoachCommand>(this.Configuration)
                 .AddWebService<PersonDbContext>(this.Configuration)
-                .AddStatisticsInfrastructure(this.Configuration);
+                .AddPersonInfrastructure(this.Configuration);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

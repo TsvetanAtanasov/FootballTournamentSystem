@@ -47,6 +47,6 @@
             return this;
         }
 
-        public Player Build() => new Player(this.firstName, this.lastName, this.height, this.weight, this.imageUrl);
+        public Player Build() => new Player(this.firstName, this.lastName, this.height, this.weight, this.imageUrl, this.teamId);
     }
 }

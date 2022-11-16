@@ -6,6 +6,7 @@
     using FootballTournamentSystem.Person.Domain.Factories.President;
     using MassTransit;
     using Core.Application.Messages;
+    using Core.Domain.Models;
 
     public class CreatePresidentCommand : IRequest<CreatePresidentOutputModel>
     {
@@ -50,13 +51,19 @@
                     .WithTeamId(request.TeamId)
                     .Build();
 
-                await this.presidentRepository.Save(president, cancellationToken);
-
-                await this.publisher.Publish(new PresidentCreatedMessage
+                var messageData = new PresidentCreatedMessage
                 {
-                    PresidentGuid = president.Guid,
-                    TeamId = president.TeamId
-                });
+                    TeamId = president.TeamId,
+                    PresidentGuid = president.Guid
+                };
+
+                var message = new Message(messageData);
+
+                await this.presidentRepository.Save(president, cancellationToken, message);
+
+                await this.publisher.Publish(messageData);
+
+                await this.presidentRepository.MarkMessageAsPublished(message.Id);
 
                 return new CreatePresidentOutputModel(president.Id);
             }

@@ -5,6 +5,7 @@
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
+    using Core.Infrastructure;
 
     public static class ApplicationBuilderExtensions
     {
@@ -28,8 +29,8 @@
                 .UseAuthorization()
                 .UseEndpoints(endpoints =>
                 {
-                    // add health checks
-                    // endpoints.MapHealthChecks("/health");
+                    endpoints.MapHealthChecks();
+
                     endpoints.MapControllers();
                 });
 

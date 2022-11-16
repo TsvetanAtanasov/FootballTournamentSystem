@@ -1,13 +1,15 @@
 ﻿namespace FootballTournamentSystem.Tournament.Infrastructure.Persistance
 {
+    using System.Reflection;
     using Microsoft.EntityFrameworkCore;
+    using Core.Infrastructure.Data;
     using FootballTournamentSystem.Tournament.Infrastructure;
     using FootballTournamentSystem.Tournament.Domain.Models.Tournament;
     using FootballTournamentSystem.Tournament.Domain.Models.Match;
     using FootballTournamentSystem.Tournament.Domain.Models.Team;
-    using System.Reflection;
 
-    public class TournamentDbContext : DbContext,
+
+    public class TournamentDbContext : MessageDbContext,
         ITournamentDbContext
     {
         public TournamentDbContext(DbContextOptions<TournamentDbContext> options)
@@ -30,6 +32,8 @@
         public DbSet<Match> Matches { get; set; } = default!;
 
         public DbSet<Team> Teams { get; set; } = default!;
+
+        protected override Assembly ConfigurationsAssembly => Assembly.GetExecutingAssembly();
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

@@ -5,13 +5,14 @@
 
     public class Player : Person
     {
-        internal Player(string firstName, string lastName, double height, double weight, string imageUrl)
+        internal Player(string firstName, string lastName, double height, double weight, string imageUrl, int teamId)
             : base(firstName, lastName, imageUrl)
         {
             this.Validate(height, weight);
 
             this.Height = height;
             this.Weight = weight;
+            this.TeamId = teamId;
         }
 
         private Player()
