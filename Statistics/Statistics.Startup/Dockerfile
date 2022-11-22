@@ -16,7 +16,7 @@ COPY ["Statistics/Statistics.Application/Statistics.Application.csproj", "Statis
 COPY ["Statistics/Statistics.Domain/Statistics.Domain.csproj", "Statistics/Statistics.Domain/"]
 COPY ["Statistics/Statistics.Infrastructure/Statistics.Infrastructure.csproj", "Statistics/Statistics.Infrastructure/"]
 COPY ["Core/Core.Infrastructure/Core.Infrastructure.csproj", "Core/Core.Infrastructure/"]
-COPY ["Core.Identity/Core.Identity.csproj", "Core.Identity/"]
+COPY ["Core/Core.Identity/Core.Identity.csproj", "Core/Core.Identity/"]
 RUN dotnet restore "Statistics/Statistics.Startup/Statistics.Startup.csproj"
 COPY . .
 WORKDIR "/src/Statistics/Statistics.Startup"

@@ -16,7 +16,7 @@ COPY ["Tournament/Tournament.Domain/Tournament.Domain.csproj", "Tournament/Tourn
 COPY ["Core/Core.Web/Core.Web.csproj", "Core/Core.Web/"]
 COPY ["Tournament/Tournament.Infrastructure/Tournament.Infrastructure.csproj", "Tournament/Tournament.Infrastructure/"]
 COPY ["Core/Core.Infrastructure/Core.Infrastructure.csproj", "Core/Core.Infrastructure/"]
-COPY ["Core.Identity/Core.Identity.csproj", "Core.Identity/"]
+COPY ["Core/Core.Identity/Core.Identity.csproj", "Core/Core.Identity/"]
 RUN dotnet restore "Tournament/Tournament.Startup/Tournament.Startup.csproj"
 COPY . .
 WORKDIR "/src/Tournament/Tournament.Startup"

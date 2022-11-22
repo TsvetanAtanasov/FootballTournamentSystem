@@ -16,7 +16,7 @@ COPY ["Person/Person.Application/Person.Application.csproj", "Person/Person.Appl
 COPY ["Person/Person.Domain/Person.Domain.csproj", "Person/Person.Domain/"]
 COPY ["Person/Person.Infrastructure/Person.Infrastructure.csproj", "Person/Person.Infrastructure/"]
 COPY ["Core/Core.Infrastructure/Core.Infrastructure.csproj", "Core/Core.Infrastructure/"]
-COPY ["Core.Identity/Core.Identity.csproj", "Core.Identity/"]
+COPY ["Core/Core.Identity/Core.Identity.csproj", "Core/Core.Identity/"]
 RUN dotnet restore "Person/Person.Startup/Person.Startup.csproj"
 COPY . .
 WORKDIR "/src/Person/Person.Startup"

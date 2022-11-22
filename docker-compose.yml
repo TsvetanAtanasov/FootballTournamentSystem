@@ -87,7 +87,7 @@ services:
         image: tsvetan97/footballtournamentsystem-identity-service
         build:
             context: ./
-            dockerfile: ./FootballTournamentSystem.Identity/Dockerfile
+            dockerfile: ./Identity/FootballTournamentSystem.Identity/Dockerfile
         ports: 
             - "5007:80"
         environment:
